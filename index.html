@@ -578,6 +578,155 @@
     @page{margin:16mm 14mm}
   }
 
+  /* ===== グローバル検索モーダル ===== */
+  .search-btn{
+    background:none;border:1px solid var(--c-bd);color:var(--c-sub);
+    padding:6px 12px 6px 34px;margin-right:10px;border-radius:4px;
+    font-size:13px;cursor:pointer;position:relative;font-family:inherit;
+    min-width:180px;text-align:left;
+  }
+  .search-btn::before{
+    content:"";position:absolute;left:11px;top:50%;transform:translateY(-50%);
+    width:14px;height:14px;border:2px solid var(--c-sub);border-radius:50%;
+  }
+  .search-btn::after{
+    content:"";position:absolute;left:22px;top:58%;
+    width:6px;height:2px;background:var(--c-sub);transform:rotate(45deg);
+  }
+  .search-btn:hover{border-color:var(--c-brand);color:var(--c-text)}
+  .search-btn .kbd{
+    background:var(--c-bg-soft);border:1px solid var(--c-bd);border-radius:3px;
+    padding:1px 6px;font-size:11px;font-family:ui-monospace,monospace;
+    margin-left:8px;color:var(--c-sub);
+  }
+  .search-modal{
+    display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:150;
+    padding:80px 20px 20px;overflow-y:auto;
+  }
+  .search-modal.open{display:block}
+  .search-modal .sm-box{
+    background:var(--c-bg);border-radius:6px;max-width:640px;margin:0 auto;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);overflow:hidden;
+  }
+  .search-modal .sm-header{
+    padding:12px 16px;border-bottom:1px solid var(--c-bd);
+    display:flex;align-items:center;gap:10px;
+  }
+  .search-modal .sm-header input{
+    flex:1;border:0;outline:none;font-size:16px;font-family:inherit;
+    padding:8px 4px;background:transparent;color:var(--c-text);
+  }
+  .search-modal .sm-close{
+    background:var(--c-bg-soft);border:0;border-radius:4px;padding:4px 10px;
+    font-size:12px;cursor:pointer;color:var(--c-sub);
+  }
+  .search-modal .sm-results{max-height:60vh;overflow-y:auto}
+  .search-modal .sm-result{
+    padding:12px 18px;border-bottom:1px solid var(--c-bg-soft);cursor:pointer;
+    display:block;text-decoration:none;color:var(--c-text);
+  }
+  .search-modal .sm-result:hover,
+  .search-modal .sm-result.focused{background:var(--c-bg-brand)}
+  .search-modal .sm-result .sm-page{
+    font-size:11px;color:var(--c-brand);font-weight:700;letter-spacing:.06em;margin-bottom:2px;
+  }
+  .search-modal .sm-result .sm-title{font-size:15px;font-weight:700;margin-bottom:2px}
+  .search-modal .sm-result .sm-preview{font-size:13px;color:var(--c-sub);line-height:1.6}
+  .search-modal .sm-result mark{background:#FFF59D;color:var(--c-text);padding:0 2px;border-radius:2px}
+  .search-modal .sm-empty{padding:24px;text-align:center;color:var(--c-sub);font-size:14px}
+  .search-modal .sm-foot{
+    padding:8px 18px;background:var(--c-bg-soft);border-top:1px solid var(--c-bd);
+    font-size:11px;color:var(--c-sub);display:flex;gap:14px;justify-content:flex-end;
+  }
+  .search-modal .sm-foot kbd{
+    background:var(--c-bg);border:1px solid var(--c-bd);border-radius:3px;
+    padding:1px 5px;font-size:10px;font-family:ui-monospace,monospace;
+  }
+  @media (max-width:640px){
+    .search-btn{display:none}
+    .search-modal{padding:40px 10px 10px}
+  }
+
+  /* ===== ページ内目次（TOC） ===== */
+  .page-toc{
+    display:none;
+    position:sticky;top:80px;background:var(--c-bg);
+    border:1px solid var(--c-bd);border-radius:4px;
+    padding:14px 18px;font-size:13px;
+    max-height:calc(100vh - 120px);overflow-y:auto;
+  }
+  .page-toc h4{
+    margin:0 0 8px;font-size:12px;font-weight:700;color:var(--c-sub);
+    letter-spacing:.08em;text-transform:uppercase;padding:0;border:0;
+  }
+  .page-toc ul{list-style:none;padding:0;margin:0}
+  .page-toc li{margin:0}
+  .page-toc a{
+    display:block;padding:5px 8px;color:var(--c-text);text-decoration:none;
+    border-left:2px solid transparent;line-height:1.5;
+  }
+  .page-toc a:hover{color:var(--c-brand);background:var(--c-bg-soft)}
+  .page-toc a.current{
+    color:var(--c-brand);border-left-color:var(--c-brand);font-weight:600;
+  }
+  .page-with-toc{display:grid;grid-template-columns:1fr 220px;gap:32px}
+  @media (min-width:960px){
+    .page-toc{display:block}
+  }
+
+  /* ===== 料金シミュレーター ===== */
+  .fee-sim{
+    background:var(--c-bg);border:1px solid var(--c-bd);border-radius:4px;
+    padding:20px 24px;margin:16px 0 24px;
+  }
+  .fee-sim h4{
+    margin:0 0 6px;font-size:16px;font-weight:700;color:var(--c-text);
+    padding:0;border:0;
+  }
+  .fee-sim .fs-lead{font-size:13px;color:var(--c-sub);margin:0 0 14px}
+  .fee-sim .fs-row{
+    display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:10px;margin-bottom:10px;align-items:center;
+  }
+  .fee-sim .fs-row label{font-size:13px;font-weight:600;color:var(--c-text)}
+  .fee-sim select,.fee-sim input[type="number"]{
+    width:100%;padding:8px 10px;border:1px solid var(--c-bd);border-radius:2px;
+    font-size:14px;font-family:inherit;background:var(--c-bg);
+  }
+  .fee-sim .fs-result{
+    background:var(--c-bg-brand);border-radius:4px;padding:14px 18px;
+    margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;
+  }
+  .fee-sim .fs-result .fs-label{font-size:14px;color:var(--c-sub)}
+  .fee-sim .fs-result .fs-total{font-size:24px;font-weight:700;color:var(--c-brand)}
+  .fee-sim .fs-breakdown{
+    font-size:12px;color:var(--c-sub);margin-top:8px;line-height:1.7;
+  }
+  @media (max-width:640px){
+    .fee-sim .fs-row{grid-template-columns:1fr 1fr;gap:8px}
+    .fee-sim .fs-row label{grid-column:1 / -1;margin-bottom:0}
+  }
+
+  /* ===== フィードバックウィジェット ===== */
+  .feedback{
+    background:var(--c-bg-soft);border:1px solid var(--c-bd);border-radius:4px;
+    padding:20px 24px;margin:32px 0 16px;text-align:center;
+  }
+  .feedback p{margin:0 0 12px;font-size:15px;color:var(--c-text)}
+  .feedback .fb-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .feedback button{
+    background:var(--c-bg);border:1px solid var(--c-bd);border-radius:4px;
+    padding:10px 24px;font-size:14px;font-weight:600;color:var(--c-text);cursor:pointer;
+    transition:all .12s;min-width:120px;
+  }
+  .feedback button:hover{border-color:var(--c-brand);color:var(--c-brand)}
+  .feedback button[aria-pressed="true"]{
+    background:var(--c-brand);color:#fff;border-color:var(--c-brand);
+  }
+  .feedback .fb-thanks{display:none;color:var(--c-sub);font-size:14px}
+  .feedback.submitted .fb-btns,
+  .feedback.submitted p{display:none}
+  .feedback.submitted .fb-thanks{display:block}
+
   /* ===== 戻る（ページトップへ）ボタン ===== */
   .back-to-top{
     position:fixed;right:18px;bottom:86px;z-index:40;
@@ -889,10 +1038,27 @@
       <a href="#faq" onclick="event.preventDefault();nav('faq')" data-page="faq">よくある質問</a>
       <a href="#news" onclick="event.preventDefault();nav('news')" data-page="news">お知らせ</a>
       <a href="#commercial" onclick="event.preventDefault();nav('commercial')" data-page="commercial">撮影・営利利用</a>
+      <button type="button" class="search-btn" onclick="openSearch()" aria-label="サイト内検索">サイト内を検索<span class="kbd">Ctrl + K</span></button>
       <a class="cta" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">予約システムへ</a>
     </nav>
   </div>
 </header>
+
+<!-- グローバル検索モーダル -->
+<div class="search-modal" id="searchModal" role="dialog" aria-label="サイト内検索" aria-modal="true">
+  <div class="sm-box">
+    <div class="sm-header">
+      <input id="searchInput" type="search" placeholder="キーワードを入力（例：抽選、料金、キャンセル、テニス）" autocomplete="off">
+      <button class="sm-close" type="button" onclick="closeSearch()" aria-label="閉じる">Esc</button>
+    </div>
+    <div class="sm-results" id="searchResults"></div>
+    <div class="sm-foot">
+      <span><kbd>↑↓</kbd> 移動</span>
+      <span><kbd>Enter</kbd> 開く</span>
+      <span><kbd>Esc</kbd> 閉じる</span>
+    </div>
+  </div>
+</div>
 
 <main class="site-main" role="main" id="main">
 
@@ -993,7 +1159,17 @@
       </a>
     </div>
   </section>
+
+  <div class="feedback" data-page="home">
+    <p>このページは参考になりましたか？</p>
+    <div class="fb-btns">
+      <button type="button" onclick="sendFeedback(this,'yes','home')" aria-pressed="false">👍 役に立った</button>
+      <button type="button" onclick="sendFeedback(this,'no','home')" aria-pressed="false">👎 改善が必要</button>
+    </div>
+    <div class="fb-thanks">ご回答ありがとうございました。今後の改善に活用させていただきます。</div>
+  </div>
 </section>
+
 
 <!-- ====================== ② 施設一覧 ====================== -->
 <section class="page-section" data-page="facilities" aria-labelledby="page-fac-title">
@@ -1155,7 +1331,17 @@
       </div>
     </div>
   </section>
+
+  <div class="feedback" data-page="facilities">
+    <p>このページは参考になりましたか？</p>
+    <div class="fb-btns">
+      <button type="button" onclick="sendFeedback(this,'yes','facilities')" aria-pressed="false">👍 役に立った</button>
+      <button type="button" onclick="sendFeedback(this,'no','facilities')" aria-pressed="false">👎 改善が必要</button>
+    </div>
+    <div class="fb-thanks">ご回答ありがとうございました。今後の改善に活用させていただきます。</div>
+  </div>
 </section>
+
 
 <!-- ====================== ③ 使い方ガイド ====================== -->
 <section class="page-section" data-page="guide" aria-labelledby="page-guide-title">
@@ -1368,7 +1554,17 @@
       <div class="video-placeholder">動画プレーヤー（公開時に差し替え）</div>
     </div>
   </section>
+
+  <div class="feedback" data-page="guide">
+    <p>このページは参考になりましたか？</p>
+    <div class="fb-btns">
+      <button type="button" onclick="sendFeedback(this,'yes','guide')" aria-pressed="false">👍 役に立った</button>
+      <button type="button" onclick="sendFeedback(this,'no','guide')" aria-pressed="false">👎 改善が必要</button>
+    </div>
+    <div class="fb-thanks">ご回答ありがとうございました。今後の改善に活用させていただきます。</div>
+  </div>
 </section>
+
 
 <!-- ====================== ④ 料金表 ====================== -->
 <section class="page-section" data-page="fees" aria-labelledby="page-fees-title">
@@ -1382,6 +1578,55 @@
     <h2 id="page-fees-title">施設使用料</h2>
     <p class="lead">浦安市内の体育施設の使用料を掲載しています。<b>市外登録者は市内料金の5割増し</b>となります。</p>
     <p class="note">※最新の料金は<a href="https://www.urayasu-zaidan.or.jp/taiikukan/1002165.html" target="_blank" rel="noopener">うらやす財団 公式サイト</a>で必ずご確認ください。</p>
+
+    <!-- 料金シミュレーター -->
+    <div class="fee-sim">
+      <h4>💰 料金シミュレーター</h4>
+      <p class="fs-lead">よく使う組み合わせをかんたんに計算できます（主要施設のみ）。</p>
+      <div class="fs-row">
+        <label for="simFac">施設・面積</label>
+        <select id="simFac">
+          <option value="8580,非営利・入場料なし">メインアリーナ 全面（8,580円）</option>
+          <option value="4290,非営利・入場料なし">メインアリーナ 1/2面（4,290円）</option>
+          <option value="2150,非営利・入場料なし">メインアリーナ 1/4面（2,150円）</option>
+          <option value="3430,非営利・入場料なし">サブアリーナ 全面（3,430円）</option>
+          <option value="1720,非営利・入場料なし">サブアリーナ 1/2面（1,720円）</option>
+          <option value="1710,非営利・入場料なし">第一・第二武道場（1,710円）</option>
+          <option value="1080,非営利・入場料なし">卓球室（1,080円）</option>
+          <option value="720,非営利・入場料なし">テニスコート 1面（720円）</option>
+          <option value="2470,非営利・入場料なし">軟式野球場・ソフトボール場（2,470円）</option>
+          <option value="1650,非営利・入場料なし">フットサル場・スポーツコート（1,650円）</option>
+          <option value="7750,非営利・入場料なし">運動公園野球場（7,750円）</option>
+        </select>
+        <label for="simCat">利用区分</label>
+        <select id="simCat">
+          <option value="1">市内・一般</option>
+          <option value="0.5">市内・小中高生/65歳以上</option>
+          <option value="1.5">市外・一般</option>
+          <option value="0.75">市外・小中高生/65歳以上</option>
+        </select>
+      </div>
+      <div class="fs-row">
+        <label for="simSlots">利用コマ数（1コマ=2時間）</label>
+        <input id="simSlots" type="number" min="1" max="10" value="1">
+        <label for="simChildcareAge">託児（任意）</label>
+        <select id="simChildcareAge">
+          <option value="0">利用しない</option>
+          <option value="600,1">6ヶ月〜1歳未満（1時間 600円）</option>
+          <option value="1000,2">6ヶ月〜1歳未満（2時間 1,000円）</option>
+          <option value="450,1">1歳〜2歳未満（1時間 450円）</option>
+          <option value="750,2">1歳〜2歳未満（2時間 750円）</option>
+          <option value="300,1">2歳〜就学前（1時間 300円）</option>
+          <option value="500,2">2歳〜就学前（2時間 500円）</option>
+        </select>
+      </div>
+      <div class="fs-result">
+        <span class="fs-label">合計金額（目安）</span>
+        <span class="fs-total" id="simTotal">¥0</span>
+      </div>
+      <p class="fs-breakdown" id="simBreakdown"></p>
+      <p class="note" style="margin-top:14px">※ 概算です。入場料徴収・営利目的・附属器具・照明・各施設の特例などは含まれません。実際の金額は予約システムでご確認ください。</p>
+    </div>
 
     <!-- 目次 -->
     <div class="info-box">
@@ -1651,7 +1896,17 @@
     </div>
     <p class="note">※定員：6ヶ月〜1歳未満 2名／1歳〜就学前 最大6名。<br>※予約当日、予定時刻を10分経過してもお越しにならない場合はキャンセル扱いとなります。</p>
   </section>
+
+  <div class="feedback" data-page="fees">
+    <p>このページは参考になりましたか？</p>
+    <div class="fb-btns">
+      <button type="button" onclick="sendFeedback(this,'yes','fees')" aria-pressed="false">👍 役に立った</button>
+      <button type="button" onclick="sendFeedback(this,'no','fees')" aria-pressed="false">👎 改善が必要</button>
+    </div>
+    <div class="fb-thanks">ご回答ありがとうございました。今後の改善に活用させていただきます。</div>
+  </div>
 </section>
+
 
 <!-- ====================== ⑤ FAQ ====================== -->
 <section class="page-section" data-page="faq" aria-labelledby="page-faq-title">
@@ -1813,7 +2068,17 @@
       </div>
     </details>
   </section>
+
+  <div class="feedback" data-page="faq">
+    <p>このページは参考になりましたか？</p>
+    <div class="fb-btns">
+      <button type="button" onclick="sendFeedback(this,'yes','faq')" aria-pressed="false">👍 役に立った</button>
+      <button type="button" onclick="sendFeedback(this,'no','faq')" aria-pressed="false">👎 改善が必要</button>
+    </div>
+    <div class="fb-thanks">ご回答ありがとうございました。今後の改善に活用させていただきます。</div>
+  </div>
 </section>
+
 
 <!-- ====================== ⑥ お知らせ ====================== -->
 <section class="page-section" data-page="news" aria-labelledby="page-news-title">
@@ -1837,7 +2102,17 @@
       <li><span class="date3">2026/03/01</span><span class="tag3 info">システム</span><span>公共施設予約システムの利用方法を更新しました</span></li>
     </ul>
   </section>
+
+  <div class="feedback" data-page="news">
+    <p>このページは参考になりましたか？</p>
+    <div class="fb-btns">
+      <button type="button" onclick="sendFeedback(this,'yes','news')" aria-pressed="false">👍 役に立った</button>
+      <button type="button" onclick="sendFeedback(this,'no','news')" aria-pressed="false">👎 改善が必要</button>
+    </div>
+    <div class="fb-thanks">ご回答ありがとうございました。今後の改善に活用させていただきます。</div>
+  </div>
 </section>
+
 
 <!-- ====================== ⑦ 撮影・営利利用 ====================== -->
 <section class="page-section" data-page="commercial" aria-labelledby="page-comm-title">
@@ -2028,7 +2303,17 @@
       <p>一般社団法人 浦安市スポーツ協会 事務局<br>TEL <a href="tel:0477239387">047-723-9387</a>（平日 9:00〜17:00）<br>Email <a href="mailto:office@urayasu-spokyo.org">office@urayasu-spokyo.org</a></p>
     </div>
   </section>
+
+  <div class="feedback" data-page="commercial">
+    <p>このページは参考になりましたか？</p>
+    <div class="fb-btns">
+      <button type="button" onclick="sendFeedback(this,'yes','commercial')" aria-pressed="false">👍 役に立った</button>
+      <button type="button" onclick="sendFeedback(this,'no','commercial')" aria-pressed="false">👎 改善が必要</button>
+    </div>
+    <div class="fb-thanks">ご回答ありがとうございました。今後の改善に活用させていただきます。</div>
+  </div>
 </section>
+
 
 
 </main>
@@ -2117,7 +2402,8 @@
     `<a href="#guide" class="sb-link" onclick="event.preventDefault();nav('guide');setTimeout(()=>document.getElementById('apply-lottery')?.scrollIntoView({behavior:'smooth'}),200)">予約の流れ</a>`;
 })();
 
-function nav(page){
+/* 内部遷移（ハッシュを変えない）— hashchange イベントから呼ばれる */
+function navInternal(page){
   document.querySelectorAll('.page-section').forEach(s=>s.classList.toggle('active', s.dataset.page===page));
   document.querySelectorAll('.site-nav a[data-page]').forEach(a=>{
     const isActive = a.dataset.page===page;
@@ -2125,16 +2411,37 @@ function nav(page){
     if(isActive) a.setAttribute('aria-current','page');
     else a.removeAttribute('aria-current');
   });
-  // モバイルメニューを閉じる
   const menu = document.querySelector('.site-nav');
   const btn = document.querySelector('.mobile-toggle');
-  menu.classList.remove('open');
+  if(menu) menu.classList.remove('open');
   if(btn) btn.setAttribute('aria-expanded','false');
-  // メイン領域へフォーカスを戻す（読み上げ向け）
   const main = document.getElementById('main');
   if(main){ main.setAttribute('tabindex','-1'); main.focus({preventScroll:true}); }
   window.scrollTo({top:0, behavior:'smooth'});
+  renderTOC(page);
 }
+
+/* 外部から呼ばれる nav() — URLハッシュ更新付き */
+function nav(page){
+  if(location.hash.replace('#','') === page){
+    navInternal(page);
+  } else {
+    location.hash = '#' + page;
+  }
+}
+
+/* ページ読み込み時のルーティング */
+function syncFromHash(){
+  const h = (location.hash || '#home').replace('#','');
+  const validPages = ['home','facilities','guide','fees','faq','news','commercial'];
+  const target = validPages.includes(h) ? h : 'home';
+  navInternal(target);
+}
+window.addEventListener('hashchange', syncFromHash);
+window.addEventListener('DOMContentLoaded', ()=>{
+  if(location.hash) syncFromHash();
+  else renderTOC('home');
+});
 
 function toggleMenu(btn){
   const menu = document.querySelector('.site-nav');
@@ -2281,6 +2588,249 @@ function setFontSize(size){
     });
   }
 })();
+
+/* ===== グローバル検索（全ページ横断） ===== */
+let searchIndex = [];
+function buildSearchIndex(){
+  searchIndex = [];
+  const pageLabels = {
+    home:'ホーム', facilities:'施設一覧', guide:'使い方ガイド',
+    fees:'料金表', faq:'よくある質問', news:'お知らせ', commercial:'撮影・営利利用'
+  };
+  document.querySelectorAll('.page-section').forEach(sec=>{
+    const page = sec.dataset.page;
+    // 主要ブロック（見出し+直下の要素）をインデックス化
+    sec.querySelectorAll('h2, h3, .faq-item, .fcard, .notice-list li').forEach(el=>{
+      const title = el.matches('.faq-item') ? (el.querySelector('summary')?.textContent || '').trim()
+                  : el.matches('.fcard') ? (el.querySelector('h4')?.textContent || '').trim()
+                  : el.matches('li') ? (el.textContent || '').trim().slice(0,80)
+                  : (el.textContent || '').trim();
+      const content = (el.textContent || '').replace(/\s+/g,' ').trim();
+      if(title && content){
+        // 対応するアンカー
+        let anchor = el.id;
+        if(!anchor){
+          // 最寄りの id を探す
+          let p = el;
+          while(p && !p.id && p !== sec){p = p.previousElementSibling || p.parentElement}
+          anchor = p && p.id ? p.id : '';
+        }
+        searchIndex.push({
+          page, pageLabel: pageLabels[page] || page,
+          title, content, anchor
+        });
+      }
+    });
+  });
+}
+function highlight(text, q){
+  if(!q) return text;
+  const re = new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+  return text.replace(re,'<mark>$1</mark>');
+}
+function openSearch(){
+  const modal = document.getElementById('searchModal');
+  const input = document.getElementById('searchInput');
+  if(!searchIndex.length) buildSearchIndex();
+  modal.classList.add('open');
+  setTimeout(()=>input.focus(), 50);
+  renderSearchResults('');
+}
+function closeSearch(){
+  document.getElementById('searchModal').classList.remove('open');
+}
+function renderSearchResults(q){
+  const results = document.getElementById('searchResults');
+  if(!q){
+    results.innerHTML = '<div class="sm-empty">キーワードを入力してください<br><small>例：抽選／料金／キャンセル／テニス／団体登録／雨天</small></div>';
+    return;
+  }
+  const qLower = q.toLowerCase();
+  const hits = searchIndex.filter(x=>
+    x.title.toLowerCase().includes(qLower) || x.content.toLowerCase().includes(qLower)
+  ).slice(0, 20);
+  if(!hits.length){
+    results.innerHTML = '<div class="sm-empty">「' + q + '」に一致する項目が見つかりません</div>';
+    return;
+  }
+  results.innerHTML = hits.map((h,i)=>{
+    const preview = h.content.slice(0, 100);
+    const href = '#' + h.page + (h.anchor ? '#' + h.anchor : '');
+    return '<a class="sm-result' + (i===0?' focused':'') + '" href="' + href + '" onclick="searchResultClick(event,\'' + h.page + '\',\'' + (h.anchor||'') + '\')">' +
+      '<div class="sm-page">' + h.pageLabel + '</div>' +
+      '<div class="sm-title">' + highlight(h.title, q) + '</div>' +
+      '<div class="sm-preview">' + highlight(preview, q) + (h.content.length>100?'…':'') + '</div>' +
+      '</a>';
+  }).join('');
+}
+function searchResultClick(e, page, anchor){
+  e.preventDefault();
+  closeSearch();
+  nav(page);
+  if(anchor){
+    setTimeout(()=>{
+      const el = document.getElementById(anchor);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 250);
+  }
+}
+(function(){
+  const input = document.getElementById('searchInput');
+  if(!input) return;
+  input.addEventListener('input', e=>renderSearchResults(e.target.value.trim()));
+  // キーボードショートカット：Ctrl+K / Cmd+K で開く、Escで閉じる
+  document.addEventListener('keydown', e=>{
+    if((e.ctrlKey || e.metaKey) && e.key.toLowerCase()==='k'){
+      e.preventDefault();
+      openSearch();
+    }
+    if(e.key==='Escape'){
+      const m = document.getElementById('searchModal');
+      if(m && m.classList.contains('open')) closeSearch();
+    }
+    // 検索結果内の矢印キー操作
+    const modal = document.getElementById('searchModal');
+    if(modal && modal.classList.contains('open')){
+      if(e.key==='ArrowDown' || e.key==='ArrowUp'){
+        e.preventDefault();
+        const items = modal.querySelectorAll('.sm-result');
+        if(!items.length) return;
+        let idx = Array.from(items).findIndex(x=>x.classList.contains('focused'));
+        items.forEach(x=>x.classList.remove('focused'));
+        idx = (idx + (e.key==='ArrowDown'?1:-1) + items.length) % items.length;
+        items[idx].classList.add('focused');
+        items[idx].scrollIntoView({block:'nearest'});
+      }
+      if(e.key==='Enter'){
+        const focused = modal.querySelector('.sm-result.focused');
+        if(focused) focused.click();
+      }
+    }
+  });
+  // モーダル外クリックで閉じる
+  document.getElementById('searchModal').addEventListener('click', e=>{
+    if(e.target.id === 'searchModal') closeSearch();
+  });
+})();
+
+/* ===== 料金シミュレーター ===== */
+(function(){
+  const simFac = document.getElementById('simFac');
+  if(!simFac) return;
+  const simCat = document.getElementById('simCat');
+  const simSlots = document.getElementById('simSlots');
+  const simChildcare = document.getElementById('simChildcareAge');
+  const totalEl = document.getElementById('simTotal');
+  const breakdownEl = document.getElementById('simBreakdown');
+
+  function calc(){
+    const [basePrice, baseDesc] = simFac.value.split(',');
+    const catMul = parseFloat(simCat.value);
+    const slots = Math.max(1, parseInt(simSlots.value) || 1);
+    const facTotal = Math.round(parseInt(basePrice) * catMul) * slots;
+
+    let childcareTotal = 0;
+    let childcareLabel = '';
+    if(simChildcare.value !== '0'){
+      const [cPrice, cHours] = simChildcare.value.split(',');
+      childcareTotal = parseInt(cPrice);
+      const opt = simChildcare.options[simChildcare.selectedIndex].text.replace(/（.*）/, '').trim();
+      childcareLabel = opt;
+    }
+
+    const total = facTotal + childcareTotal;
+    totalEl.textContent = '¥' + total.toLocaleString();
+
+    const catText = simCat.options[simCat.selectedIndex].text;
+    const facText = simFac.options[simFac.selectedIndex].text.replace(/（.*）/, '').trim();
+    let breakdown = `${facText}：¥${parseInt(basePrice).toLocaleString()} × ${catText}の係数${catMul} × ${slots}コマ = ¥${facTotal.toLocaleString()}`;
+    if(childcareTotal){
+      breakdown += `<br>託児（${childcareLabel}）：¥${childcareTotal.toLocaleString()}`;
+    }
+    breakdownEl.innerHTML = breakdown;
+  }
+  [simFac, simCat, simSlots, simChildcare].forEach(el=>{
+    el.addEventListener('input', calc);
+    el.addEventListener('change', calc);
+  });
+  calc();
+})();
+
+/* ===== ページ内目次（TOC）の自動生成 ===== */
+function renderTOC(page){
+  // 既存のTOCを削除
+  document.querySelectorAll('.page-toc').forEach(t=>t.remove());
+  document.querySelectorAll('.page-with-toc').forEach(w=>{
+    const inner = w.querySelector(':scope > *:first-child');
+    if(inner){w.parentNode.insertBefore(inner, w); w.remove()}
+  });
+
+  // 長いページ（guide, fees）にのみTOC表示
+  const tocPages = {
+    guide: 'ご利用の流れ',
+    fees: '料金表の構成'
+  };
+  if(!tocPages[page]) return;
+
+  const section = document.querySelector('.page-section[data-page="'+page+'"] .block');
+  if(!section) return;
+  const h3s = section.querySelectorAll(':scope > h3[id]');
+  if(h3s.length < 3) return;
+
+  // TOC要素構築
+  const toc = document.createElement('aside');
+  toc.className = 'page-toc';
+  toc.innerHTML = '<h4>' + tocPages[page] + '</h4><ul>' +
+    Array.from(h3s).map(h=>'<li><a href="#'+page+'#'+h.id+'" data-target="'+h.id+'">'+h.textContent.replace(/[①-⑩]/g,'').trim()+'</a></li>').join('') +
+    '</ul>';
+
+  // ページをグリッドレイアウトに変換
+  const pageSection = section.closest('.page-section');
+  const block = pageSection.querySelector('.block');
+  if(!block) return;
+  const wrapper = document.createElement('div');
+  wrapper.className = 'page-with-toc';
+  block.parentNode.insertBefore(wrapper, block);
+  wrapper.appendChild(block);
+  wrapper.appendChild(toc);
+
+  // TOCのリンククリックで smooth scroll
+  toc.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', e=>{
+      e.preventDefault();
+      const id = a.dataset.target;
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  // スクロール連動で current 切替
+  const links = toc.querySelectorAll('a');
+  function onScroll(){
+    let active = null;
+    h3s.forEach(h=>{
+      const r = h.getBoundingClientRect();
+      if(r.top < 120) active = h.id;
+    });
+    links.forEach(l=>l.classList.toggle('current', l.dataset.target===active));
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+}
+
+/* ===== フィードバック送信（localStorage記録） ===== */
+function sendFeedback(btn, value, page){
+  const wrap = btn.closest('.feedback');
+  if(!wrap) return;
+  wrap.classList.add('submitted');
+  try{
+    const stored = JSON.parse(localStorage.getItem('urayasu-feedback') || '[]');
+    stored.push({page, value, at: new Date().toISOString()});
+    localStorage.setItem('urayasu-feedback', JSON.stringify(stored));
+  }catch(e){}
+  // 将来的にここでGASやフォームに送信可能
+  // fetch('/feedback', {method:'POST', body: JSON.stringify({page, value})});
+}
 </script>
 
 </body>
