@@ -81,12 +81,13 @@
     -webkit-font-smoothing:antialiased;
     font-feature-settings:"palt";
   }
-  /* フォントサイズ切替（html要素のクラスで全体を拡大／縮小） */
-  html.font-sm{font-size:93.75%}   /* 本文 16px 相当 */
-  html.font-md{font-size:100%}      /* 本文 17px 相当（既定） */
-  html.font-lg{font-size:112.5%}    /* 本文 19px 相当 */
-  html.font-xl{font-size:125%}      /* 本文 21px 相当（高齢者向け） */
-  body{font-size:1rem}
+  /* フォントサイズ切替
+     既存CSSがpx指定中心のため、コンテンツ全体に zoom を適用してレイアウトごと拡縮します。
+     ヘッダー・フッターも一緒に拡縮、ナビ／文字サイズトグル／戻るボタンは元サイズのまま。
+  */
+  html.font-sm .site-main,html.font-sm .site-footer{zoom:.9}
+  html.font-lg .site-main,html.font-lg .site-footer{zoom:1.18}
+  html.font-xl .site-main,html.font-xl .site-footer{zoom:1.35}
   /* キーボードフォーカス時のアウトライン(アクセシビリティ) */
   a:focus-visible,button:focus-visible,summary:focus-visible,
   input:focus-visible,select:focus-visible,textarea:focus-visible{
