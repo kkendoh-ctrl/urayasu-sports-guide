@@ -538,6 +538,80 @@
   .faq-item.hidden{display:none}
   .faq-category.hidden{display:none}
 
+  /* ===== 動画埋込 ===== */
+  .video-section{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:12px 0 20px}
+  .video-card{
+    background:var(--c-bg);border:1px solid var(--c-bd);border-radius:4px;overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  .video-card .vid-frame{
+    position:relative;padding-top:56.25%;background:var(--c-bg-soft);
+  }
+  .video-card iframe,.video-card .vid-placeholder{
+    position:absolute;inset:0;width:100%;height:100%;border:0;
+  }
+  .video-card .vid-placeholder{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:var(--c-sub);font-size:13px;gap:8px;
+  }
+  .video-card .vid-placeholder .play{
+    width:48px;height:48px;border-radius:50%;background:var(--c-brand);
+    color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+  .video-card .vid-info{padding:14px 16px}
+  .video-card h4{margin:0 0 4px;font-size:15px;font-weight:700;color:var(--c-text);padding:0;border:0}
+  .video-card .vid-meta{font-size:12px;color:var(--c-sub)}
+
+  /* ===== 操作ガイド（印刷用ページ） ===== */
+  .op-guide-intro{
+    background:var(--c-bg-soft);border:1px solid var(--c-bd);border-radius:4px;
+    padding:16px 20px;margin-bottom:20px;font-size:14px;line-height:1.8;
+  }
+  .op-step{
+    border:1px solid var(--c-bd);border-radius:4px;padding:20px 22px;margin-bottom:14px;
+    display:grid;grid-template-columns:48px 1fr;gap:16px;break-inside:avoid;
+  }
+  .op-step-num{
+    background:var(--c-brand);color:#fff;width:40px;height:40px;
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:18px;
+  }
+  .op-step h4{margin:0 0 6px;font-size:16px;font-weight:700;padding:0;border:0}
+  .op-step p{margin:0 0 10px;font-size:14px;line-height:1.7}
+  .op-step .op-screenshot{
+    background:var(--c-bg-soft);border:1px dashed var(--c-bd);border-radius:4px;
+    padding:40px 20px;text-align:center;color:var(--c-sub);font-size:13px;
+    margin:10px 0;
+  }
+  .op-step .op-tip{
+    background:var(--c-bg-brand);border-left:3px solid var(--c-brand);padding:8px 12px;
+    font-size:13px;line-height:1.6;margin-top:8px;
+  }
+
+  /* ===== トラブル対処ページ ===== */
+  .trouble-list{list-style:none;padding:0;margin:0}
+  .trouble-item{
+    border:1px solid var(--c-bd);border-radius:4px;margin-bottom:10px;overflow:hidden;
+  }
+  .trouble-item summary{
+    padding:14px 18px;cursor:pointer;font-weight:700;color:var(--c-text);font-size:15px;
+    list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  .trouble-item summary::-webkit-details-marker{display:none}
+  .trouble-item summary::before{
+    content:"!";color:var(--c-brand);font-weight:700;
+    background:var(--c-bg-brand);width:24px;height:24px;border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;
+  }
+  .trouble-item summary::after{content:"＋";color:var(--c-brand);flex-shrink:0}
+  .trouble-item[open] summary::after{content:"−"}
+  .trouble-item[open] summary{border-bottom:1px solid var(--c-bg-soft)}
+  .trouble-item .t-body{padding:14px 18px 16px;font-size:14px;line-height:1.8;color:var(--c-text)}
+  .trouble-item .t-body h5{
+    margin:12px 0 6px;font-size:14px;font-weight:700;color:var(--c-brand);padding:0;border:0;
+  }
+  .trouble-item .t-body ol,.trouble-item .t-body ul{margin:4px 0 8px;padding-left:1.4em}
+
   /* ===== 印刷用レイアウト ===== */
   @media print{
     html,body{background:#fff !important;color:#000 !important;font-size:11pt;line-height:1.6}
@@ -1093,6 +1167,7 @@
       <a href="#faq" onclick="event.preventDefault();nav('faq')" data-page="faq">よくある質問</a>
       <a href="#news" onclick="event.preventDefault();nav('news')" data-page="news">お知らせ</a>
       <a href="#commercial" onclick="event.preventDefault();nav('commercial')" data-page="commercial">撮影・営利利用</a>
+      <a href="#troubleshooting" onclick="event.preventDefault();nav('troubleshooting')" data-page="troubleshooting">トラブル対処</a>
       <button type="button" class="search-btn" onclick="openSearch()" aria-label="サイト内検索">サイト内を検索<span class="kbd">Ctrl + K</span></button>
       <a class="cta" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">予約システムへ</a>
     </nav>
@@ -1683,10 +1758,60 @@
       </div>
     </div>
 
+    <h3 id="videos">動画で使い方を見る</h3>
+    <p>よくあるご利用の流れを、3本の短い動画（各3分）でご案内します。</p>
+    <div class="video-section">
+      <!-- 動画1: 利用者登録 -->
+      <div class="video-card">
+        <div class="vid-frame">
+          <!-- 公開時に差替え: <iframe src="https://www.youtube.com/embed/XXXX" allowfullscreen></iframe> -->
+          <div class="vid-placeholder">
+            <div class="play">▶</div>
+            <div>動画準備中</div>
+          </div>
+        </div>
+        <div class="vid-info">
+          <h4>① 利用者登録のしかた</h4>
+          <div class="vid-meta">約3分／PC・スマートフォン両対応</div>
+        </div>
+      </div>
+
+      <!-- 動画2: 抽選→確定→支払い -->
+      <div class="video-card">
+        <div class="vid-frame">
+          <div class="vid-placeholder">
+            <div class="play">▶</div>
+            <div>動画準備中</div>
+          </div>
+        </div>
+        <div class="vid-info">
+          <h4>② 抽選申込み→当選確定→支払い</h4>
+          <div class="vid-meta">約3分／一連の流れを通しで解説</div>
+        </div>
+      </div>
+
+      <!-- 動画3: キャンセル・変更 -->
+      <div class="video-card">
+        <div class="vid-frame">
+          <div class="vid-placeholder">
+            <div class="play">▶</div>
+            <div>動画準備中</div>
+          </div>
+        </div>
+        <div class="vid-info">
+          <h4>③ キャンセル・予約の変更</h4>
+          <div class="vid-meta">約3分／還付ルールも合わせて</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 id="other-help">さらに詳しい操作ガイド</h3>
     <div class="info-box">
-      <h3>動画で使い方を見る</h3>
-      <p>予約システムの操作方法を動画でご案内します（公開時にYouTube動画を埋め込み予定）。</p>
-      <div class="video-placeholder">動画プレーヤー（公開時に差し替え）</div>
+      <p>動画と併せて、以下もご活用ください。</p>
+      <ul style="margin:0;padding-left:1.4em;line-height:2">
+        <li><a href="#operation-guide" onclick="event.preventDefault();nav('operation-guide')"><b>画面キャプチャ付き 操作ガイド（印刷対応）</b></a>　— PCから印刷して手元に置いて操作できます</li>
+        <li><a href="#troubleshooting" onclick="event.preventDefault();nav('troubleshooting')"><b>予約システムのトラブル対処</b></a>　— ID・パスワード忘れ／ログインできない／決済失敗などの対処法</li>
+      </ul>
     </div>
   </section>
 
@@ -2449,7 +2574,348 @@
   </div>
 </section>
 
+<!-- ====================== ⑧ トラブル対処 ====================== -->
+<section class="page-section" data-page="troubleshooting" aria-labelledby="page-trouble-title">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="#home" onclick="event.preventDefault();nav('home')">ホーム</a></li>
+      <li>予約システムのトラブル対処</li>
+    </ol>
+  </nav>
+  <section class="block">
+    <h2 id="page-trouble-title">予約システムのトラブル対処</h2>
+    <p class="lead">予約システム操作中によくある困りごとへの対処法をまとめました。該当する項目を開いて手順を確認してください。</p>
 
+    <h3>ログインに関すること</h3>
+    <ul class="trouble-list">
+      <details class="trouble-item">
+        <summary>利用者IDを忘れてしまった</summary>
+        <div class="t-body">
+          <h5>対処方法</h5>
+          <ol>
+            <li>予約システムに登録したメールアドレスをご用意ください。</li>
+            <li><a href="https://k5.p-kashikan.jp/urayasu-city/" target="_blank" rel="noopener">浦安市公共施設予約システム</a>のログイン画面から「利用者IDをお忘れの方」（または相当する）を選択します。</li>
+            <li>登録メールアドレスを入力すると、登録済みのIDがメールで送付されます。</li>
+          </ol>
+          <h5>それでも解決しない場合</h5>
+          <p>本人確認のうえ、スポーツ協会事務局までお問い合わせください。<br>TEL：<a href="tel:0477239387">047-723-9387</a>（平日 9:00〜17:00）</p>
+        </div>
+      </details>
+
+      <details class="trouble-item">
+        <summary>パスワードを忘れた・ログインできない</summary>
+        <div class="t-body">
+          <h5>対処方法</h5>
+          <ol>
+            <li>ログイン画面の「パスワードをお忘れの方」を選択します。</li>
+            <li>利用者IDと登録メールアドレスを入力すると、パスワード再設定用のメールが届きます。</li>
+            <li>メール内のリンクから新しいパスワードを設定してください。</li>
+          </ol>
+          <h5>※旧システムから移行の方</h5>
+          <p>初回ログイン時は、利用者IDとパスワード（<b>旧システム登録時の電話番号 ※ハイフンなし</b>）でログインし、新しいパスワードに更新してください。</p>
+        </div>
+      </details>
+
+      <details class="trouble-item">
+        <summary>ログイン画面で何度も弾かれる・エラーが出る</summary>
+        <div class="t-body">
+          <h5>対処方法（順に試してください）</h5>
+          <ol>
+            <li><b>ブラウザを最新版に更新</b>（Chrome／Edge／Safari／Firefox を推奨）</li>
+            <li><b>Cookie・JavaScriptを有効</b>にする</li>
+            <li><b>シークレット／プライベートモードで再度試す</b>（拡張機能の干渉回避）</li>
+            <li>キャッシュを削除して再読み込み（Ctrl+F5 もしくは Shift+更新）</li>
+            <li>違うブラウザで試す</li>
+          </ol>
+        </div>
+      </details>
+    </ul>
+
+    <h3>予約操作に関すること</h3>
+    <ul class="trouble-list">
+      <details class="trouble-item">
+        <summary>「確定」ボタンが押せない・表示されない</summary>
+        <div class="t-body">
+          <h5>考えられる原因</h5>
+          <ol>
+            <li><b>確定期間外</b>：当選確定は<b>毎月16〜26日</b>の期間中のみ操作できます。</li>
+            <li><b>すでに確定済み</b>：マイページの「予約申込一覧」にすでに表示されていないかご確認ください。</li>
+            <li>ブラウザキャッシュの問題 → 更新（F5）またはシークレットモードで再試行。</li>
+          </ol>
+          <h5>確定期間を過ぎてしまった</h5>
+          <p>確定期間を過ぎた当選は自動でキャンセルとなります。再度、翌月の抽選にお申込みください。</p>
+        </div>
+      </details>
+
+      <details class="trouble-item">
+        <summary>支払いで失敗した・エラーが出た</summary>
+        <div class="t-body">
+          <h5>決済方法別の対処</h5>
+          <h5 style="margin-top:4px">▶ クレジットカード</h5>
+          <ul>
+            <li>カード番号・有効期限・セキュリティコードに誤りがないか再確認</li>
+            <li>カードの利用限度額をご確認ください</li>
+            <li>3Dセキュア（本人認証）の通知が別端末に届いている可能性</li>
+          </ul>
+          <h5>▶ PayPay</h5>
+          <ul>
+            <li>PayPayアプリの残高・支払い設定をご確認ください</li>
+            <li>PayPay側のメンテナンス時間をご確認ください</li>
+          </ul>
+          <h5>▶ コンビニ</h5>
+          <ul>
+            <li>発行された払込票の期限内にお支払いください</li>
+            <li>払込票番号の入力ミスがないかご確認ください</li>
+          </ul>
+          <h5>※支払い期限を過ぎた場合</h5>
+          <p>予約は自動取消となります。再度、随時予約・抽選申込みからやり直してください。</p>
+        </div>
+      </details>
+
+      <details class="trouble-item">
+        <summary>抽選申込みの件数が上限と言われた</summary>
+        <div class="t-body">
+          <p>抽選申込みは、<b>屋外・屋内それぞれ第3希望まで（合計6件まで）</b>です。すでに6件申込済みの場合、追加できません。</p>
+          <p>不要な申込みをマイページから削除してから、新たに申込みしてください。</p>
+        </div>
+      </details>
+
+      <details class="trouble-item">
+        <summary>間違えて申込み／予約した。取り消したい</summary>
+        <div class="t-body">
+          <ol>
+            <li>マイページの「予約申込一覧」を開きます。</li>
+            <li>該当の予約の「取消」ボタンから手続きできます。</li>
+            <li>支払済みの場合、使用日の<b>3日前まで</b>は全額還付、<b>2日前・前日</b>は還付不可です。</li>
+          </ol>
+        </div>
+      </details>
+    </ul>
+
+    <h3>メール・通知に関すること</h3>
+    <ul class="trouble-list">
+      <details class="trouble-item">
+        <summary>予約システムからのメールが届かない</summary>
+        <div class="t-body">
+          <h5>よくある原因と対処</h5>
+          <ol>
+            <li><b>迷惑メールフォルダ</b>に振り分けられていないかご確認ください。</li>
+            <li>ドメイン指定受信をしている方は <b>@p-kashikan.jp</b> を受信許可に追加してください。</li>
+            <li>キャリアメール（docomo/au/SoftBank）の場合、URL付きメールの受信許可を確認。</li>
+            <li>登録メールアドレスに誤字がないか、マイページの「利用者情報」でご確認ください。</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="trouble-item">
+        <summary>領収書・明細が欲しい</summary>
+        <div class="t-body">
+          <p>クレジットカード・PayPay・コンビニ決済の場合、それぞれの利用明細が領収書代わりになります。</p>
+          <p>別途、浦安市スポーツ協会名義の領収書が必要な場合は、事務局へご連絡ください。<br>TEL：<a href="tel:0477239387">047-723-9387</a>／Email：<a href="mailto:office@urayasu-spokyo.org">office@urayasu-spokyo.org</a></p>
+        </div>
+      </details>
+    </ul>
+
+    <h3>利用者情報に関すること</h3>
+    <ul class="trouble-list">
+      <details class="trouble-item">
+        <summary>住所・電話番号が変わった</summary>
+        <div class="t-body">
+          <p>予約システムのマイページ →「利用者情報の変更」から修正できます。特に住所変更は、市内者／市外者の区分にも影響しますので、速やかに変更してください。</p>
+        </div>
+      </details>
+
+      <details class="trouble-item">
+        <summary>登録している施設を追加・変更したい</summary>
+        <div class="t-body">
+          <p>個人登録をお持ちの方は、新たに追加手続きは不要です。予約時に希望施設を選択できます。</p>
+          <p>団体登録の種目追加・代表者変更・構成員変更は、スポーツ協会事務局までご連絡ください。</p>
+        </div>
+      </details>
+    </ul>
+
+    <div class="info-box">
+      <h3>上記で解決しない場合</h3>
+      <p>お気軽にスポーツ協会事務局までお問い合わせください。</p>
+      <p>一般社団法人 浦安市スポーツ協会 事務局<br>
+         TEL：<a href="tel:0477239387">047-723-9387</a>（平日 9:00〜17:00）<br>
+         Email：<a href="mailto:office@urayasu-spokyo.org">office@urayasu-spokyo.org</a></p>
+    </div>
+  </section>
+
+  <div class="feedback" data-page="troubleshooting">
+    <p>このページは参考になりましたか？</p>
+    <div class="fb-btns">
+      <button type="button" onclick="sendFeedback(this,'yes','troubleshooting')" aria-pressed="false">👍 役に立った</button>
+      <button type="button" onclick="sendFeedback(this,'no','troubleshooting')" aria-pressed="false">👎 改善が必要</button>
+    </div>
+    <div class="fb-thanks">ご回答ありがとうございました。今後の改善に活用させていただきます。</div>
+  </div>
+</section>
+
+<!-- ====================== ⑨ 操作ガイド（印刷用） ====================== -->
+<section class="page-section" data-page="operation-guide" aria-labelledby="page-op-title">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="#home" onclick="event.preventDefault();nav('home')">ホーム</a></li>
+      <li><a href="#guide" onclick="event.preventDefault();nav('guide')">使い方ガイド</a></li>
+      <li>操作ガイド（印刷用）</li>
+    </ol>
+  </nav>
+  <section class="block">
+    <h2 id="page-op-title">操作ガイド（画像付き・印刷対応）</h2>
+
+    <div class="op-guide-intro">
+      <p style="margin:0 0 8px"><b>🖨 このページは印刷して手元に置いて操作するための資料です。</b></p>
+      <p style="margin:0">お使いのブラウザで <b>Ctrl + P</b>（Macは Cmd + P）を押すと印刷プレビューが開きます。各操作のスクリーンショット付きガイドを印刷してご利用ください。</p>
+      <p style="margin:10px 0 0;text-align:right"><button onclick="window.print()" style="background:var(--c-brand);color:#fff;border:0;padding:10px 22px;border-radius:2px;font-weight:700;font-size:14px;cursor:pointer">🖨 このページを印刷する</button></p>
+    </div>
+
+    <h3>A. 利用者登録のしかた</h3>
+    <div class="op-step">
+      <div class="op-step-num">1</div>
+      <div>
+        <h4>予約システムにアクセス</h4>
+        <p>PC・スマートフォンで <a href="https://k5.p-kashikan.jp/urayasu-city/" target="_blank" rel="noopener">浦安市公共施設予約システム</a> を開きます。</p>
+        <div class="op-screenshot">［ここに画面キャプチャを挿入：予約システムのトップ画面］</div>
+      </div>
+    </div>
+    <div class="op-step">
+      <div class="op-step-num">2</div>
+      <div>
+        <h4>メニューから「利用登録」を選択</h4>
+        <p>画面右上のメニュー（≡ マーク）をタップし、「利用登録」ボタンを押します。</p>
+        <div class="op-screenshot">［ここに画面キャプチャを挿入：メニュー展開と利用登録ボタン］</div>
+      </div>
+    </div>
+    <div class="op-step">
+      <div class="op-step-num">3</div>
+      <div>
+        <h4>個人登録／団体登録を選ぶ</h4>
+        <p>個人で利用する方は「個人登録」、チーム利用する方は「団体登録」を選びます。</p>
+        <div class="op-tip">団体登録には代表者の本人確認書類と団体構成員登録書が必要です。</div>
+      </div>
+    </div>
+    <div class="op-step">
+      <div class="op-step-num">4</div>
+      <div>
+        <h4>必要情報を入力</h4>
+        <p>氏名・住所・生年月日・連絡先・本人確認書類の情報（マイナンバーカード等）を入力します。</p>
+        <div class="op-screenshot">［ここに画面キャプチャを挿入：登録フォーム入力画面］</div>
+      </div>
+    </div>
+    <div class="op-step">
+      <div class="op-step-num">5</div>
+      <div>
+        <h4>登録完了・ログイン</h4>
+        <p>登録完了後、利用者IDと設定したパスワードでログインできます。</p>
+      </div>
+    </div>
+
+    <h3>B. 抽選申込みのしかた</h3>
+    <div class="op-step">
+      <div class="op-step-num">1</div>
+      <div>
+        <h4>マイページにログイン</h4>
+        <p>ログイン後、マイページの「抽選施設一覧」を開きます。</p>
+        <div class="op-screenshot">［ここに画面キャプチャを挿入：マイページの抽選メニュー］</div>
+      </div>
+    </div>
+    <div class="op-step">
+      <div class="op-step-num">2</div>
+      <div>
+        <h4>施設・日時を指定</h4>
+        <p>利用したい施設・日付・時間帯を選択します。<b>屋外・屋内それぞれ第3希望まで（合計6件）</b>申込みできます。</p>
+        <div class="op-tip">受付期間：毎月<b>1日〜10日</b>／2か月先の利用分が対象です。</div>
+      </div>
+    </div>
+    <div class="op-step">
+      <div class="op-step-num">3</div>
+      <div>
+        <h4>申込み内容を確認・送信</h4>
+        <p>入力内容に間違いがないか確認し、「申込」ボタンを押します。</p>
+        <div class="op-screenshot">［ここに画面キャプチャを挿入：申込確認画面］</div>
+      </div>
+    </div>
+
+    <h3>C. 当選確定・お支払いのしかた</h3>
+    <div class="op-step">
+      <div class="op-step-num">1</div>
+      <div>
+        <h4>抽選結果を確認</h4>
+        <p>毎月16日からマイページの「抽選申込一覧」で結果が確認できます。</p>
+        <div class="op-screenshot">［ここに画面キャプチャを挿入：抽選結果一覧画面］</div>
+      </div>
+    </div>
+    <div class="op-step">
+      <div class="op-step-num">2</div>
+      <div>
+        <h4>「確定」ボタンを押す</h4>
+        <p>当選した予約の横にある <b>「確定」</b> ボタンを押すことで予約が成立します。</p>
+        <div class="op-tip">⏰ 確定期間：毎月<b>16〜26日</b>まで／この期間を過ぎると自動キャンセルになります。</div>
+      </div>
+    </div>
+    <div class="op-step">
+      <div class="op-step-num">3</div>
+      <div>
+        <h4>支払いに進む</h4>
+        <p>マイページの「予約申込一覧」の「支払」ボタンから決済画面に進みます。</p>
+        <div class="op-screenshot">［ここに画面キャプチャを挿入：支払方法選択画面］</div>
+      </div>
+    </div>
+    <div class="op-step">
+      <div class="op-step-num">4</div>
+      <div>
+        <h4>決済方法を選び完了</h4>
+        <p>クレジットカード／PayPay／コンビニから選択し、画面に従って決済を完了します。</p>
+        <div class="op-tip">💰 支払い期限：確定作業日から<b>10日以内</b>／期限を過ぎると自動取消。</div>
+      </div>
+    </div>
+
+    <h3>D. キャンセル・変更のしかた</h3>
+    <div class="op-step">
+      <div class="op-step-num">1</div>
+      <div>
+        <h4>マイページから予約を選択</h4>
+        <p>マイページの「予約申込一覧」から取消したい予約を選びます。</p>
+      </div>
+    </div>
+    <div class="op-step">
+      <div class="op-step-num">2</div>
+      <div>
+        <h4>「取消」ボタンを押す</h4>
+        <p>予約一覧の「取消」ボタンから手続きします。</p>
+        <div class="op-tip">
+          ✅ 使用日の<b>3日前まで</b>：使用料を全額還付<br>
+          ❌ 使用日の<b>2日前・前日</b>：還付不可
+        </div>
+      </div>
+    </div>
+    <div class="op-step">
+      <div class="op-step-num">3</div>
+      <div>
+        <h4>還付金の受取り</h4>
+        <p>クレジットカード決済の場合は、自動的にカードへ返金されます（1〜2か月後）。<br>コンビニ・PayPay決済の還付方法は、各決済事業者により異なります。</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>お問い合わせ</h3>
+      <p>操作方法が分からない場合は、スポーツ協会事務局までお気軽にご相談ください。</p>
+      <p>一般社団法人 浦安市スポーツ協会 事務局<br>
+         TEL：<a href="tel:0477239387">047-723-9387</a>（平日 9:00〜17:00）</p>
+    </div>
+  </section>
+
+  <div class="feedback" data-page="operation-guide">
+    <p>このページは参考になりましたか？</p>
+    <div class="fb-btns">
+      <button type="button" onclick="sendFeedback(this,'yes','operation-guide')" aria-pressed="false">👍 役に立った</button>
+      <button type="button" onclick="sendFeedback(this,'no','operation-guide')" aria-pressed="false">👎 改善が必要</button>
+    </div>
+    <div class="fb-thanks">ご回答ありがとうございました。今後の改善に活用させていただきます。</div>
+  </div>
+</section>
 
 </main>
 
@@ -2477,7 +2943,8 @@
       <a href="#fees" onclick="event.preventDefault();nav('fees')">料金表</a> ｜
       <a href="#faq" onclick="event.preventDefault();nav('faq')">よくある質問</a> ｜
       <a href="#news" onclick="event.preventDefault();nav('news')">お知らせ</a> ｜
-      <a href="#commercial" onclick="event.preventDefault();nav('commercial')">撮影・営利利用</a>
+      <a href="#commercial" onclick="event.preventDefault();nav('commercial')">撮影・営利利用</a> ｜
+      <a href="#troubleshooting" onclick="event.preventDefault();nav('troubleshooting')">トラブル対処</a>
     </p>
     <p class="copy">本サイトは一般社団法人 浦安市スポーツ協会が運営する、市民向けの参考案内サイトです。<br>制度・申請に関する正式情報は<a href="https://www.city.urayasu.lg.jp/shogaigakushu/sports/shisetsu/index.html" target="_blank" rel="noopener">浦安市公式サイト</a>を、施設の最新情報は<a href="https://www.urayasu-zaidan.or.jp/taiikukan/" target="_blank" rel="noopener">うらやす財団 公式サイト</a>をご確認ください。<br>© 一般社団法人 浦安市スポーツ協会</p>
   </div>
@@ -2515,7 +2982,7 @@ function nav(page){
 /* ページ読み込み時のルーティング */
 function syncFromHash(){
   const h = (location.hash || '#home').replace('#','');
-  const validPages = ['home','facilities','guide','fees','faq','news','commercial'];
+  const validPages = ['home','facilities','guide','fees','faq','news','commercial','troubleshooting','operation-guide'];
   const target = validPages.includes(h) ? h : 'home';
   navInternal(target);
 }
