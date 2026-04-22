@@ -1073,11 +1073,6 @@
     </div>
   </section>
 
-  <!-- A-1：抽選スケジュール動的バナー（JSで状態切替） -->
-  <aside id="scheduleBanner" class="schedule-banner" aria-label="今月の抽選スケジュール">
-    <!-- 内容はJSで書き換え -->
-  </aside>
-
   <section class="block">
     <h2>目的から探す</h2>
     <p class="lead">ご利用シーンに合わせて、必要な情報にすぐアクセスできます。</p>
@@ -2349,59 +2344,6 @@
 </footer>
 
 <script>
-/* A-1：抽選スケジュール 動的バナー
-   今日の日付に応じて「今やるべきこと」を自動で表示します。
-   毎月のサイクル：
-   ・1〜10日：抽選申込み受付中（次の次の月分）
-   ・11〜12日：抽選準備中
-   ・13〜15日：抽選実施→結果発表待ち
-   ・16〜26日：当選確定期間（支払い期限 = 確定日+10日）
-   ・27〜末日：次回の受付開始までカウントダウン
-*/
-(function renderScheduleBanner(){
-  const el = document.getElementById('scheduleBanner');
-  if(!el) return;
-  const now = new Date();
-  const d = now.getDate();
-  const monthsAhead = (m,n) => {
-    const x = new Date(now.getFullYear(), now.getMonth()+n, 1);
-    return (x.getMonth()+1) + '月';
-  };
-  let cls, label, title, body;
-  if(d >= 1 && d <= 10){
-    cls = 'sb-apply';
-    label = '抽選申込み受付中';
-    title = `${monthsAhead(0,2)}分の抽選申込みを受付中です`;
-    const left = 10 - d;
-    body = `<b>${monthsAhead(0,2)}分の抽選申込みを受付中</b><p>締切：今月10日（あと ${left} 日）／予約システムから申込みしてください</p>`;
-  } else if(d >= 11 && d <= 12){
-    cls = 'sb-waiting';
-    label = '抽選準備中';
-    body = `<b>抽選準備中</b><p>${monthsAhead(0,2)}分の抽選は今月13日に実施されます（結果は16日から確認可）</p>`;
-  } else if(d >= 13 && d <= 15){
-    cls = 'sb-lottery';
-    label = '抽選実施・結果発表待ち';
-    body = `<b>${monthsAhead(0,2)}分の抽選が実施されました</b><p>16日から予約システムで結果を確認できます</p>`;
-  } else if(d >= 16 && d <= 26){
-    cls = 'sb-confirm';
-    label = '当選確定期間';
-    const left = 26 - d;
-    body = `<b>当選確定・お支払いの期間中（あと ${left} 日）</b><p>マイページの「確定」ボタンを押し、確定作業日から10日以内に支払いを完了してください</p>`;
-  } else {
-    cls = 'sb-waiting';
-    label = '抽選受付まで';
-    // 末日〜翌月1日までのカウント
-    const lastDay = new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
-    const left = (lastDay - d) + 1;
-    body = `<b>次回の抽選受付は ${monthsAhead(0,1)}1日から</b><p>あと ${left} 日で受付開始／${monthsAhead(0,3)}分の抽選申込みが始まります</p>`;
-  }
-  el.className = 'schedule-banner ' + cls;
-  el.innerHTML =
-    `<span class="sb-status">${label}</span>` +
-    `<div class="sb-text">${body}</div>` +
-    `<a href="#guide" class="sb-link" onclick="event.preventDefault();nav('guide');setTimeout(()=>document.getElementById('apply-lottery')?.scrollIntoView({behavior:'smooth'}),200)">予約の流れ</a>`;
-})();
-
 /* 内部遷移（ハッシュを変えない）— hashchange イベントから呼ばれる */
 function navInternal(page){
   document.querySelectorAll('.page-section').forEach(s=>s.classList.toggle('active', s.dataset.page===page));
