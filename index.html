@@ -819,6 +819,61 @@
   .purpose-card .pc-title{font-size:15px;font-weight:700;color:var(--c-text);line-height:1.5}
   .purpose-card .pc-desc{font-size:13px;color:var(--c-sub);line-height:1.6}
 
+  /* ===== 屋外施設 本日の利用可否ボード ===== */
+  .status-board{
+    background:var(--c-bg);border:1px solid var(--c-bd);border-radius:4px;
+    overflow:hidden;margin-top:16px;
+  }
+  .status-board-head{
+    background:var(--c-bg-brand);padding:12px 18px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+    border-bottom:1px solid var(--c-bd);
+  }
+  .status-board-head .sb-updated{font-size:12px;color:var(--c-sub)}
+  .status-board-head .sb-updated b{color:var(--c-text);font-weight:700;margin-left:4px}
+  .status-board-legend{display:flex;gap:14px;font-size:12px;color:var(--c-sub);flex-wrap:wrap}
+  .status-board-legend span{display:inline-flex;align-items:center;gap:4px}
+  .status-board-legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .status-board-legend .dot.ok{background:#43A047}
+  .status-board-legend .dot.warn{background:#FB8C00}
+  .status-board-legend .dot.ng{background:#E53935}
+  .status-board-legend .dot.closed{background:var(--c-sub)}
+
+  .status-group{border-top:1px solid var(--c-bd)}
+  .status-group:first-of-type{border-top:0}
+  .status-group h4{
+    margin:0;padding:10px 18px;font-size:13px;color:var(--c-sub);
+    font-weight:700;background:var(--c-bg-soft);letter-spacing:.04em;border:0;
+  }
+  .status-list{list-style:none;padding:0;margin:0}
+  .status-list li{
+    display:grid;grid-template-columns:1fr auto auto auto;gap:12px;align-items:center;
+    padding:10px 18px;font-size:14px;border-top:1px solid var(--c-bg-soft);
+  }
+  .status-list li:first-child{border-top:0}
+  .status-list .s-name{font-weight:600}
+  .status-list .s-name small{display:block;font-weight:normal;color:var(--c-sub);font-size:12px}
+  .status-list .s-badge{
+    font-size:12px;font-weight:700;padding:3px 10px;border-radius:12px;white-space:nowrap;
+  }
+  .status-list .s-badge.ok{background:#E8F5E9;color:#1B5E20}
+  .status-list .s-badge.warn{background:#FFF8E1;color:#E65100}
+  .status-list .s-badge.ng{background:#FFEBEE;color:#C62828}
+  .status-list .s-badge.closed{background:var(--c-bg-soft);color:var(--c-sub)}
+  .status-list .s-time{font-size:12px;color:var(--c-sub);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .status-list .s-tel{
+    font-size:13px;color:var(--c-brand);text-decoration:none;font-weight:700;white-space:nowrap;
+  }
+  .status-list .s-tel:hover{text-decoration:underline}
+  @media (max-width:640px){
+    .status-board-head{padding:10px 14px}
+    .status-list li{grid-template-columns:1fr auto;gap:6px 10px;padding:10px 14px}
+    .status-list .s-name{grid-column:1;grid-row:1}
+    .status-list .s-badge{grid-column:2;grid-row:1;justify-self:end}
+    .status-list .s-time{grid-column:1;grid-row:2;font-size:11px}
+    .status-list .s-tel{grid-column:2;grid-row:2;justify-self:end}
+  }
+
   /* ===== 雨天時連絡先カード ===== */
   .rain-card{
     background:#FFF8E1;border:1px solid #E6CA8A;border-left:4px solid #C88100;
@@ -1098,6 +1153,88 @@
         <div class="pc-desc">申請フォームから事前に受付</div>
       </a>
     </div>
+  </section>
+
+  <!-- 屋外施設 本日の利用可否ボード -->
+  <section class="block">
+    <h2>本日の屋外施設 利用可否</h2>
+    <p class="lead">各施設の管理人による雨天・グラウンド状況の判断結果です。急な中止などは施設から直接ご連絡します。</p>
+
+    <div class="status-board" aria-live="polite">
+      <div class="status-board-head">
+        <div class="sb-updated">最終更新：<b>2026/04/23 8:30</b></div>
+        <div class="status-board-legend" aria-hidden="true">
+          <span><i class="dot ok"></i> 利用可</span>
+          <span><i class="dot warn"></i> 現地判断</span>
+          <span><i class="dot ng"></i> 中止</span>
+          <span><i class="dot closed"></i> 閉場中</span>
+        </div>
+      </div>
+
+      <!-- 運動公園エリア -->
+      <div class="status-group">
+        <h4>運動公園エリア（舞浜2-27）</h4>
+        <ul class="status-list">
+          <li><span class="s-name">野球場<small>1面・夜間照明</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509829">047-350-9829</a></li>
+          <li><span class="s-name">軟式野球場<small>2面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509829">047-350-9829</a></li>
+          <li><span class="s-name">テニスコート<small>人工芝8面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509829">047-350-9829</a></li>
+          <li><span class="s-name">スポーツコート<small>フットサル2面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509829">047-350-9829</a></li>
+          <li><span class="s-name">スケートボード場</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509829">047-350-9829</a></li>
+          <li><span class="s-name">ブリオベッカ浦安競技場<small>陸上</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509830">047-350-9830</a></li>
+          <li><span class="s-name">アーチェリー場</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509830">047-350-9830</a></li>
+        </ul>
+      </div>
+
+      <!-- 中央公園 -->
+      <div class="status-group">
+        <h4>中央公園エリア（富岡4-25）</h4>
+        <ul class="status-list">
+          <li><span class="s-name">KG軟式野球場<small>1面・夜間照明</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473519242">047-351-9242</a></li>
+          <li><span class="s-name">テニスコート<small>人工芝6面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473519242">047-351-9242</a></li>
+        </ul>
+      </div>
+
+      <!-- 高洲エリア -->
+      <div class="status-group">
+        <h4>高洲エリア</h4>
+        <ul class="status-list">
+          <li><span class="s-name">高洲テニスコート<small>人工芝4面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473500485">047-350-0485</a></li>
+          <li><span class="s-name">高洲中央公園テニスコート<small>人工芝2面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473537778">047-353-7778</a></li>
+          <li><span class="s-name">J:COM浦安少年野球場<small>高洲中央公園内</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473537778">047-353-7778</a></li>
+          <li><span class="s-name">高洲南テニスコート<small>ハードコート2面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
+          <li><span class="s-name">高洲海浜公園パークゴルフ場<small>27ホール</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473820382">047-382-0382</a></li>
+        </ul>
+      </div>
+
+      <!-- 美浜・舞浜エリア -->
+      <div class="status-group">
+        <h4>美浜・舞浜エリア（管理棟なし）</h4>
+        <ul class="status-list">
+          <li><span class="s-name">美浜テニスコート</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
+          <li><span class="s-name">美浜運動公園テニスコート</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
+          <li><span class="s-name">舞浜テニスコート</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
+          <li><span class="s-name">大三角公園少年野球場</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
+          <li><span class="s-name">美浜運動公園少年野球場</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
+        </ul>
+      </div>
+
+      <!-- 明海・今川エリア -->
+      <div class="status-group">
+        <h4>明海・今川エリア</h4>
+        <ul class="status-list">
+          <li><span class="s-name">総合公園球技場<small>明海7-2</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473532867">047-353-2867</a></li>
+          <li><span class="s-name">ブリオベッカフィールド明海<small>明海2-1</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473508026">047-350-8026</a></li>
+          <li><span class="s-name">今川球技場<small>ソフトボール2面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="note" style="margin-top:10px">
+      <b>本ボードについて</b>：各施設の管理人（管理棟がない施設は巡回スタッフ）の判断を、事務局が取りまとめて更新しています。<br>
+      朝8:30・12:00・15:00の1日3回を目安に更新予定。急な変化があった場合は随時更新します。<br>
+      緊急の中止連絡は施設から電話・メールで予約者へ直接ご連絡します。
+    </p>
   </section>
 
   <section class="block">
