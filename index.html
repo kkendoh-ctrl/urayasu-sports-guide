@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>浦安市 体育施設利用ガイド｜一般社団法人 浦安市スポーツ協会</title>
+<style>
+  :root{
+    /* --- 浦安市サイト 基本カラー(3色 + 機能色少々) --- */
+    --c-bg:       #FFFFFF;   /* ベース背景：白 */
+    --c-text:     #1A1A1A;   /* 本文：濃いグレー */
+    --c-brand:    #0066B3;   /* アクセント：浦安ブルー1色 */
+
+    /* --- 補助色(使用は最小限) --- */
+    --c-sub:      #555555;   /* サブテキスト */
+    --c-bd:       #D4D8DC;   /* 罫線 */
+    --c-bg-soft:  #F3F5F7;   /* セクション背景(薄グレー) */
+    --c-bg-brand: #EAF2F9;   /* ブランド薄色(ハイライト用) */
+    --c-alert:    #B3261E;   /* 警告の赤(抑えめ) */
+
+    /* --- スペーシング --- */
+    --space-sm: 16px;
+    --space-md: 32px;
+    --space-lg: 48px;
+    --space-xl: 64px;
+
+    /* --- レイアウト --- */
+    --max-width: 960px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;
+    color:var(--c-text);background:var(--c-bg-soft);
+    line-height:1.8;font-size:17px;
+    -webkit-font-smoothing:antialiased;
+    font-feature-settings:"palt";
+  }
+  /* キーボードフォーカス時のアウトライン(アクセシビリティ) */
+  a:focus-visible,button:focus-visible,summary:focus-visible,
+  input:focus-visible,select:focus-visible,textarea:focus-visible{
+    outline:3px solid var(--c-brand);
+    outline-offset:2px;
+  }
+
+  /* スキップリンク：キーボード/スクリーンリーダーで本文へ即移動 */
+  .skip-link{
+    position:absolute;left:-9999px;top:0;
+    background:var(--c-brand);color:#fff;padding:10px 16px;
+    text-decoration:none;font-weight:700;z-index:200;
+  }
+  .skip-link:focus{left:0;outline:3px solid #fff;outline-offset:-3px}
+
+  /* ===== サイトヘッダー ===== */
+  .site-header{
+    background:var(--c-bg);border-bottom:1px solid var(--c-bd);
+    position:sticky;top:0;z-index:100;
+  }
+  .site-header-inner{
+    max-width:var(--max-width);margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;gap:16px;
+  }
+  .site-logo{
+    display:block;text-decoration:none;color:var(--c-text);
+    font-weight:700;font-size:16px;line-height:1.3;
+    flex-shrink:0;             /* 縮ませない */
+    white-space:nowrap;        /* 改行させない */
+  }
+  .site-logo strong{color:var(--c-brand);display:block}
+  .site-logo small{
+    display:block;font-size:12px;color:var(--c-sub);font-weight:normal;margin-top:2px;
+  }
+
+  .site-nav{
+    margin-left:auto;display:flex;gap:0;align-items:center;
+    flex-wrap:nowrap;          /* 折り返さない(幅不足時はモバイルメニューに切替) */
+  }
+  .site-nav a{
+    padding:8px 10px;text-decoration:none;color:var(--c-text);font-size:14px;
+    font-weight:500;cursor:pointer;white-space:nowrap;
+    border-bottom:3px solid transparent;
+  }
+  .site-nav a:hover{color:var(--c-brand)}
+  .site-nav a.active{color:var(--c-brand);border-bottom-color:var(--c-brand);font-weight:700}
+  .site-nav .cta{
+    background:var(--c-brand);color:#fff;padding:10px 18px;border-radius:4px;
+    font-weight:700;font-size:14px;margin-left:14px;border-bottom:0;
+    flex-shrink:0;
+  }
+  .site-nav .cta:hover{background:#005499;color:#fff}
+
+  /* モバイルハンバーガー */
+  .mobile-toggle{display:none;background:none;border:0;font-size:24px;cursor:pointer;color:var(--c-text);margin-left:auto}
+
+  /* ===== メイン ===== */
+  .site-main{max-width:var(--max-width);margin:0 auto;background:var(--c-bg);min-height:600px}
+
+  /* ページ表示切替 */
+  .page-section{display:none}
+  .page-section.active{display:block}
+
+  /* ===== パンくずリスト ===== */
+  .breadcrumb{
+    padding:12px 28px;font-size:14px;color:var(--c-sub);
+    border-bottom:1px solid var(--c-bd);
+  }
+  .breadcrumb ol{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:4px 8px}
+  .breadcrumb li:not(:last-child)::after{content:"›";margin-left:8px;color:var(--c-bd)}
+  .breadcrumb a{color:var(--c-brand);text-decoration:none}
+  .breadcrumb a:hover{text-decoration:underline}
+  .breadcrumb li:last-child{color:var(--c-text);font-weight:500}
+
+  /* ===== ヒーローエリア(上に薄い青の帯) ===== */
+  .hero-big{
+    background:var(--c-bg);
+    color:var(--c-text);
+    padding:0 0 28px;
+    border-bottom:1px solid var(--c-bd);
+  }
+  .hero-big .hero-band{
+    height:8px;background:var(--c-bg-brand);
+    border-bottom:1px solid var(--c-bd);
+  }
+  .hero-inner{max-width:var(--max-width);margin:0 auto;padding:32px 28px 0}
+  .hero-big h1{
+    margin:0 0 10px;
+    font-size:26px;font-weight:700;line-height:1.4;color:var(--c-text);
+    padding-left:14px;border-left:5px solid var(--c-brand);
+  }
+  .hero-big .lead{
+    margin:0;padding-left:19px;
+    font-size:15px;line-height:1.8;color:var(--c-sub);
+    max-width:720px;
+  }
+
+  /* ===== 3ステップ(ご利用の流れ) ===== */
+  .flow-wrap{
+    background:var(--c-bg-soft);
+    padding:var(--space-lg) 28px;
+    border-bottom:1px solid var(--c-bd);
+  }
+  .flow-wrap .flow-head{max-width:var(--max-width);margin:0 auto 20px;text-align:center}
+  .flow-wrap .flow-head h2{
+    font-size:22px;font-weight:700;color:var(--c-text);
+    margin:0 0 8px;padding:0;border:0;
+  }
+  .flow-wrap .flow-head p{
+    margin:0;font-size:16px;color:var(--c-sub);line-height:1.7;
+  }
+  .three-steps{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+    max-width:var(--max-width);margin:0 auto;
+  }
+
+  .three-steps .step{
+    background:var(--c-bg);border:1px solid var(--c-bd);
+    border-radius:4px;padding:20px 22px;text-align:left;
+    display:flex;flex-direction:column;
+  }
+  .three-steps .step .step-label{
+    display:block;font-size:12px;font-weight:600;letter-spacing:.08em;
+    color:var(--c-sub);margin-bottom:8px;
+  }
+  .three-steps .step .step-label .n{
+    color:var(--c-brand);font-weight:700;
+  }
+  .three-steps .step h3{
+    margin:0 0 10px;color:var(--c-text);font-size:17px;font-weight:700;line-height:1.5;
+    padding:0;border:0;
+  }
+  .three-steps .step p{
+    margin:0 0 14px;font-size:14px;color:var(--c-text);line-height:1.7;flex:1;
+  }
+  .three-steps .step .step-link{
+    font-size:14px;color:var(--c-brand);font-weight:700;
+    text-decoration:none;margin-top:auto;
+    border-top:1px solid var(--c-bd);padding-top:12px;
+  }
+  .three-steps .step .step-link:hover{text-decoration:underline}
+  .three-steps .step .step-link::after{content:" →"}
+
+  /* ===== 汎用セクション ===== */
+  section.block{padding:var(--space-lg) 28px}
+  section.block + section.block{border-top:1px solid var(--c-bd)}
+  section.block h2{
+    font-size:22px;font-weight:700;color:var(--c-text);
+    margin:0 0 12px;
+    padding:0 0 12px 0;
+    border-bottom:2px solid var(--c-brand);
+  }
+  section.block h3{
+    font-size:18px;font-weight:700;color:var(--c-text);
+    margin:32px 0 12px;
+    padding-left:10px;
+    border-left:4px solid var(--c-brand);
+  }
+  section.block h3:first-child{margin-top:0}
+  section.block .lead{
+    margin:0 0 24px;color:var(--c-sub);font-size:16px;line-height:1.8;
+  }
+  section.block p{font-size:16px;line-height:1.8}
+  section.block p.note{
+    font-size:14px;color:var(--c-sub);line-height:1.7;margin:8px 0 16px;
+  }
+  section.block a{
+    color:var(--c-brand);text-decoration:underline;text-underline-offset:2px;
+  }
+  section.block a:hover{text-decoration-thickness:2px}
+
+  /* ===== 施設カード(完成版) ===== */
+  .fcard-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;
+  }
+  .fcard{
+    background:var(--c-bg);
+    border:1px solid var(--c-bd);
+    border-radius:4px;
+    text-decoration:none !important;color:var(--c-text);
+    display:flex;flex-direction:column;
+    overflow:hidden;
+    cursor:pointer;
+  }
+  .fcard:hover{
+    border-color:var(--c-brand);
+    box-shadow:0 1px 3px rgba(0,0,0,.08);
+  }
+  .fcard:hover h4{color:var(--c-brand)}
+
+  /* アイコンエリア:薄ブランド色 + 線画SVGアイコン */
+  .fcard .ph{
+    height:88px;
+    background:var(--c-bg-brand);
+    border-bottom:1px solid var(--c-bd);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--c-brand);
+  }
+  .fcard .ph svg{width:44px;height:44px;display:block}
+
+  .fcard .inner{padding:18px;flex:1;display:flex;flex-direction:column}
+  .fcard h4{
+    margin:0 0 8px;color:var(--c-text);font-size:16px;font-weight:700;line-height:1.5;
+  }
+  .fcard p{
+    margin:0 0 14px;font-size:14px;color:var(--c-sub);flex:1;line-height:1.7;
+  }
+  .fcard .cta{
+    font-size:14px;color:var(--c-brand);font-weight:700;
+    padding-top:12px;border-top:1px solid var(--c-bd);
+    margin-top:auto;
+  }
+  .fcard .cta::after{content:" →";display:inline}
+
+  /* ===== お知らせ ===== */
+  .notice-list{list-style:none;padding:0;margin:0}
+  .notice-list li{
+    padding:14px 0;border-bottom:1px solid var(--c-bd);
+    display:flex;gap:16px;flex-wrap:wrap;align-items:baseline;font-size:16px;line-height:1.7;
+  }
+  .notice-list .date3{color:var(--c-sub);font-size:14px;min-width:100px;font-variant-numeric:tabular-nums}
+  .notice-list .tag3{
+    display:inline-block;font-size:13px;padding:2px 10px;
+    border:1px solid currentColor;color:var(--c-brand);font-weight:600;
+    background:transparent;border-radius:2px;
+  }
+  .notice-list .tag3.info{color:var(--c-brand);border-color:var(--c-brand)}
+  .notice-list .tag3.alert{color:var(--c-alert);border-color:var(--c-alert)}
+  .notice-list .tag3.event{color:#1F6B33;border-color:#1F6B33}
+
+  /* ===== 使い方ステップ ===== */
+  .guide-steps{counter-reset:step;margin:0;padding:0;list-style:none}
+  .guide-steps>li{
+    background:var(--c-bg);border:1px solid var(--c-bd);
+    padding:20px 24px;margin-bottom:12px;border-radius:4px;
+    position:relative;counter-increment:step;
+  }
+  .guide-steps h3{
+    margin:0 0 8px;color:var(--c-text);font-size:17px;font-weight:700;
+    padding:0;border:0;
+  }
+  .guide-steps h3::before{
+    content:counter(step) ".";color:var(--c-brand);
+    margin-right:8px;font-weight:700;
+  }
+  .guide-steps p{margin:0 0 8px;font-size:15px;line-height:1.8;color:var(--c-text)}
+  .guide-steps ul{margin:8px 0;padding-left:1.5em;font-size:14px;line-height:1.8;color:var(--c-text)}
+
+  /* ===== 料金表 ===== */
+  .fee-slots{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:12px 0 24px}
+  .fee-slots div{
+    background:var(--c-bg-brand);border:1px solid var(--c-bd);
+    padding:10px 4px;text-align:center;font-size:14px;border-radius:2px;
+  }
+  .fee-slots b{display:block;color:var(--c-brand);font-size:15px;margin-bottom:2px}
+  .fee-scroll{overflow-x:auto;border:1px solid var(--c-bd);margin-bottom:24px}
+  .fee-table{border-collapse:collapse;width:100%;min-width:560px;background:var(--c-bg);font-size:15px}
+  .fee-table th,.fee-table td{border:1px solid var(--c-bd);padding:10px 14px;text-align:center}
+  .fee-table thead th{
+    background:var(--c-bg-brand);color:var(--c-text);font-weight:700;
+    border-bottom:2px solid var(--c-brand);
+  }
+  .fee-table tbody tr:nth-child(even){background:var(--c-bg-soft)}
+  .fee-table td.lbl,.fee-table th.lbl{background:var(--c-bg-soft);color:var(--c-text);font-weight:700;text-align:left}
+
+  /* ===== FAQ ===== */
+  .faq-item{
+    background:var(--c-bg);border:1px solid var(--c-bd);
+    margin-bottom:8px;border-radius:2px;
+  }
+  .faq-item summary{
+    padding:16px 20px;cursor:pointer;font-weight:700;color:var(--c-text);font-size:16px;
+    list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"＋";font-size:18px;color:var(--c-brand);flex-shrink:0}
+  .faq-item[open] summary::after{content:"−"}
+  .faq-item summary:hover{background:var(--c-bg-soft)}
+  .faq-item .answer{
+    padding:0 20px 18px;font-size:16px;line-height:1.8;color:var(--c-text);
+  }
+  .faq-category{
+    background:var(--c-bg-brand);color:var(--c-brand);padding:6px 14px;
+    font-size:14px;font-weight:700;display:inline-block;margin:24px 0 12px;border-radius:2px;
+  }
+  .faq-category + details{margin-top:0}
+  details + .faq-category{margin-top:32px}
+
+  /* ===== お問い合わせフォーム ===== */
+  .contact-form{background:var(--c-bg-soft);padding:28px;border:1px solid var(--c-bd);border-radius:4px}
+  .contact-form label{display:block;margin-bottom:18px;font-size:16px}
+  .contact-form label b{display:block;margin-bottom:6px;font-weight:700;color:var(--c-text);font-size:15px}
+  .contact-form input,.contact-form textarea,.contact-form select{
+    width:100%;padding:12px 14px;border:1px solid var(--c-bd);border-radius:2px;
+    font-size:16px;font-family:inherit;background:var(--c-bg);color:var(--c-text);
+  }
+  .contact-form textarea{min-height:140px}
+  .contact-form .required{color:var(--c-alert);margin-left:4px;font-weight:700}
+  .contact-form button{
+    background:var(--c-brand);color:#fff;border:0;padding:14px 36px;border-radius:2px;
+    font-weight:700;font-size:16px;cursor:pointer;margin-top:8px;
+  }
+  .contact-form button:hover{background:#005499}
+
+  /* ===== フッター ===== */
+  .site-footer{
+    background:var(--c-bg-soft);color:var(--c-text);padding:40px 28px 32px;
+    border-top:4px solid var(--c-brand);margin-top:0;text-align:left;
+  }
+  .site-footer .footer-inner{max-width:var(--max-width);margin:0 auto}
+  .site-footer p{margin:4px 0;font-size:15px;line-height:1.8}
+  .site-footer a{color:var(--c-brand);text-decoration:underline}
+  .site-footer hr{border:0;border-top:1px solid var(--c-bd);margin:20px 0}
+  .site-footer .footer-nav{font-size:14px;color:var(--c-sub)}
+  .site-footer .footer-nav a{margin:0 8px;color:var(--c-brand)}
+  .site-footer .copy{margin-top:12px;font-size:13px;color:var(--c-sub)}
+
+  /* ===== 埋め込みフォーム（Googleフォーム iframe 代替のプレビュー） ===== */
+  .embed-form{
+    background:var(--c-bg);border:1px solid var(--c-bd);border-radius:4px;
+    padding:28px;margin:16px 0 24px;
+  }
+  .embed-form .ef-head{
+    border-left:4px solid var(--c-brand);padding:2px 0 2px 14px;margin-bottom:20px;
+  }
+  .embed-form .ef-head h4{
+    margin:0 0 4px;font-size:18px;font-weight:700;color:var(--c-text);
+  }
+  .embed-form .ef-head p{margin:0;font-size:14px;color:var(--c-sub);line-height:1.7}
+  .embed-form .ef-field{margin-bottom:22px}
+  .embed-form .ef-field label.q{
+    display:block;margin-bottom:8px;font-size:15px;font-weight:600;color:var(--c-text);
+  }
+  .embed-form .ef-field label.q .req{color:var(--c-alert);margin-left:4px}
+  .embed-form .ef-field .hint{font-size:13px;color:var(--c-sub);margin-bottom:8px}
+  .embed-form input[type="text"],
+  .embed-form input[type="email"],
+  .embed-form input[type="tel"],
+  .embed-form input[type="date"],
+  .embed-form input[type="time"],
+  .embed-form input[type="number"],
+  .embed-form textarea,
+  .embed-form select{
+    width:100%;padding:10px 12px;border:1px solid var(--c-bd);border-radius:2px;
+    font-size:16px;font-family:inherit;background:var(--c-bg);color:var(--c-text);
+  }
+  .embed-form textarea{min-height:100px;resize:vertical}
+  .embed-form .ef-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .embed-form .ef-choices{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+  .embed-form .ef-choices label{
+    display:flex;align-items:flex-start;gap:8px;font-size:15px;line-height:1.6;cursor:pointer;
+  }
+  .embed-form .ef-choices input{margin-top:4px;flex-shrink:0}
+  .embed-form .ef-submit{
+    background:var(--c-brand);color:#fff;border:0;padding:14px 36px;border-radius:2px;
+    font-weight:700;font-size:16px;cursor:pointer;margin-top:8px;
+  }
+  .embed-form .ef-submit:hover{background:#005499}
+  .embed-form .ef-foot{
+    margin-top:18px;padding-top:14px;border-top:1px solid var(--c-bd);
+    font-size:13px;color:var(--c-sub);line-height:1.7;
+  }
+  @media (max-width:640px){
+    .embed-form{padding:20px}
+    .embed-form .ef-row{grid-template-columns:1fr}
+  }
+
+  /* ===== 情報ボックス(再利用ユーティリティ) ===== */
+  .info-box{
+    background:var(--c-bg-soft);
+    border:1px solid var(--c-bd);
+    border-left:4px solid var(--c-brand);
+    border-radius:0 4px 4px 0;
+    padding:20px 24px;
+    margin:24px 0;
+  }
+  .info-box h3{
+    margin:0 0 10px;color:var(--c-text);font-size:17px;font-weight:700;
+    padding:0;border:0;
+  }
+  .info-box p{margin:0 0 8px;font-size:15px;line-height:1.7;color:var(--c-text)}
+  .info-box p:last-child{margin-bottom:0}
+  .info-box table{width:100%;font-size:15px;border-collapse:collapse}
+  .info-box table td{padding:6px 0}
+  .info-box table tr+tr td{border-top:1px solid var(--c-bd)}
+
+  /* 動画プレースホルダ */
+  .video-placeholder{
+    background:var(--c-bg-soft);
+    border:1px dashed var(--c-bd);
+    color:var(--c-sub);
+    padding:48px 20px;text-align:center;
+    border-radius:4px;font-size:15px;
+  }
+  .video-placeholder::before{
+    content:"▶";display:inline-block;margin-right:8px;color:var(--c-brand);
+  }
+
+  /* 固定CTAバー(モバイル下部) */
+  .fixed-cta{
+    position:fixed;bottom:0;left:0;right:0;background:var(--c-bg);
+    padding:10px 14px;border-top:1px solid var(--c-bd);z-index:50;display:none;
+  }
+  .fixed-cta a{
+    display:block;background:var(--c-brand);color:#fff;text-decoration:none;
+    padding:12px;border-radius:2px;font-weight:700;text-align:center;font-size:16px;
+  }
+
+  /* プレビューバー */
+  .preview-note{
+    background:#FFF8E1;border-bottom:1px solid #E6CA8A;color:#5A4100;
+    padding:10px 14px;font-size:14px;text-align:center;
+  }
+
+  /* タブレット以下：ナビが収まらないのでハンバーガーに切替 */
+  @media (max-width:960px){
+    .mobile-toggle{display:block}
+    .site-nav{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      background:var(--c-bg);
+      flex-direction:column;align-items:stretch;
+      border-top:1px solid var(--c-bd);padding:8px 0;
+      box-shadow:0 4px 8px rgba(0,0,0,.06);
+    }
+    .site-nav.open{display:flex}
+    .site-nav a{
+      width:100%;padding:14px 20px;border-bottom:1px solid var(--c-bd);
+      border-bottom-color:var(--c-bd);
+    }
+    .site-nav a:last-child{border-bottom:0}
+    .site-nav a.active{border-bottom-color:var(--c-bd);background:var(--c-bg-soft)}
+    .site-nav .cta{
+      margin:8px 16px;border-radius:4px;text-align:center;
+    }
+  }
+
+  /* スマートフォン */
+  @media (max-width:640px){
+    .flow-wrap{padding:32px 20px}
+    .three-steps{grid-template-columns:1fr;gap:12px}
+    /* モバイルでは矢印を非表示(カードが縦積みのため) */
+    .three-steps::before,.three-steps::after{display:none}
+    .hero-big{padding:0 0 22px}
+    .hero-inner{padding:24px 20px 0}
+    .hero-big h1{font-size:20px}
+    .fee-slots{grid-template-columns:repeat(3,1fr)}
+    .fixed-cta{display:block}
+    .site-main{padding-bottom:70px}
+    section.block{padding:32px 20px}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">本文へスキップ</a>
+
+<div class="preview-note">
+  これはJimdoで構築した場合の最終イメージです。上のメニューでページ切替ができます。<br>
+  一般社団法人 浦安市スポーツ協会
+</div>
+
+<!-- ===== SVGアイコン定義(画面には表示されない) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ico-arena" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 42h40M8 42V18l16-10 16 10v24"/>
+      <path d="M18 42V28h12v14"/>
+      <path d="M14 18h20"/>
+    </symbol>
+    <symbol id="ico-budo" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 42h40M10 42V14h28v28"/>
+      <path d="M10 22h28"/>
+      <path d="M20 32h8v10h-8z"/>
+    </symbol>
+    <symbol id="ico-tennis" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="18" cy="18" r="11"/>
+      <line x1="10" y1="10" x2="26" y2="26"/>
+      <line x1="26" y1="10" x2="10" y2="26"/>
+      <line x1="18" y1="7" x2="18" y2="29"/>
+      <line x1="7" y1="18" x2="29" y2="18"/>
+      <line x1="26" y1="26" x2="42" y2="42"/>
+    </symbol>
+    <symbol id="ico-baseball" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="36" cy="12" r="6"/>
+      <path d="M30 8 Q34 12 30 16"/>
+      <path d="M42 8 Q38 12 42 16"/>
+      <path d="M6 42 L34 14 M10 38 L4 44"/>
+    </symbol>
+    <symbol id="ico-soccer" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+      <circle cx="24" cy="24" r="18"/>
+      <path d="M24 12 L34 19 L30 30 L18 30 L14 19 Z"/>
+      <line x1="24" y1="12" x2="24" y2="6"/>
+      <line x1="34" y1="19" x2="40" y2="16"/>
+      <line x1="14" y1="19" x2="8" y2="16"/>
+      <line x1="30" y1="30" x2="34" y2="38"/>
+      <line x1="18" y1="30" x2="14" y2="38"/>
+    </symbol>
+    <symbol id="ico-pool" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M4 18 Q10 12 16 18 Q22 24 28 18 Q34 12 40 18 Q44 22 44 18"/>
+      <path d="M4 28 Q10 22 16 28 Q22 34 28 28 Q34 22 40 28 Q44 32 44 28"/>
+      <path d="M4 38 Q10 32 16 38 Q22 44 28 38 Q34 32 40 38 Q44 42 44 38"/>
+    </symbol>
+    <symbol id="ico-pg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="14" y1="6" x2="14" y2="44"/>
+      <path d="M14 8 L36 14 L14 20 Z" fill="currentColor"/>
+      <circle cx="14" cy="42" r="3" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="ico-sk" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M4 28 L44 28"/>
+      <path d="M9 28 L7 34 M13 28 L12 34 M35 28 L36 34 M39 28 L41 34"/>
+      <circle cx="11" cy="38" r="3" fill="currentColor" stroke="none"/>
+      <circle cx="37" cy="38" r="3" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="ico-guide" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 8 Q14 6 24 8 Q34 6 40 8 L40 40 Q34 38 24 40 Q14 38 8 40 Z"/>
+      <line x1="24" y1="8" x2="24" y2="40"/>
+    </symbol>
+    <symbol id="ico-fees" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="14" y1="10" x2="24" y2="22"/>
+      <line x1="34" y1="10" x2="24" y2="22"/>
+      <line x1="14" y1="28" x2="34" y2="28"/>
+      <line x1="14" y1="34" x2="34" y2="34"/>
+      <line x1="24" y1="22" x2="24" y2="40"/>
+    </symbol>
+    <symbol id="ico-faq" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="24" cy="24" r="18"/>
+      <path d="M18 18 Q18 14 24 14 Q30 14 30 18 Q30 22 24 24 L24 28"/>
+      <circle cx="24" cy="33" r="1.5" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="ico-sun" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="24" cy="24" r="8"/>
+      <line x1="24" y1="6" x2="24" y2="10"/>
+      <line x1="24" y1="38" x2="24" y2="42"/>
+      <line x1="6" y1="24" x2="10" y2="24"/>
+      <line x1="38" y1="24" x2="42" y2="24"/>
+      <line x1="11" y1="11" x2="14" y2="14"/>
+      <line x1="34" y1="34" x2="37" y2="37"/>
+      <line x1="11" y1="37" x2="14" y2="34"/>
+      <line x1="34" y1="14" x2="37" y2="11"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ====================== サイトヘッダー ====================== -->
+<header class="site-header" role="banner">
+  <div class="site-header-inner">
+    <a href="#home" class="site-logo" onclick="event.preventDefault();nav('home')" aria-label="浦安市 体育施設利用ガイド トップページへ">
+      <strong>浦安市 体育施設利用ガイド</strong>
+      <small>一般社団法人 浦安市スポーツ協会</small>
+    </a>
+
+    <button class="mobile-toggle" aria-label="メニューを開閉する"
+            aria-expanded="false" aria-controls="siteNav"
+            onclick="toggleMenu(this)">≡</button>
+
+    <nav class="site-nav" id="siteNav" aria-label="グローバルナビゲーション">
+      <a href="#home" onclick="event.preventDefault();nav('home')" class="active" data-page="home">ホーム</a>
+      <a href="#facilities" onclick="event.preventDefault();nav('facilities')" data-page="facilities">施設一覧</a>
+      <a href="#guide" onclick="event.preventDefault();nav('guide')" data-page="guide">使い方</a>
+      <a href="#fees" onclick="event.preventDefault();nav('fees')" data-page="fees">料金表</a>
+      <a href="#faq" onclick="event.preventDefault();nav('faq')" data-page="faq">よくある質問</a>
+      <a href="#news" onclick="event.preventDefault();nav('news')" data-page="news">お知らせ</a>
+      <a href="#commercial" onclick="event.preventDefault();nav('commercial')" data-page="commercial">撮影・営利利用</a>
+      <a class="cta" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">予約システムへ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main" role="main" id="main">
+
+<!-- ====================== ① ホーム ====================== -->
+<section class="page-section active" data-page="home" aria-labelledby="page-home-title">
+
+  <section class="hero-big" aria-label="トップメッセージ">
+    <div class="hero-band" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1>体育施設の利用案内</h1>
+      <p class="lead">浦安市内の体育館・テニスコート・球技場・プール等の予約方法・料金・施設情報をご案内します。</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 id="page-home-title">お知らせ</h2>
+    <ul class="notice-list">
+      <li><span class="date3">2026/04/21</span><span class="tag3 alert">重要</span><span>6月分の抽選申込みは <b>5/1〜5/10</b> 受付です</span></li>
+      <li><span class="date3">2026/04/15</span><span class="tag3 event">イベント</span><span>5月開催 総合体育館 託児のご案内</span></li>
+      <li><span class="date3">2026/04/10</span><span class="tag3 info">施設</span><span>メインアリーナ 床面補修工事（6/15〜17 休館）</span></li>
+      <li><span class="date3">2026/04/01</span><span class="tag3 info">料金</span><span>支払方法にPayPay・コンビニ決済が追加されました</span></li>
+    </ul>
+    <p style="text-align:right;margin-top:16px"><a href="#news" onclick="event.preventDefault();nav('news')">お知らせ一覧を見る</a></p>
+  </section>
+
+  <section class="block">
+    <h2>主なメニュー</h2>
+    <div class="fcard-grid">
+      <a href="#facilities" class="fcard" onclick="event.preventDefault();nav('facilities')">
+        <div class="ph" aria-hidden="true"><svg><use href="#ico-arena"/></svg></div>
+        <div class="inner"><h4>施設一覧</h4><p>体育館・テニスコート・球技場・プールなど浦安市内の体育施設をご紹介</p><div class="cta">施設を探す</div></div>
+      </a>
+      <a href="#guide" class="fcard" onclick="event.preventDefault();nav('guide')">
+        <div class="ph" aria-hidden="true"><svg><use href="#ico-guide"/></svg></div>
+        <div class="inner"><h4>使い方ガイド</h4><p>はじめての方向けに、登録から予約・支払いまでの手順をご案内</p><div class="cta">使い方を見る</div></div>
+      </a>
+      <a href="#fees" class="fcard" onclick="event.preventDefault();nav('fees')">
+        <div class="ph" aria-hidden="true"><svg><use href="#ico-fees"/></svg></div>
+        <div class="inner"><h4>料金表</h4><p>体育館・球技場・プールなど全施設の使用料一覧</p><div class="cta">料金表を見る</div></div>
+      </a>
+      <a href="#faq" class="fcard" onclick="event.preventDefault();nav('faq')">
+        <div class="ph" aria-hidden="true"><svg><use href="#ico-faq"/></svg></div>
+        <div class="inner"><h4>よくある質問</h4><p>料金・登録・予約・キャンセルなどのご質問</p><div class="cta">FAQを見る</div></div>
+      </a>
+    </div>
+  </section>
+</section>
+
+<!-- ====================== ② 施設一覧 ====================== -->
+<section class="page-section" data-page="facilities" aria-labelledby="page-fac-title">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="#home" onclick="event.preventDefault();nav('home')">ホーム</a></li>
+      <li>施設一覧</li>
+    </ol>
+  </nav>
+  <section class="block">
+    <h2 id="page-fac-title">施設一覧</h2>
+    <p class="lead">浦安市内の体育施設26施設をジャンル別に掲載しています。施設名をタップすると予約システムへ移動します。</p>
+
+    <h3>屋内施設</h3>
+    <div class="fcard-grid">
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph arena" aria-hidden="true"><svg><use href="#ico-arena"/></svg></div>
+        <div class="inner">
+          <h4>バルドラール浦安アリーナ（総合体育館）</h4>
+          <p>舞浜2-27 / TEL 047-355-1110 / 駐車場634台<br>メイン/サブアリーナ・武道場2面・弓道場・卓球室・卓球コーナー・トレーニング室・会議室・多目的室<br>利用時間 9:00〜21:00／第1・第3水曜休館</p>
+          <div class="cta">予約する</div>
+        </div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph budo" aria-hidden="true"><svg><use href="#ico-budo"/></svg></div>
+        <div class="inner">
+          <h4>中央武道館</h4>
+          <p>猫実1-18-15 / TEL 047-380-2100 / 駐車場20台<br>武道場2面／トレーニング室／会議室<br>利用時間 9:00〜21:00／第1・第3月曜休館</p>
+          <div class="cta">予約する</div>
+        </div>
+      </a>
+    </div>
+
+    <h3>テニスコート</h3>
+    <div class="fcard-grid">
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
+        <div class="inner"><h4>運動公園テニスコート</h4><p>舞浜2-27 / 砂入り人工芝8面<br>TEL 047-350-9829 / 夜間照明あり<br>駐車場634台</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
+        <div class="inner"><h4>中央公園テニスコート</h4><p>富岡4-25 / 砂入り人工芝6面<br>TEL 047-351-9242 / 夜間照明あり<br>駐車場18台</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
+        <div class="inner"><h4>高洲テニスコート</h4><p>高洲2-7 / 砂入り人工芝4面<br>TEL 047-350-0485 / 夜間照明あり<br>駐車場20台</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
+        <div class="inner"><h4>美浜テニスコート</h4><p>美浜5-10 / 砂入り人工芝2面<br>駐車場なし</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
+        <div class="inner"><h4>美浜運動公園テニスコート</h4><p>入船5-46 / 砂入り人工芝2面<br>駐車場なし</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
+        <div class="inner"><h4>舞浜テニスコート</h4><p>舞浜2-1 / 砂入り人工芝2面<br>駐車場なし</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
+        <div class="inner"><h4>高洲中央公園テニスコート</h4><p>高洲4-1 / 砂入り人工芝2面<br>TEL 047-353-7778 / 夜間照明あり<br>駐車場69台</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
+        <div class="inner"><h4>高洲南テニスコート</h4><p>港84-1 / ハードコート2面<br>駐車場10台</p><div class="cta">予約する</div></div>
+      </a>
+    </div>
+
+    <h3>野球・ソフトボール・少年野球</h3>
+    <div class="fcard-grid">
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
+        <div class="inner"><h4>運動公園野球場</h4><p>舞浜2-27 / 1面 / 夜間照明あり<br>TEL 047-350-9829</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
+        <div class="inner"><h4>運動公園軟式野球場</h4><p>舞浜2-27 / 2面<br>TEL 047-350-9829</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
+        <div class="inner"><h4>KG軟式野球場（中央公園）</h4><p>富岡4-25 / 1面 / 夜間照明あり<br>TEL 047-351-9242<br>※12・1・2月は閉鎖</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
+        <div class="inner"><h4>今川球技場</h4><p>今川3-12 / ソフトボール2面<br>※1月は閉鎖</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
+        <div class="inner"><h4>大三角公園少年野球場</h4><p>舞浜3-37 / 少年野球1面<br>駐車場あり(約30台)</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
+        <div class="inner"><h4>J:COM浦安少年野球場</h4><p>高洲4-1 / 少年野球1面<br>TEL 047-353-7778<br>（高洲中央公園少年野球場）</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
+        <div class="inner"><h4>美浜運動公園少年野球場</h4><p>入船5-46 / 少年野球1面<br>駐車場なし</p><div class="cta">予約する</div></div>
+      </a>
+    </div>
+
+    <h3>サッカー・フットサル・陸上・アーチェリー</h3>
+    <div class="fcard-grid">
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph soccer" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
+        <div class="inner"><h4>ブリオベッカ浦安競技場</h4><p>舞浜2-27 / 陸上・サッカー・ラグビー<br>TEL 047-350-9830 / 夜間照明あり<br>（運動公園陸上競技場）</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph soccer" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
+        <div class="inner"><h4>運動公園スポーツコート</h4><p>舞浜2-27 / 人工芝フットサル2面<br>TEL 047-350-9829 / 夜間照明あり</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph soccer" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
+        <div class="inner"><h4>ブリオベッカフィールド明海</h4><p>明海2-1 / 人工芝フットサル1面＋人工芝少年サッカー1面<br>TEL 047-350-8026 / 夜間照明あり<br>（明海球技場）</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph soccer" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
+        <div class="inner"><h4>総合公園球技場</h4><p>明海7-2 / ラグビー兼サッカー 1面<br>TEL 047-353-2867 / 夜間照明あり</p><div class="cta">予約する</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph soccer" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
+        <div class="inner"><h4>運動公園アーチェリー場</h4><p>舞浜2-27 / アーチェリー・弓道（遠的）<br>TEL 047-350-9830 / 夜間照明あり<br>（ブリオベッカ浦安競技場内）</p><div class="cta">予約する</div></div>
+      </a>
+    </div>
+
+    <h3>プール・その他</h3>
+    <div class="fcard-grid">
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph pool" aria-hidden="true"><svg><use href="#ico-pool"/></svg></div>
+        <div class="inner"><h4>バルドラール浦安アリーナ 屋内水泳プール</h4><p>舞浜2-27 / TEL 047-304-0030 / 駐車場634台<br>25m公認プール・多目的プール・健康プール・リハビリプール・キッズスポーツルーム<br>通年営業／登録不要／第1・第3水曜休館</p><div class="cta">施設情報</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph pool" aria-hidden="true"><svg><use href="#ico-sun"/></svg></div>
+        <div class="inner"><h4>東野プール（屋外）</h4><p>東野2-18-1 / TEL 047-352-6891（開場期間のみ）<br>競泳プール・子供プール・ちびっ子プール・流水プール<br>開場期間：7月第1土曜〜9月第1日曜<br>9:00〜17:00（最終入場16:00）／登録不要</p><div class="cta">施設情報</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph pg" aria-hidden="true"><svg><use href="#ico-pg"/></svg></div>
+        <div class="inner"><h4>高洲海浜公園パークゴルフ場</h4><p>高洲9-18 / TEL 047-382-0382 / 駐車場152台<br>27ホール／登録不要<br>火曜休場<br>4・5・10・11・3月 9:00〜17:00／6〜9月 9:00〜18:00／12〜2月 9:00〜16:00</p><div class="cta">施設情報</div></div>
+      </a>
+      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="ph sk" aria-hidden="true"><svg><use href="#ico-sk"/></svg></div>
+        <div class="inner"><h4>運動公園スケートボード場</h4><p>舞浜2-27 / TEL 047-350-9829 / 駐車場634台<br>通常 9:00〜17:00<br>5〜8月 9:00〜19:00（土日祝 7:00〜19:00）</p><div class="cta">施設情報</div></div>
+      </a>
+    </div>
+  </section>
+</section>
+
+<!-- ====================== ③ 使い方ガイド ====================== -->
+<section class="page-section" data-page="guide" aria-labelledby="page-guide-title">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="#home" onclick="event.preventDefault();nav('home')">ホーム</a></li>
+      <li>使い方ガイド</li>
+    </ol>
+  </nav>
+  <section class="block">
+    <h2 id="page-guide-title">体育施設の使い方</h2>
+    <p class="lead"><b>「登録 → 予約 → 支払い → 利用」の流れ</b>です。登録から予約・支払いまで、PC・スマートフォンですべて完結します。</p>
+
+    <p class="note">本ページの内容は<a href="https://www.city.urayasu.lg.jp/shogaigakushu/sports/shisetsu/index.html" target="_blank" rel="noopener">浦安市公式サイト「スポーツ施設の利用・予約」</a>の情報に基づいています。</p>
+
+    <h3>ステップ1：使用者登録（PC・スマートフォン）</h3>
+    <ol class="guide-steps">
+      <li>
+        <h3>対象を確認する</h3>
+        <p><b>16歳以上の方</b>が登録できます。市内在住・在勤・在学の方は「市内者」、それ以外は「市外者」として登録され、市外者の使用料は<b>5割増し</b>となります。</p>
+      </li>
+      <li>
+        <h3>本人確認書類を準備</h3>
+        <p>登録時に内容を入力するため、お手元にご用意ください。</p>
+        <ul>
+          <li>住所・氏名・生年月日がわかる本人確認書類（マイナンバーカード 等）</li>
+          <li>市内在勤の方：社員証など在勤を証明できるもの（名刺は不可）</li>
+          <li>市内在学の方：学生証など在学を証明できるもの</li>
+        </ul>
+      </li>
+      <li>
+        <h3>予約システムから登録</h3>
+        <p><a href="https://k5.p-kashikan.jp/urayasu-city/" target="_blank" rel="noopener">浦安市公共施設予約システム</a>にアクセスし、画面右上のメニューをタップして「<b>利用登録</b>」ボタンから手続きします。</p>
+        <ul>
+          <li>個人登録：個人で利用する方（16歳以上）</li>
+          <li>団体登録：野球場・サッカー場・フットサル場 等を団体で利用する方（代表者の本人確認書類と団体構成員登録書が必要）</li>
+        </ul>
+      </li>
+      <li>
+        <h3>ログイン</h3>
+        <p>登録完了後、<b>利用者IDとご自身で登録したパスワード</b>でログインできます。</p>
+        <p><small>※旧システムをご利用だった方は、初回ログイン時に利用者IDとパスワード（旧システム登録時の<b>電話番号 ※ハイフンなし</b>）でログインし、パスワードの更新を行うと予約システムが利用可能になります。</small></p>
+      </li>
+    </ol>
+
+    <div class="info-box">
+      <h3>登録不要で利用できる施設</h3>
+      <p>以下の施設は使用者登録なしでご利用いただけます。</p>
+      <ul style="margin:0;padding-left:1.4em">
+        <li>東野プール（屋外）</li>
+        <li>バルドラール浦安アリーナ 屋内水泳プール</li>
+        <li>高洲海浜公園パークゴルフ場</li>
+      </ul>
+    </div>
+
+    <h3 id="group-reg">団体登録について</h3>
+    <p>以下の屋外運動施設を利用するには、個人登録とは別に<b>団体登録</b>が必要です。</p>
+    <ul>
+      <li>野球場／ソフトボール場</li>
+      <li>少年野球場</li>
+      <li>サッカー場／ラグビー場</li>
+      <li>少年サッカー場</li>
+      <li>フットサル場</li>
+    </ul>
+
+    <h4 style="font-size:15px;margin:20px 0 8px;color:var(--c-sub)">施設ごとの登録条件（人数・年齢）</h4>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>施設</th><th>登録条件</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="lbl">野球場・ソフトボール場</td>
+            <td style="text-align:left">
+              中学生以上の方が<b>9人以上</b>の団体<br>
+              <small>（ソフトボール場の場合、小学生9人以上でも可）<br>
+              ※中学生以下のみの団体は、18歳以上の方1人が代表者になること</small>
+            </td>
+          </tr>
+          <tr>
+            <td class="lbl">少年野球場</td>
+            <td style="text-align:left">
+              <b>18歳以上の方1人が代表者</b>となり、小学生以下の方が<b>9人以上</b>の団体
+            </td>
+          </tr>
+          <tr>
+            <td class="lbl">サッカー場・ラグビー場</td>
+            <td style="text-align:left">
+              小学生以上の方が<b>11人以上</b>の団体<br>
+              <small>※中学生以下のみの団体は、18歳以上の方1人が代表者になること</small>
+            </td>
+          </tr>
+          <tr>
+            <td class="lbl">少年サッカー場</td>
+            <td style="text-align:left">
+              <b>18歳以上の方1人が代表者</b>となり、小学生以下の方が<b>8人以上</b>の団体
+            </td>
+          </tr>
+          <tr>
+            <td class="lbl">フットサル場</td>
+            <td style="text-align:left">
+              小学生以上の方が<b>5人以上</b>の団体<br>
+              <small>※中学生以下のみの団体は、18歳以上の方1人が代表者になること</small>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 style="font-size:15px;margin:20px 0 8px;color:var(--c-sub)">市内扱いの判定</h4>
+    <ul>
+      <li><b>野球場・ソフトボール場</b>：登録対象者の<b>過半数</b>が市内在住・在勤・在学の方であること</li>
+      <li><b>少年野球場／サッカー場／ラグビー場／少年サッカー場／フットサル場</b>：登録対象者のうち<b>代表者を除く過半数</b>が市内在住・在学の方であること</li>
+      <li>上記の要件を満たさない団体は<b>市外扱い</b>（使用料5割増）となります</li>
+    </ul>
+
+    <h4 style="font-size:15px;margin:20px 0 8px;color:var(--c-sub)">必要書類</h4>
+    <ul>
+      <li>代表者の本人確認ができるもの（住所・氏名・生年月日がわかるもの）</li>
+      <li>団体構成員登録書</li>
+    </ul>
+
+    <div class="info-box">
+      <p style="margin:0"><b>新予約システムでは、団体構成員となる中学生以下の方の使用者登録は不要</b>になりました。代表者と16歳以上の構成員のみ個人登録を行ってください。</p>
+    </div>
+
+    <h3>ステップ2：予約する</h3>
+    <ol class="guide-steps">
+      <li>
+        <h3>抽選予約（市内者対象）</h3>
+        <p>毎月、翌々月分の利用について抽選で枠を割り当てます。マイページの「抽選施設一覧」から申込みます。</p>
+        <ul>
+          <li>申込み期間：<b>毎月1日〜10日</b></li>
+          <li>抽選実施：<b>毎月13日</b>（システムにより自動抽選）</li>
+          <li>申込み上限：<b>屋外・屋内それぞれ第3希望まで（計6件）</b></li>
+        </ul>
+      </li>
+      <li>
+        <h3>当選確定（必須）</h3>
+        <p>抽選結果はマイページの「抽選申込一覧」から確認できます。当選した枠は <b>「確定」ボタン</b> を押すことで予約が成立します。</p>
+        <ul>
+          <li>確定期間：<b>毎月16日〜26日</b></li>
+          <li>支払い期限：<b>当選確定作業日から10日以内</b></li>
+          <li>期間内に確定と支払いを行わなかった場合、当選は自動取消</li>
+        </ul>
+      </li>
+      <li>
+        <h3>随時予約（抽選後の空き枠）</h3>
+        <p>マイページの「空き状況」から、空いている枠を先着で予約できます。</p>
+        <ul>
+          <li><b>市内者</b>：利用日の1か月前〜利用日の前日まで</li>
+          <li><b>市外者</b>：利用日の7日前〜利用日の前日まで</li>
+        </ul>
+        <p class="note">※「1か月前」とは、たとえば<b>5月15日</b>に随時予約したい場合、<b>4月15日</b>から予約できる、という意味です。</p>
+      </li>
+    </ol>
+
+    <h3>ステップ3：支払い（オンライン）</h3>
+    <ol class="guide-steps">
+      <li>
+        <h3>支払い方法</h3>
+        <p>マイページの「予約申込一覧」から「<b>支払</b>」ボタンを押して決済します。</p>
+        <ul>
+          <li>クレジットカード</li>
+          <li>コンビニ（セブン／ローソン／ファミリーマート 等）</li>
+          <li>PayPay</li>
+          <li>現金：バルドラール浦安アリーナ・中央武道館の窓口のみ</li>
+        </ul>
+      </li>
+      <li>
+        <h3>支払い期限</h3>
+        <p><b>使用日の前日まで</b>に支払いが完了している必要があります。期限までに支払いが確認できない場合、予約は自動取消となります。</p>
+      </li>
+    </ol>
+
+    <h3>ステップ4：キャンセル・利用当日</h3>
+    <ol class="guide-steps">
+      <li>
+        <h3>キャンセル・還付</h3>
+        <p>予約システムのマイページからキャンセル手続きができます。</p>
+        <ul>
+          <li>使用日の<b>3日前まで</b>のキャンセル：使用料を還付</li>
+          <li>使用日の<b>2日前・前日</b>のキャンセル：使用料の還付不可</li>
+          <li>雨天等の判断は管理者が行いますので、当日のご自身での取消しは行わないでください。必ず管理棟または巡回管理人にご連絡をお願いします。</li>
+        </ul>
+      </li>
+      <li>
+        <h3>利用日当日</h3>
+        <p>当日は施設受付で<b>登録番号等の予約内容</b>で利用者確認をしますので、ご用意をお願いします。</p>
+      </li>
+    </ol>
+
+    <div class="info-box">
+      <h3>動画で使い方を見る</h3>
+      <p>予約システムの操作方法を動画でご案内します（公開時にYouTube動画を埋め込み予定）。</p>
+      <div class="video-placeholder">動画プレーヤー（公開時に差し替え）</div>
+    </div>
+  </section>
+</section>
+
+<!-- ====================== ④ 料金表 ====================== -->
+<section class="page-section" data-page="fees" aria-labelledby="page-fees-title">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="#home" onclick="event.preventDefault();nav('home')">ホーム</a></li>
+      <li>料金表</li>
+    </ol>
+  </nav>
+  <section class="block">
+    <h2 id="page-fees-title">施設使用料</h2>
+    <p class="lead">浦安市内の体育施設の使用料を掲載しています。<b>市外登録者は市内料金の5割増し</b>となります。</p>
+    <p class="note">※最新の料金は<a href="https://www.urayasu-zaidan.or.jp/taiikukan/1002165.html" target="_blank" rel="noopener">うらやす財団 公式サイト</a>で必ずご確認ください。</p>
+
+    <!-- 目次 -->
+    <div class="info-box">
+      <p style="margin:0 0 6px"><b>このページの目次</b></p>
+      <ul style="margin:0;padding-left:1.4em;columns:2;font-size:14px;line-height:1.9">
+        <li><a href="#fee-slots">利用時間区分</a></li>
+        <li><a href="#fee-arena">バルドラール浦安アリーナ</a></li>
+        <li><a href="#fee-budokan">中央武道館</a></li>
+        <li><a href="#fee-ball">球技場（屋外）</a></li>
+        <li><a href="#fee-lighting">夜間照明料</a></li>
+        <li><a href="#fee-pg">パークゴルフ場</a></li>
+        <li><a href="#fee-sk">スケートボード場</a></li>
+        <li><a href="#fee-pool">屋内水泳プール</a></li>
+        <li><a href="#fee-higashino">東野プール</a></li>
+        <li><a href="#fee-training">トレーニング室</a></li>
+        <li><a href="#fee-personal">個人使用料</a></li>
+        <li><a href="#fee-childcare">託児料金</a></li>
+      </ul>
+    </div>
+
+    <!-- 利用時間区分 -->
+    <h3 id="fee-slots">利用時間区分</h3>
+    <p class="note">アリーナ・武道館は2時間単位の6区分／球技場は早朝（7:00〜9:00）を含む7区分</p>
+    <div class="fee-slots">
+      <div><b>①</b>9:00〜11:00</div>
+      <div><b>②</b>11:00〜13:00</div>
+      <div><b>③</b>13:00〜15:00</div>
+      <div><b>④</b>15:00〜17:00</div>
+      <div><b>⑤</b>17:00〜19:00</div>
+      <div><b>⑥</b>19:00〜21:00</div>
+    </div>
+    <p class="note">※球技場の7:00〜9:00・17:00〜19:00・19:00〜21:00は、施設・期間・曜日により利用できない場合があります。</p>
+
+    <!-- バルドラール浦安アリーナ -->
+    <h3 id="fee-arena">バルドラール浦安アリーナ（総合体育館）</h3>
+
+    <h4 style="font-size:15px;margin:16px 0 6px;color:var(--c-sub)">① 営利を目的としない場合／入場料を徴収しない場合（通常料金）</h4>
+    <p class="note">2時間あたり</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>施設</th><th>面積</th><th>一般</th><th>小中高生・65歳以上</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl" rowspan="3">メインアリーナ</td><td>全面</td><td>8,580円</td><td>4,290円</td></tr>
+          <tr><td>1/2面</td><td>4,290円</td><td>2,150円</td></tr>
+          <tr><td>1/4面</td><td>2,150円</td><td>1,080円</td></tr>
+          <tr><td class="lbl" rowspan="2">サブアリーナ</td><td>全面</td><td>3,430円</td><td>1,710円</td></tr>
+          <tr><td>1/2面</td><td>1,720円</td><td>860円</td></tr>
+          <tr><td class="lbl">第一・第二武道場</td><td>—</td><td>1,710円</td><td>850円</td></tr>
+          <tr><td class="lbl">弓道場</td><td>—</td><td>1,710円</td><td>850円</td></tr>
+          <tr><td class="lbl">卓球室</td><td>—</td><td>1,080円</td><td>540円</td></tr>
+          <tr><td class="lbl">多目的室</td><td>—</td><td>850円</td><td>420円</td></tr>
+          <tr><td class="lbl">会議室</td><td>1時間</td><td>590円</td><td>290円</td></tr>
+          <tr><td class="lbl">研修室</td><td>1時間</td><td>660円</td><td>330円</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 style="font-size:15px;margin:20px 0 6px;color:var(--c-sub)">② 営利を目的としない場合／入場料を徴収する場合</h4>
+    <p class="note">メインアリーナ・サブアリーナのみ／2時間あたり</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>施設</th><th>面積</th><th>使用料</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl" rowspan="3">メインアリーナ</td><td>全面</td><td>17,160円</td></tr>
+          <tr><td>1/2面</td><td>8,580円</td></tr>
+          <tr><td>1/4面</td><td>4,290円</td></tr>
+          <tr><td class="lbl" rowspan="2">サブアリーナ</td><td>全面</td><td>6,860円</td></tr>
+          <tr><td>1/2面</td><td>3,430円</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 style="font-size:15px;margin:20px 0 6px;color:var(--c-sub)">③ 営利を目的とする場合</h4>
+    <p class="note">メインアリーナ・サブアリーナのみ／2時間あたり</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>施設</th><th>面積</th><th>入場料を徴収しない場合</th><th>入場料を徴収する場合</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl" rowspan="3">メインアリーナ</td><td>全面</td><td>85,800円</td><td>171,600円</td></tr>
+          <tr><td>1/2面</td><td>42,900円</td><td>85,800円</td></tr>
+          <tr><td>1/4面</td><td>21,450円</td><td>42,900円</td></tr>
+          <tr><td class="lbl" rowspan="2">サブアリーナ</td><td>全面</td><td>34,320円</td><td>68,640円</td></tr>
+          <tr><td>1/2面</td><td>17,160円</td><td>34,320円</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">※いずれも市内登録者の料金。市外登録者は5割増し。<br>※メインアリーナ全面使用のご希望、入場料徴収・営利目的のご利用は<a href="tel:0473551110">総合体育館（047-355-1110）</a>までご相談ください。</p>
+
+    <div class="info-box">
+      <h3>撮影・営利目的でのご利用について</h3>
+      <p>映画・テレビ・CM・雑誌等の撮影、物販、興行その他営利を目的とした利用は、通常の予約とは別に事前の申請が必要です（<b>利用希望日の14日前まで</b>）。</p>
+      <p><a href="#commercial" onclick="event.preventDefault();nav('commercial')"><b>撮影・営利利用の申請について詳しく見る</b></a></p>
+    </div>
+
+    <!-- 中央武道館 -->
+    <h3 id="fee-budokan">中央武道館</h3>
+    <p class="note">2時間あたり／第一・第二武道場は1面当たりの額（各2面あり）</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>施設</th><th>単位</th><th>一般</th><th>小中高生・65歳以上</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">第一・第二武道場</td><td>1面・2時間</td><td>1,720円</td><td>860円</td></tr>
+          <tr><td class="lbl">会議室</td><td>1時間</td><td colspan="2">160円（一律）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 球技場 -->
+    <h3 id="fee-ball">球技場（屋外施設・2時間）</h3>
+    <h4 style="font-size:15px;margin:12px 0 6px;color:var(--c-sub)">市内登録者</h4>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>施設</th><th>単位</th><th>一般</th><th>小中高生・65歳以上</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">テニスコート</td><td>1面</td><td>720円</td><td>360円</td></tr>
+          <tr><td class="lbl">軟式野球場・ソフトボール場</td><td>1面</td><td>2,470円</td><td>1,230円</td></tr>
+          <tr><td class="lbl">総合公園球技場</td><td>全面</td><td>3,300円</td><td>1,650円</td></tr>
+          <tr><td class="lbl">少年サッカー場</td><td>全面</td><td>—</td><td>1,650円</td></tr>
+          <tr><td class="lbl">フットサル場・スポーツコート</td><td>1面</td><td>1,650円</td><td>820円</td></tr>
+          <tr><td class="lbl">運動公園野球場</td><td>1面</td><td>7,750円</td><td>3,870円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 style="font-size:15px;margin:16px 0 6px;color:var(--c-sub)">市外登録者</h4>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>施設</th><th>単位</th><th>一般</th><th>小中高生・65歳以上</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">テニスコート</td><td>1面</td><td>1,080円</td><td>540円</td></tr>
+          <tr><td class="lbl">軟式野球場・ソフトボール場</td><td>1面</td><td>3,710円</td><td>1,850円</td></tr>
+          <tr><td class="lbl">総合公園球技場</td><td>全面</td><td>4,950円</td><td>2,470円</td></tr>
+          <tr><td class="lbl">少年サッカー場</td><td>全面</td><td>—</td><td>2,470円</td></tr>
+          <tr><td class="lbl">フットサル場・スポーツコート</td><td>1面</td><td>2,470円</td><td>1,230円</td></tr>
+          <tr><td class="lbl">運動公園野球場</td><td>1面</td><td>11,630円</td><td>5,810円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">※少年サッカー場は小学生の団体のみ全面使用可。<br>※小中高生・65歳以上が全体の過半数を占める場合、使用料が50%減額（管理棟・事務所で人数確認）。</p>
+
+    <!-- 夜間照明料 -->
+    <h3 id="fee-lighting">夜間照明料</h3>
+    <p class="note">市内外同一料金／照明券は施設の管理棟券売機で購入／原則還付なし</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>施設</th><th>単位</th><th>使用料</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">中央公園 軟式野球場</td><td>1面 30分</td><td>4,950円</td></tr>
+          <tr><td class="lbl">中央公園 テニスコート</td><td>1面 30分</td><td>330円</td></tr>
+          <tr><td class="lbl" rowspan="3">運動公園野球場<br>（運動公園／高洲中央公園／高洲太陽の丘）</td><td>全面 30分</td><td>4,650円</td></tr>
+          <tr><td>1/3面 30分</td><td>1,550円</td></tr>
+          <tr><td>スポーツコート 1面 30分</td><td>170円</td></tr>
+          <tr><td class="lbl" rowspan="2">ブリオベッカフィールド明海<br>（明海球技場）少年サッカー場</td><td>全面 30分</td><td>490円</td></tr>
+          <tr><td>半面 30分</td><td>250円</td></tr>
+          <tr><td class="lbl">フットサル場</td><td>30分</td><td>240円</td></tr>
+          <tr><td class="lbl">総合公園球技場</td><td>30分</td><td>820円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">※30分未満の端数は30分とみなします。<br>※高洲中央公園・高洲太陽の丘公園・明海球技場は5千円札・1万円札は使用できません。</p>
+
+    <!-- パークゴルフ場 -->
+    <h3 id="fee-pg">高洲海浜公園パークゴルフ場</h3>
+    <p class="note">登録不要／利用券の払い戻し不可／レンタルクラブ・レンタル靴は無料</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>区分</th><th>単位</th><th>一般</th><th>小中高生・65歳以上</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl" rowspan="3">市内者</td><td>1回券（18ホール）</td><td>490円</td><td>240円</td></tr>
+          <tr><td>半日券（4時間）</td><td>990円</td><td>490円</td></tr>
+          <tr><td>1日券（何度でもプレー可）</td><td>1,480円</td><td>740円</td></tr>
+          <tr><td class="lbl" rowspan="3">市外者</td><td>1回券</td><td>740円</td><td>—</td></tr>
+          <tr><td>半日券</td><td>1,480円</td><td>—</td></tr>
+          <tr><td>1日券</td><td>2,220円</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- スケートボード場 -->
+    <h3 id="fee-sk">運動公園スケートボード場</h3>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>区分</th><th>単位</th><th>一般</th><th>小中高生・65歳以上・障がいのある方</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">市内者</td><td>4時間</td><td>220円</td><td>110円</td></tr>
+          <tr><td class="lbl">市外者</td><td>4時間</td><td>330円</td><td>160円</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 屋内水泳プール -->
+    <h3 id="fee-pool">バルドラール浦安アリーナ 屋内水泳プール</h3>
+    <p class="note">登録不要／7月1日〜9月15日は2時間以内、9月16日〜翌6月30日は3時間以内</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>区分</th><th>市内者</th><th>市外者</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">一般</td><td>420円</td><td>630円</td></tr>
+          <tr><td class="lbl">小中高生</td><td>210円</td><td>320円</td></tr>
+          <tr><td class="lbl">65歳以上・障がいのある方</td><td>210円</td><td>320円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">※回数券では延長料金の精算はできません。<br>※身体障がい者の介護の方は1名無料。<br>※超過料金（30分毎）：7/1〜9/15は一般160円・小中高生等80円／9/16〜6/30は一般100円・小中高生等50円。</p>
+
+    <!-- 東野プール -->
+    <h3 id="fee-higashino">東野プール（屋外・夏季）</h3>
+    <p class="note">登録不要／利用時間2時間／開場期間：7月第1土曜日〜9月第1日曜日</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>区分</th><th>料金</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">プール使用料</td><td>下記金額はうらやす財団公式サイトを要確認</td></tr>
+          <tr><td class="lbl">ロッカー</td><td>1人1回 10円</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- トレーニング室 -->
+    <h3 id="fee-training">トレーニング室</h3>
+    <p class="note">利用前に「トレーニング利用講習会」の受講が必須／16歳以上が対象</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>区分</th><th>対象</th><th>1時間</th><th>2時間</th><th>超過30分ごと</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl" rowspan="2">市内</td><td>一般</td><td>230円</td><td>460円</td><td>120円</td></tr>
+          <tr><td>高校生・65歳以上・障がいのある方</td><td>110円</td><td>220円</td><td>60円</td></tr>
+          <tr><td class="lbl" rowspan="2">市外</td><td>一般</td><td>340円</td><td>680円</td><td>180円</td></tr>
+          <tr><td>高校生・65歳以上・障がいのある方</td><td>170円</td><td>340円</td><td>90円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">※定員：バルドラール浦安アリーナ 65名／中央武道館 40名。<br>※障がいのある方は身体障害者手帳等の提示で使用料50%減免。</p>
+
+    <!-- 個人使用料 -->
+    <h3 id="fee-personal">個人使用料（予約不要・登録証で利用）</h3>
+    <p class="note">バルドラール浦安アリーナ・中央武道館・ブリオベッカ浦安競技場（陸上競技場）・アーチェリー場の各施設が定めた日・時間・種目に、個人で利用できます。</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>施設</th><th>区分</th><th>一般</th><th>小中高生・65歳以上・障がいのある方</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl" rowspan="2">アリーナ・武道館</td><td>市内 / 1時間</td><td>230円</td><td>110円</td></tr>
+          <tr><td>市外 / 1時間</td><td>340円</td><td>170円</td></tr>
+          <tr><td class="lbl" rowspan="2">陸上競技場</td><td>市内 / 30分</td><td>130円</td><td>60円</td></tr>
+          <tr><td>市外 / 30分</td><td>190円</td><td>90円</td></tr>
+          <tr><td class="lbl" rowspan="2">アーチェリー場</td><td>市内 / 1時間</td><td>350円</td><td>170円</td></tr>
+          <tr><td>市外 / 1時間</td><td>520円</td><td>260円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">※弓道場・アーチェリー場の個人使用は認定証をお持ちの方に限ります（<a href="tel:0473551110">総合体育館 047-355-1110</a>）。</p>
+
+    <!-- 託児料金 -->
+    <h3 id="fee-childcare">託児料金</h3>
+    <p class="note">対象：満6ヶ月〜就学前／トレーニング室・プール・教室利用中の保護者向け／事前申込制</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead>
+          <tr><th>お子様の年齢</th><th>1時間</th><th>1時間30分</th><th>2時間</th><th>2時間30分</th><th>3時間<br><small style="font-weight:normal">※中央武道館のみ</small></th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="lbl">6ヶ月〜1歳未満</td><td>600円</td><td>800円</td><td>1,000円</td><td>1,200円</td><td>1,400円</td></tr>
+          <tr><td class="lbl">1歳〜2歳未満</td><td>450円</td><td>600円</td><td>750円</td><td>900円</td><td>1,050円</td></tr>
+          <tr><td class="lbl">2歳〜就学前</td><td>300円</td><td>400円</td><td>500円</td><td>600円</td><td>700円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">※定員：6ヶ月〜1歳未満 2名／1歳〜就学前 最大6名。<br>※予約当日、予定時刻を10分経過してもお越しにならない場合はキャンセル扱いとなります。</p>
+  </section>
+</section>
+
+<!-- ====================== ⑤ FAQ ====================== -->
+<section class="page-section" data-page="faq" aria-labelledby="page-faq-title">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="#home" onclick="event.preventDefault();nav('home')">ホーム</a></li>
+      <li>よくある質問</li>
+    </ol>
+  </nav>
+  <section class="block">
+    <h2 id="page-faq-title">よくあるご質問</h2>
+    <p class="lead">カテゴリ別によくあるご質問をまとめています。見つからない場合は、ページ下部のスポーツ協会事務局（TEL 047-723-9387／平日 9:00〜17:00）までご連絡ください。</p>
+
+    <div class="faq-category">料金について</div>
+    <details class="faq-item">
+      <summary>市外に住んでいますが、料金はいくらですか？</summary>
+      <div class="answer">市外登録者の施設使用料は、市内料金の「5割増し」となります。<br>例）メインアリーナ全面 8,580円 → 12,870円<br>また、随時予約の受付は利用日の7日前からとなります。</div>
+    </details>
+    <details class="faq-item">
+      <summary>小中高生や65歳以上の割引はありますか？</summary>
+      <div class="answer">団体利用で、小中高生または65歳以上の方が参加者の過半数を占める場合、使用料が<b>50%減額</b>されます。当日、管理棟や事務所で人数確認を行います。</div>
+    </details>
+
+    <div class="faq-category">登録について</div>
+    <details class="faq-item">
+      <summary>登録は何歳から？どこで手続きできますか？</summary>
+      <div class="answer">
+        <p style="margin:0 0 8px"><b>16歳以上の方</b>が登録できます。手続きは<a href="https://k5.p-kashikan.jp/urayasu-city/" target="_blank" rel="noopener">浦安市公共施設予約システム</a>から、PC・スマートフォンで完結します（窓口での手続きは不要）。</p>
+        <p style="margin:0">画面右上のメニューをタップして「利用登録」ボタンから手続きを開始してください。</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>登録に必要な情報は？</summary>
+      <div class="answer">
+        以下の本人確認情報を入力できるよう、お手元にご用意ください。<br>
+        ・本人確認書類（住所・氏名・生年月日がわかるもの／<b>マイナンバーカード 等</b>）<br>
+        ・市内在勤の方：社員証など在勤を証明できるもの（<b>名刺は不可</b>）<br>
+        ・市内在学の方：学生証など在学を証明できるもの
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>旧システムで登録済みです。再登録は必要ですか？</summary>
+      <div class="answer">新たな利用者登録は不要です。<b>初回ログイン時</b>に利用者IDと、パスワード（旧システム登録時の<b>電話番号 ※ハイフンなし</b>）でログインし、<b>パスワードの更新</b>を行うと予約システムが利用可能になります。</div>
+    </details>
+    <details class="faq-item">
+      <summary>登録不要で使える施設は？</summary>
+      <div class="answer">以下の施設は使用者登録なしで利用できます。<br>・東野プール（屋外）<br>・バルドラール浦安アリーナ 屋内水泳プール<br>・高洲海浜公園パークゴルフ場</div>
+    </details>
+    <details class="faq-item">
+      <summary>団体登録はどの施設で必要ですか？</summary>
+      <div class="answer">
+        野球場／ソフトボール場／少年野球場／サッカー場／ラグビー場／少年サッカー場／フットサル場をご利用になる場合は、個人登録とは別に<b>団体登録</b>が必要です。使い方ガイドの<a href="#guide" onclick="event.preventDefault();nav('guide')">「団体登録について」</a>をご確認ください。
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>団体登録の最低人数は？</summary>
+      <div class="answer">
+        施設ごとに人数要件が異なります。<br>
+        ・野球場・ソフトボール場：中学生以上の方が<b>9人以上</b>（ソフトボール場は小学生9人以上でも可）<br>
+        ・少年野球場：18歳以上の代表者＋小学生以下<b>9人以上</b><br>
+        ・サッカー場・ラグビー場：小学生以上<b>11人以上</b><br>
+        ・少年サッカー場：18歳以上の代表者＋小学生以下<b>8人以上</b><br>
+        ・フットサル場：小学生以上<b>5人以上</b>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>団体のメンバーは全員、個人登録が必要ですか？</summary>
+      <div class="answer">新予約システムでは、団体構成員となる<b>中学生以下の方の使用者登録は不要</b>です。代表者と16歳以上の構成員のみ個人登録を行ってください。</div>
+    </details>
+
+    <div class="faq-category">予約について</div>
+    <details class="faq-item">
+      <summary>抽選の申込みはいつ・どこで？</summary>
+      <div class="answer">
+        予約システムにログイン後、マイページの「抽選施設一覧」から申込みます。<br>
+        ・毎月<b>1日〜10日</b>：抽選申込み受付（屋外・屋内それぞれ第3希望まで／計6件）<br>
+        ・毎月<b>13日</b>：抽選実施（システム自動）<br>
+        ・毎月<b>16日〜26日</b>：当選確認＋予約確定（マイページ「抽選申込一覧」の「確定」ボタン）<br>
+        ※期間内に確定しないと当選は自動取消になります。
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>当選確定後の支払い期限は？</summary>
+      <div class="answer">当選確定の作業を行った日から<b>10日以内</b>に支払いを済ませる必要があります。期限内に支払いがない場合、当選は自動取消となります。</div>
+    </details>
+    <details class="faq-item">
+      <summary>支払い方法は？</summary>
+      <div class="answer">マイページの「予約申込一覧」から「支払」ボタンを押し、以下の方法で支払えます。<br>・クレジットカード<br>・コンビニ（セブン／ローソン／ファミリーマート 等）<br>・PayPay<br>・現金（バルドラール浦安アリーナ・中央武道館の窓口のみ）</div>
+    </details>
+    <details class="faq-item">
+      <summary>キャンセルの還付ルールは？</summary>
+      <div class="answer">
+        ・利用日の<b>3日前まで</b>のキャンセル：使用料を還付<br>
+        ・利用日の<b>2日前・前日</b>のキャンセル：使用料の還付不可<br>
+        ※雨天等の判断は管理者が行いますので、当日のご自身での取消しは行わないでください。必ず管理棟または巡回管理人にご連絡をお願いします。
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>随時予約はいつから取れますか？</summary>
+      <div class="answer">
+        ・市内者：利用日の<b>1か月前</b>から利用日の前日まで<br>
+        ・市外者：利用日の<b>7日前</b>から利用日の前日まで<br>
+        <small>※「1か月前」とは、たとえば<b>5月15日</b>に随時予約したい場合、<b>4月15日</b>から予約できる、という意味です。</small>
+      </div>
+    </details>
+
+    <div class="faq-category">施設について</div>
+    <details class="faq-item">
+      <summary>開館時間と休館日は？</summary>
+      <div class="answer">
+        ・バルドラール浦安アリーナ：9:00〜21:00／第1・第3水曜休館（祝日の場合は開館）／年末年始休館<br>
+        ・中央武道館：9:00〜21:00／第1・第3月曜休館（祝日の場合は開館）／年末年始休館
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>子どもだけで利用できますか？</summary>
+      <div class="answer">安全管理上、小中学生だけでの利用はできません。<b>18歳以上の方の付き添い</b>が必要です。就学前のお子様の有料施設への入場は、高校生を除く18歳以上の保護者の同伴が必要です。</div>
+    </details>
+    <details class="faq-item">
+      <summary>トレーニング室を利用したいのですが？</summary>
+      <div class="answer">
+        ご利用前に、施設で開催する「<b>トレーニング利用講習会</b>」の受講が必要です。<br>
+        ・対象：<b>16歳以上</b>の方（その年度内に16歳に達する年齢を含む）<br>
+        ・定員：バルドラール浦安アリーナ65名／中央武道館40名<br>
+        ・お申込み：施設窓口または電話で受付<br>
+        ・障がい者手帳をお持ちの方は使用料が50%減免されます
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>プールの利用ルールは？（年齢制限など）</summary>
+      <div class="answer">
+        <b>屋内水泳プール</b>（バルドラール浦安アリーナ）：<br>
+        ・オムツのとれた幼児（おおむね3歳以上）からご利用可<br>
+        ・小学3年生以下：高校生を除く18歳以上の保護者と一緒に利用（保護者1名につき子2名まで）<br>
+        ・小学4年生以上：2名以上のグループでの利用が必要<br>
+        ・小中学生の17時以降：高校生を除く18歳以上の保護者と一緒に利用<br>
+        ・スイミングキャップ・水着着用必須。露出度の高い水着、Tバック等は不可<br>
+        <br>
+        <b>東野プール</b>（屋外・夏季のみ）：<br>
+        ・開場期間：7月第1土曜日〜9月第1日曜日<br>
+        ・幼児は保護者同伴<br>
+        ・撮影・飲食（軽食除く）・ベビーカー・履物の場内持込み不可
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>託児サービスはありますか？</summary>
+      <div class="answer">
+        バルドラール浦安アリーナ（総合体育館・屋内水泳プール）と中央武道館で、<b>満6ヶ月〜就学前</b>のお子様を対象に託児を行っています。<br>
+        ・対象者：トレーニング室／プール／教室を利用される保護者<br>
+        ・定員：6ヶ月以上1歳未満は2名／1歳以上就学前まで最大6名<br>
+        ・事前申込制。予約当日、予定時刻を10分経過しても受付に来られない場合はキャンセル扱いとなります<br>
+        ・開催日・時間は各施設へ直接お問い合わせください
+      </div>
+    </details>
+  </section>
+</section>
+
+<!-- ====================== ⑥ お知らせ ====================== -->
+<section class="page-section" data-page="news" aria-labelledby="page-news-title">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="#home" onclick="event.preventDefault();nav('home')">ホーム</a></li>
+      <li>お知らせ</li>
+    </ol>
+  </nav>
+  <section class="block">
+    <h2 id="page-news-title">お知らせ</h2>
+    <p class="lead">施設の休館情報・抽選スケジュール・イベント情報などをお届けします。</p>
+
+    <ul class="notice-list">
+      <li><span class="date3">2026/04/21</span><span class="tag3 alert">重要</span><span>6月分の抽選申込みは <b>5/1〜5/10</b> 受付です</span></li>
+      <li><span class="date3">2026/04/15</span><span class="tag3 event">イベント</span><span>5月開催 総合体育館 託児のご案内</span></li>
+      <li><span class="date3">2026/04/10</span><span class="tag3 info">施設</span><span>メインアリーナ 床面補修工事（6/15〜17 休館）</span></li>
+      <li><span class="date3">2026/04/01</span><span class="tag3 info">料金</span><span>支払方法にPayPay・コンビニ決済が追加されました</span></li>
+      <li><span class="date3">2026/03/20</span><span class="tag3 event">季節</span><span>東野プール 7/4(土)オープン予定</span></li>
+      <li><span class="date3">2026/03/15</span><span class="tag3 info">施設</span><span>運動公園テニスコート ネット張替完了</span></li>
+      <li><span class="date3">2026/03/01</span><span class="tag3 info">システム</span><span>公共施設予約システムの利用方法を更新しました</span></li>
+    </ul>
+  </section>
+</section>
+
+<!-- ====================== ⑦ 撮影・営利利用 ====================== -->
+<section class="page-section" data-page="commercial" aria-labelledby="page-comm-title">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="#home" onclick="event.preventDefault();nav('home')">ホーム</a></li>
+      <li>撮影・営利利用</li>
+    </ol>
+  </nav>
+  <section class="block">
+    <h2 id="page-comm-title">撮影・営利目的でのご利用について</h2>
+    <p class="lead">映画・テレビ・CM・雑誌等の撮影、物販、興行、レッスンの募集など、営利を目的とした利用は、通常の予約とは別に事前の申請が必要です。</p>
+
+    <h3>対象となる利用</h3>
+    <ul>
+      <li>映画・テレビ番組・CM・ミュージックビデオ・雑誌などの<b>撮影</b></li>
+      <li><b>物販・販売</b>を行う場合</li>
+      <li>入場料を徴収する<b>興行・イベント</b></li>
+      <li>営利目的の<b>スクール・レッスン・スポーツ教室</b>の開催</li>
+      <li>その他、営利目的と認められる利用</li>
+    </ul>
+
+    <h3>申請の流れ</h3>
+    <ol class="guide-steps">
+      <li>
+        <h3>申請内容を確認する</h3>
+        <p>撮影場所・日時・人数・目的・撮影機材・使用範囲など、事前に内容を整理してください。</p>
+      </li>
+      <li>
+        <h3>申請フォームから受付</h3>
+        <p>下記の申請フォームに必要事項を入力してください。<b>利用希望日の14日前まで</b>にお申込みください。</p>
+      </li>
+      <li>
+        <h3>スポーツ協会・施設との協議</h3>
+        <p>申請内容をもとに、スポーツ協会・施設管理者と利用可否・詳細を協議します（数日〜2週間程度）。</p>
+      </li>
+      <li>
+        <h3>使用料のお支払い・利用</h3>
+        <p>承認後、使用料をお支払いいただき、利用当日は申請者ご本人が現地にお越しください。</p>
+      </li>
+    </ol>
+
+    <h3 id="apply-form">申請フォーム</h3>
+    <p>以下のフォームから受付を行っています。入力内容を確認の上、スポーツ協会事務局より数日以内にご連絡いたします。</p>
+
+    <!--
+      実装時の切替えポイント：
+      Googleフォームの埋め込みコードを取得した場合は、以下の<form>全体を
+      <iframe src="Googleフォームの埋込URL" width="100%" height="900" frameborder="0">
+        読み込み中…
+      </iframe>
+      に差し替えてください。
+      （GoogleフォームからGASでメール通知・自動返信を行う場合はこちらが便利）
+    -->
+    <form class="embed-form" onsubmit="event.preventDefault();alert('※デモ表示です。公開時にGoogleフォームと連携させてください。');">
+      <div class="ef-head">
+        <h4>撮影・営利目的利用 申請フォーム</h4>
+        <p>利用希望日の<b>14日前まで</b>にご送信ください。<span class="required" style="color:var(--c-alert)">*</span> は必須項目です。</p>
+      </div>
+
+      <div class="ef-field">
+        <label class="q">利用目的 <span class="req">*</span></label>
+        <div class="ef-choices">
+          <label><input type="radio" name="purpose" required> 映画・テレビ・CM・MVの撮影</label>
+          <label><input type="radio" name="purpose"> 雑誌・Web媒体の撮影</label>
+          <label><input type="radio" name="purpose"> 物販・販売</label>
+          <label><input type="radio" name="purpose"> 入場料を徴収する興行・イベント</label>
+          <label><input type="radio" name="purpose"> 営利目的のスクール・レッスン</label>
+          <label><input type="radio" name="purpose"> その他</label>
+        </div>
+      </div>
+
+      <div class="ef-field">
+        <label class="q">お名前（担当者） <span class="req">*</span></label>
+        <input type="text" required placeholder="例）遠藤 健太">
+      </div>
+
+      <div class="ef-field">
+        <label class="q">会社名・団体名 <span class="req">*</span></label>
+        <input type="text" required placeholder="例）株式会社〇〇／〇〇プロダクション">
+      </div>
+
+      <div class="ef-row">
+        <div class="ef-field">
+          <label class="q">メールアドレス <span class="req">*</span></label>
+          <input type="email" required placeholder="連絡の取れるアドレス">
+        </div>
+        <div class="ef-field">
+          <label class="q">電話番号 <span class="req">*</span></label>
+          <input type="tel" required placeholder="090-0000-0000">
+        </div>
+      </div>
+
+      <div class="ef-field">
+        <label class="q">希望施設 <span class="req">*</span></label>
+        <select required>
+          <option value="">選択してください</option>
+          <option>バルドラール浦安アリーナ メインアリーナ 全面</option>
+          <option>バルドラール浦安アリーナ メインアリーナ 1/2面</option>
+          <option>バルドラール浦安アリーナ メインアリーナ 1/4面</option>
+          <option>バルドラール浦安アリーナ サブアリーナ 全面</option>
+          <option>バルドラール浦安アリーナ サブアリーナ 1/2面</option>
+          <option>その他（備考欄に記入）</option>
+        </select>
+      </div>
+
+      <div class="ef-row">
+        <div class="ef-field">
+          <label class="q">利用希望日 <span class="req">*</span></label>
+          <p class="hint">14日以上先の日付</p>
+          <input type="date" required>
+        </div>
+        <div class="ef-field">
+          <label class="q">利用時間帯 <span class="req">*</span></label>
+          <p class="hint">搬入出も含めてご記入ください</p>
+          <input type="text" required placeholder="例）9:00〜13:00（搬入出含む）">
+        </div>
+      </div>
+
+      <div class="ef-row">
+        <div class="ef-field">
+          <label class="q">入場料の徴収 <span class="req">*</span></label>
+          <div class="ef-choices">
+            <label><input type="radio" name="fee" required> 徴収しない</label>
+            <label><input type="radio" name="fee"> 徴収する</label>
+          </div>
+        </div>
+        <div class="ef-field">
+          <label class="q">参加・スタッフ人数 <span class="req">*</span></label>
+          <input type="number" required min="1" placeholder="例）20">
+        </div>
+      </div>
+
+      <div class="ef-field">
+        <label class="q">撮影機材・持ち込み備品</label>
+        <p class="hint">大型機材（カメラ・照明・クレーン等）・展示什器がある場合はご記入ください</p>
+        <textarea placeholder="例）大型カメラ3台、照明スタンド4本、発電機1台"></textarea>
+      </div>
+
+      <div class="ef-field">
+        <label class="q">利用内容の詳細・目的 <span class="req">*</span></label>
+        <p class="hint">作品名・番組名・販売内容・イベント名・告知媒体など、できるだけ具体的にご記入ください。</p>
+        <textarea required placeholder="例）ドラマ「〇〇」のアリーナシーン撮影。放送予定：〇月〇日 〇〇テレビ"></textarea>
+      </div>
+
+      <div class="ef-field">
+        <label class="q">備考・ご質問（任意）</label>
+        <textarea placeholder="その他ご相談事項があればご記入ください"></textarea>
+      </div>
+
+      <button type="submit" class="ef-submit">申請を送信する</button>
+
+      <div class="ef-foot">
+        ※ご送信いただいた個人情報は、本申請の対応目的以外には使用いたしません。<br>
+        ※内容を確認後、スポーツ協会事務局より <b>047-723-9387</b> もしくは <b>office@urayasu-spokyo.org</b> よりご連絡いたします。<br>
+        ※返信に数日〜2週間ほどお時間をいただく場合があります。
+      </div>
+    </form>
+
+    <h3>使用料（参考）</h3>
+    <p class="note">2時間あたり／メインアリーナ・サブアリーナのみ／市内登録者の料金（市外は5割増し）</p>
+    <div class="fee-scroll">
+      <table class="fee-table">
+        <thead><tr><th>施設</th><th>面積</th><th>入場料を徴収しない場合</th><th>入場料を徴収する場合</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl" rowspan="3">メインアリーナ</td><td>全面</td><td>85,800円</td><td>171,600円</td></tr>
+          <tr><td>1/2面</td><td>42,900円</td><td>85,800円</td></tr>
+          <tr><td>1/4面</td><td>21,450円</td><td>42,900円</td></tr>
+          <tr><td class="lbl" rowspan="2">サブアリーナ</td><td>全面</td><td>34,320円</td><td>68,640円</td></tr>
+          <tr><td>1/2面</td><td>17,160円</td><td>34,320円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">※メインアリーナ以外の施設・屋外施設での営利利用は、個別にご相談ください。</p>
+
+    <h3>注意事項</h3>
+    <ul>
+      <li>通常利用者の迷惑にならない範囲でご利用ください。</li>
+      <li>機材搬入・搬出の時間も利用時間に含みます。</li>
+      <li>設備の損傷・汚損が生じた場合は、別途弁償をお願いすることがあります。</li>
+      <li>撮影物に施設名・ロゴを使用する場合は、事前にご確認ください。</li>
+      <li>キャンセル・日程変更については、お早めにご連絡ください。</li>
+    </ul>
+
+    <div class="info-box">
+      <h3>お問い合わせ</h3>
+      <p>営利目的利用・撮影に関するご相談は、以下までお気軽にお問い合わせください。</p>
+      <p>一般社団法人 浦安市スポーツ協会 事務局<br>TEL <a href="tel:0477239387">047-723-9387</a>（平日 9:00〜17:00）<br>Email <a href="mailto:office@urayasu-spokyo.org">office@urayasu-spokyo.org</a></p>
+    </div>
+  </section>
+</section>
+
+
+</main>
+
+<!-- ====================== 固定CTA（モバイル） ====================== -->
+<div class="fixed-cta">
+  <a href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">予約システムに進む</a>
+</div>
+
+<!-- ====================== フッター ====================== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <p><b>一般社団法人 浦安市スポーツ協会</b></p>
+    <p>〒279-0042 千葉県浦安市猫実1-12-38</p>
+    <p>TEL 047-723-9387 / FAX 047-317-2045 / Email <a href="mailto:office@urayasu-spokyo.org">office@urayasu-spokyo.org</a></p>
+    <p>事務局営業時間：平日 9:00〜17:00</p>
+    <p style="margin-top:12px"><a href="https://urayasu-spokyo.org/" target="_blank" rel="noopener">浦安市スポーツ協会 公式サイト</a></p>
+    <hr>
+    <p class="footer-nav">
+      <a href="#home" onclick="event.preventDefault();nav('home')">ホーム</a> ｜
+      <a href="#facilities" onclick="event.preventDefault();nav('facilities')">施設一覧</a> ｜
+      <a href="#guide" onclick="event.preventDefault();nav('guide')">使い方</a> ｜
+      <a href="#fees" onclick="event.preventDefault();nav('fees')">料金表</a> ｜
+      <a href="#faq" onclick="event.preventDefault();nav('faq')">よくある質問</a> ｜
+      <a href="#news" onclick="event.preventDefault();nav('news')">お知らせ</a> ｜
+      <a href="#commercial" onclick="event.preventDefault();nav('commercial')">撮影・営利利用</a>
+    </p>
+    <p class="copy">本サイトは一般社団法人 浦安市スポーツ協会が運営する、市民向けの参考案内サイトです。<br>制度・申請に関する正式情報は<a href="https://www.city.urayasu.lg.jp/shogaigakushu/sports/shisetsu/index.html" target="_blank" rel="noopener">浦安市公式サイト</a>を、施設の最新情報は<a href="https://www.urayasu-zaidan.or.jp/taiikukan/" target="_blank" rel="noopener">うらやす財団 公式サイト</a>をご確認ください。<br>© 一般社団法人 浦安市スポーツ協会</p>
+  </div>
+</footer>
+
+<script>
+function nav(page){
+  document.querySelectorAll('.page-section').forEach(s=>s.classList.toggle('active', s.dataset.page===page));
+  document.querySelectorAll('.site-nav a[data-page]').forEach(a=>{
+    const isActive = a.dataset.page===page;
+    a.classList.toggle('active', isActive);
+    if(isActive) a.setAttribute('aria-current','page');
+    else a.removeAttribute('aria-current');
+  });
+  // モバイルメニューを閉じる
+  const menu = document.querySelector('.site-nav');
+  const btn = document.querySelector('.mobile-toggle');
+  menu.classList.remove('open');
+  if(btn) btn.setAttribute('aria-expanded','false');
+  // メイン領域へフォーカスを戻す（読み上げ向け）
+  const main = document.getElementById('main');
+  if(main){ main.setAttribute('tabindex','-1'); main.focus({preventScroll:true}); }
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function toggleMenu(btn){
+  const menu = document.querySelector('.site-nav');
+  const isOpen = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+</script>
+
+</body>
+</html>
