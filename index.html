@@ -4,6 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>浦安市 体育施設利用ガイド｜一般社団法人 浦安市スポーツ協会</title>
+
+<!-- SEO -->
+<meta name="description" content="浦安市スポーツ協会が運営する、浦安市内の体育施設（体育館・テニスコート・球技場・プール等）の予約方法・料金・施設情報を案内する市民向けガイドサイト。">
+<meta name="keywords" content="浦安市,体育施設,バルドラール浦安アリーナ,中央武道館,テニスコート,予約,浦安市スポーツ協会">
+<meta name="author" content="一般社団法人 浦安市スポーツ協会">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://kkendoh-ctrl.github.io/urayasu-sports-guide/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="浦安市 体育施設利用ガイド">
+<meta property="og:title" content="浦安市 体育施設利用ガイド｜一般社団法人 浦安市スポーツ協会">
+<meta property="og:description" content="浦安市内の体育施設（体育館・テニスコート・球技場・プール等）の予約方法・料金・施設情報を案内する市民向けガイドサイト。">
+<meta property="og:url" content="https://kkendoh-ctrl.github.io/urayasu-sports-guide/">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浦安市 体育施設利用ガイド">
+<meta name="twitter:description" content="浦安市内の体育施設の予約方法・料金・施設情報をご案内します。">
+
+<!-- 構造化データ（検索結果での見た目向上） -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"一般社団法人 浦安市スポーツ協会",
+  "alternateName":"浦安市スポーツ協会",
+  "url":"https://urayasu-spokyo.org/",
+  "email":"office@urayasu-spokyo.org",
+  "telephone":"+81-47-723-9387",
+  "address":{
+    "@type":"PostalAddress",
+    "addressCountry":"JP",
+    "addressRegion":"千葉県",
+    "addressLocality":"浦安市",
+    "streetAddress":"猫実1-12-38",
+    "postalCode":"279-0042"
+  },
+  "sameAs":["https://urayasu-spokyo.org/"]
+}
+</script>
+
+<!-- ファビコン（簡易SVG） -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230066B3'/%3E%3Ctext x='32' y='46' font-size='38' font-family='sans-serif' font-weight='700' fill='white' text-anchor='middle'%3E浦%3C/text%3E%3C/svg%3E">
 <style>
   :root{
     /* --- 浦安市サイト 基本カラー(3色 + 機能色少々) --- */
@@ -36,6 +81,12 @@
     -webkit-font-smoothing:antialiased;
     font-feature-settings:"palt";
   }
+  /* フォントサイズ切替（html要素のクラスで全体を拡大／縮小） */
+  html.font-sm{font-size:93.75%}   /* 本文 16px 相当 */
+  html.font-md{font-size:100%}      /* 本文 17px 相当（既定） */
+  html.font-lg{font-size:112.5%}    /* 本文 19px 相当 */
+  html.font-xl{font-size:125%}      /* 本文 21px 相当（高齢者向け） */
+  body{font-size:1rem}
   /* キーボードフォーカス時のアウトライン(アクセシビリティ) */
   a:focus-visible,button:focus-visible,summary:focus-visible,
   input:focus-visible,select:focus-visible,textarea:focus-visible{
@@ -91,6 +142,36 @@
 
   /* モバイルハンバーガー */
   .mobile-toggle{display:none;background:none;border:0;font-size:24px;cursor:pointer;color:var(--c-text);margin-left:auto}
+
+  /* ===== 文字サイズ切替 ===== */
+  .font-controls{
+    background:var(--c-bg-brand);border-bottom:1px solid var(--c-bd);
+    padding:6px 20px;font-size:13px;color:var(--c-sub);
+    display:flex;align-items:center;justify-content:flex-end;gap:8px;
+    max-width:100%;
+  }
+  .font-controls .fc-inner{
+    max-width:var(--max-width);margin:0 auto;width:100%;
+    display:flex;align-items:center;justify-content:flex-end;gap:8px;
+  }
+  .font-controls .fc-label{font-size:12px;color:var(--c-sub);margin-right:4px}
+  .font-controls button{
+    background:var(--c-bg);border:1px solid var(--c-bd);border-radius:2px;
+    padding:4px 12px;font-size:13px;font-weight:600;color:var(--c-text);cursor:pointer;
+    transition:border-color .1s;min-width:36px;
+  }
+  .font-controls button:hover{border-color:var(--c-brand)}
+  .font-controls button[aria-pressed="true"]{
+    background:var(--c-brand);color:#fff;border-color:var(--c-brand);
+  }
+  .font-controls button.fc-sm{font-size:11px}
+  .font-controls button.fc-md{font-size:13px}
+  .font-controls button.fc-lg{font-size:15px}
+  .font-controls button.fc-xl{font-size:17px}
+  @media (max-width:480px){
+    .font-controls{padding:5px 12px}
+    .font-controls .fc-label{display:none}
+  }
 
   /* ===== メイン ===== */
   .site-main{max-width:var(--max-width);margin:0 auto;background:var(--c-bg);min-height:600px}
@@ -457,6 +538,46 @@
   .faq-item.hidden{display:none}
   .faq-category.hidden{display:none}
 
+  /* ===== 印刷用レイアウト ===== */
+  @media print{
+    html,body{background:#fff !important;color:#000 !important;font-size:11pt;line-height:1.6}
+    .site-header,.site-nav,.mobile-toggle,.skip-link,
+    .font-controls,.hero-band,.schedule-banner,
+    .fixed-cta,.back-to-top,.preview-note,
+    .breadcrumb,.site-footer .footer-nav{display:none !important}
+    .site-main{max-width:100%;box-shadow:none;margin:0;padding:0}
+    .page-section{display:block !important;page-break-before:always}
+    .page-section:first-of-type{page-break-before:auto}
+    .hero-big{padding:0 0 12pt}
+    .hero-big h1{font-size:16pt;border-left:3pt solid #000;color:#000}
+    section.block{padding:12pt 0;break-inside:avoid}
+    section.block h2{font-size:14pt;border-bottom:1pt solid #000;color:#000}
+    section.block h3{font-size:12pt;border-left:3pt solid #000;color:#000}
+    .fcard,.three-steps .step,.info-box,.rain-card{
+      border:1pt solid #888 !important;background:#fff !important;
+      box-shadow:none !important;break-inside:avoid;
+    }
+    .fcard .ph,.ph{background:#eee !important}
+    .fcard .ph svg{fill:#000 !important;stroke:#000 !important}
+    .fcard-grid,.purpose-grid,.top-faq{break-inside:auto}
+    a{color:#000;text-decoration:underline}
+    /* 外部リンクのURLを後ろに表示 */
+    section.block a[href^="http"]::after,
+    section.block a[href^="tel:"]::after,
+    section.block a[href^="mailto:"]::after{
+      content:" (" attr(href) ")";font-size:9pt;color:#666;
+    }
+    section.block a[href^="#"]::after{content:""}
+    .fee-table{font-size:10pt}
+    .fee-table th,.fee-table td{padding:4pt 6pt;border-color:#888 !important}
+    .fee-table thead th{background:#f5f5f5 !important;color:#000 !important;border-bottom:1.5pt solid #000 !important}
+    details.faq-item{break-inside:avoid}
+    details.faq-item[open] summary::after,details.faq-item summary::after{content:""}
+    details.faq-item .answer{display:block !important}
+    /* 各ページを新しい用紙から */
+    @page{margin:16mm 14mm}
+  }
+
   /* ===== 戻る（ページトップへ）ボタン ===== */
   .back-to-top{
     position:fixed;right:18px;bottom:86px;z-index:40;
@@ -655,9 +776,15 @@
 
 <a href="#main" class="skip-link">本文へスキップ</a>
 
-<div class="preview-note">
-  これはJimdoで構築した場合の最終イメージです。上のメニューでページ切替ができます。<br>
-  一般社団法人 浦安市スポーツ協会
+<!-- 文字サイズ切替バー -->
+<div class="font-controls" role="toolbar" aria-label="文字サイズの切替">
+  <div class="fc-inner">
+    <span class="fc-label">文字サイズ</span>
+    <button type="button" class="fc-sm" onclick="setFontSize('sm')" aria-pressed="false" aria-label="小">小</button>
+    <button type="button" class="fc-md" onclick="setFontSize('md')" aria-pressed="true" aria-label="中（既定）">中</button>
+    <button type="button" class="fc-lg" onclick="setFontSize('lg')" aria-pressed="false" aria-label="大">大</button>
+    <button type="button" class="fc-xl" onclick="setFontSize('xl')" aria-pressed="false" aria-label="特大">特大</button>
+  </div>
 </div>
 
 <!-- ===== SVGアイコン定義(画面には表示されない) ===== -->
@@ -2014,6 +2141,23 @@ function toggleMenu(btn){
   const isOpen = menu.classList.toggle('open');
   btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 }
+
+/* ===== 文字サイズ切替（localStorageで保存） ===== */
+function setFontSize(size){
+  const html = document.documentElement;
+  html.classList.remove('font-sm','font-md','font-lg','font-xl');
+  html.classList.add('font-' + size);
+  try{ localStorage.setItem('urayasu-font-size', size); }catch(e){}
+  document.querySelectorAll('.font-controls button').forEach(b=>{
+    b.setAttribute('aria-pressed', b.classList.contains('fc-'+size) ? 'true' : 'false');
+  });
+}
+// 初期化：保存済みサイズを復元
+(function(){
+  let saved = 'md';
+  try{ saved = localStorage.getItem('urayasu-font-size') || 'md'; }catch(e){}
+  setFontSize(saved);
+})();
 
 /* ===== 施設フィルター（検索＋カテゴリチップ） ===== */
 (function(){
