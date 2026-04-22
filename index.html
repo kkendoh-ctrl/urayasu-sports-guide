@@ -218,13 +218,14 @@
     text-decoration:none !important;color:var(--c-text);
     display:flex;flex-direction:column;
     overflow:hidden;
-    cursor:pointer;
   }
-  .fcard:hover{
+  /* リンクとして機能するカードのみホバー効果 */
+  a.fcard{cursor:pointer}
+  a.fcard:hover{
     border-color:var(--c-brand);
     box-shadow:0 1px 3px rgba(0,0,0,.08);
   }
-  .fcard:hover h4{color:var(--c-brand)}
+  a.fcard:hover h4{color:var(--c-brand)}
 
   /* アイコンエリア:薄ブランド色 + 線画SVGアイコン */
   .fcard .ph{
@@ -661,138 +662,138 @@
   </nav>
   <section class="block">
     <h2 id="page-fac-title">施設一覧</h2>
-    <p class="lead">浦安市内の体育施設26施設をジャンル別に掲載しています。施設名をタップすると予約システムへ移動します。</p>
+    <p class="lead">浦安市内の体育施設26施設をジャンル別に掲載しています。</p>
 
     <h3>屋内施設</h3>
     <div class="fcard-grid">
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+      <div class="fcard">
         <div class="ph arena" aria-hidden="true"><svg><use href="#ico-arena"/></svg></div>
         <div class="inner">
           <h4>バルドラール浦安アリーナ（総合体育館）</h4>
           <p>舞浜2-27 / TEL 047-355-1110 / 駐車場634台<br>メイン/サブアリーナ・武道場2面・弓道場・卓球室・卓球コーナー・トレーニング室・会議室・多目的室<br>利用時間 9:00〜21:00／第1・第3水曜休館</p>
-          <div class="cta">予約する</div>
+          
         </div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+      </div>
+      <div class="fcard">
         <div class="ph budo" aria-hidden="true"><svg><use href="#ico-budo"/></svg></div>
         <div class="inner">
           <h4>中央武道館</h4>
           <p>猫実1-18-15 / TEL 047-380-2100 / 駐車場20台<br>武道場2面／トレーニング室／会議室<br>利用時間 9:00〜21:00／第1・第3月曜休館</p>
-          <div class="cta">予約する</div>
+          
         </div>
-      </a>
+      </div>
     </div>
 
     <h3>テニスコート</h3>
     <div class="fcard-grid">
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+      <div class="fcard">
         <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
-        <div class="inner"><h4>運動公園テニスコート</h4><p>舞浜2-27 / 砂入り人工芝8面<br>TEL 047-350-9829 / 夜間照明あり<br>駐車場634台</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>運動公園テニスコート</h4><p>舞浜2-27 / 砂入り人工芝8面<br>TEL 047-350-9829 / 夜間照明あり<br>駐車場634台</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
-        <div class="inner"><h4>中央公園テニスコート</h4><p>富岡4-25 / 砂入り人工芝6面<br>TEL 047-351-9242 / 夜間照明あり<br>駐車場18台</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>中央公園テニスコート</h4><p>富岡4-25 / 砂入り人工芝6面<br>TEL 047-351-9242 / 夜間照明あり<br>駐車場18台</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
-        <div class="inner"><h4>高洲テニスコート</h4><p>高洲2-7 / 砂入り人工芝4面<br>TEL 047-350-0485 / 夜間照明あり<br>駐車場20台</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>高洲テニスコート</h4><p>高洲2-7 / 砂入り人工芝4面<br>TEL 047-350-0485 / 夜間照明あり<br>駐車場20台</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
-        <div class="inner"><h4>美浜テニスコート</h4><p>美浜5-10 / 砂入り人工芝2面<br>駐車場なし</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>美浜テニスコート</h4><p>美浜5-10 / 砂入り人工芝2面<br>駐車場なし</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
-        <div class="inner"><h4>美浜運動公園テニスコート</h4><p>入船5-46 / 砂入り人工芝2面<br>駐車場なし</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>美浜運動公園テニスコート</h4><p>入船5-46 / 砂入り人工芝2面<br>駐車場なし</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
-        <div class="inner"><h4>舞浜テニスコート</h4><p>舞浜2-1 / 砂入り人工芝2面<br>駐車場なし</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>舞浜テニスコート</h4><p>舞浜2-1 / 砂入り人工芝2面<br>駐車場なし</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
-        <div class="inner"><h4>高洲中央公園テニスコート</h4><p>高洲4-1 / 砂入り人工芝2面<br>TEL 047-353-7778 / 夜間照明あり<br>駐車場69台</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>高洲中央公園テニスコート</h4><p>高洲4-1 / 砂入り人工芝2面<br>TEL 047-353-7778 / 夜間照明あり<br>駐車場69台</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph tennis" aria-hidden="true"><svg><use href="#ico-tennis"/></svg></div>
-        <div class="inner"><h4>高洲南テニスコート</h4><p>港84-1 / ハードコート2面<br>駐車場10台</p><div class="cta">予約する</div></div>
-      </a>
+        <div class="inner"><h4>高洲南テニスコート</h4><p>港84-1 / ハードコート2面<br>駐車場10台</p></div>
+      </div>
     </div>
 
     <h3>野球・ソフトボール・少年野球</h3>
     <div class="fcard-grid">
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+      <div class="fcard">
         <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
-        <div class="inner"><h4>運動公園野球場</h4><p>舞浜2-27 / 1面 / 夜間照明あり<br>TEL 047-350-9829</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>運動公園野球場</h4><p>舞浜2-27 / 1面 / 夜間照明あり<br>TEL 047-350-9829</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
-        <div class="inner"><h4>運動公園軟式野球場</h4><p>舞浜2-27 / 2面<br>TEL 047-350-9829</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>運動公園軟式野球場</h4><p>舞浜2-27 / 2面<br>TEL 047-350-9829</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
-        <div class="inner"><h4>KG軟式野球場（中央公園）</h4><p>富岡4-25 / 1面 / 夜間照明あり<br>TEL 047-351-9242<br>※12・1・2月は閉鎖</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>KG軟式野球場（中央公園）</h4><p>富岡4-25 / 1面 / 夜間照明あり<br>TEL 047-351-9242<br>※12・1・2月は閉鎖</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
-        <div class="inner"><h4>今川球技場</h4><p>今川3-12 / ソフトボール2面<br>※1月は閉鎖</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>今川球技場</h4><p>今川3-12 / ソフトボール2面<br>※1月は閉鎖</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
-        <div class="inner"><h4>大三角公園少年野球場</h4><p>舞浜3-37 / 少年野球1面<br>駐車場あり(約30台)</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>大三角公園少年野球場</h4><p>舞浜3-37 / 少年野球1面<br>駐車場あり(約30台)</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
-        <div class="inner"><h4>J:COM浦安少年野球場</h4><p>高洲4-1 / 少年野球1面<br>TEL 047-353-7778<br>（高洲中央公園少年野球場）</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>J:COM浦安少年野球場</h4><p>高洲4-1 / 少年野球1面<br>TEL 047-353-7778<br>（高洲中央公園少年野球場）</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph baseball" aria-hidden="true"><svg><use href="#ico-baseball"/></svg></div>
-        <div class="inner"><h4>美浜運動公園少年野球場</h4><p>入船5-46 / 少年野球1面<br>駐車場なし</p><div class="cta">予約する</div></div>
-      </a>
+        <div class="inner"><h4>美浜運動公園少年野球場</h4><p>入船5-46 / 少年野球1面<br>駐車場なし</p></div>
+      </div>
     </div>
 
     <h3>サッカー・フットサル・陸上・アーチェリー</h3>
     <div class="fcard-grid">
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+      <div class="fcard">
         <div class="ph soccer" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
-        <div class="inner"><h4>ブリオベッカ浦安競技場</h4><p>舞浜2-27 / 陸上・サッカー・ラグビー<br>TEL 047-350-9830 / 夜間照明あり<br>（運動公園陸上競技場）</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>ブリオベッカ浦安競技場</h4><p>舞浜2-27 / 陸上・サッカー・ラグビー<br>TEL 047-350-9830 / 夜間照明あり<br>（運動公園陸上競技場）</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph soccer" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
-        <div class="inner"><h4>運動公園スポーツコート</h4><p>舞浜2-27 / 人工芝フットサル2面<br>TEL 047-350-9829 / 夜間照明あり</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>運動公園スポーツコート</h4><p>舞浜2-27 / 人工芝フットサル2面<br>TEL 047-350-9829 / 夜間照明あり</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph soccer" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
-        <div class="inner"><h4>ブリオベッカフィールド明海</h4><p>明海2-1 / 人工芝フットサル1面＋人工芝少年サッカー1面<br>TEL 047-350-8026 / 夜間照明あり<br>（明海球技場）</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>ブリオベッカフィールド明海</h4><p>明海2-1 / 人工芝フットサル1面＋人工芝少年サッカー1面<br>TEL 047-350-8026 / 夜間照明あり<br>（明海球技場）</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph soccer" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
-        <div class="inner"><h4>総合公園球技場</h4><p>明海7-2 / ラグビー兼サッカー 1面<br>TEL 047-353-2867 / 夜間照明あり</p><div class="cta">予約する</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>総合公園球技場</h4><p>明海7-2 / ラグビー兼サッカー 1面<br>TEL 047-353-2867 / 夜間照明あり</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph soccer" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
-        <div class="inner"><h4>運動公園アーチェリー場</h4><p>舞浜2-27 / アーチェリー・弓道（遠的）<br>TEL 047-350-9830 / 夜間照明あり<br>（ブリオベッカ浦安競技場内）</p><div class="cta">予約する</div></div>
-      </a>
+        <div class="inner"><h4>運動公園アーチェリー場</h4><p>舞浜2-27 / アーチェリー・弓道（遠的）<br>TEL 047-350-9830 / 夜間照明あり<br>（ブリオベッカ浦安競技場内）</p></div>
+      </div>
     </div>
 
     <h3>プール・その他</h3>
     <div class="fcard-grid">
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+      <div class="fcard">
         <div class="ph pool" aria-hidden="true"><svg><use href="#ico-pool"/></svg></div>
-        <div class="inner"><h4>バルドラール浦安アリーナ 屋内水泳プール</h4><p>舞浜2-27 / TEL 047-304-0030 / 駐車場634台<br>25m公認プール・多目的プール・健康プール・リハビリプール・キッズスポーツルーム<br>通年営業／登録不要／第1・第3水曜休館</p><div class="cta">施設情報</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>バルドラール浦安アリーナ 屋内水泳プール</h4><p>舞浜2-27 / TEL 047-304-0030 / 駐車場634台<br>25m公認プール・多目的プール・健康プール・リハビリプール・キッズスポーツルーム<br>通年営業／登録不要／第1・第3水曜休館</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph pool" aria-hidden="true"><svg><use href="#ico-sun"/></svg></div>
-        <div class="inner"><h4>東野プール（屋外）</h4><p>東野2-18-1 / TEL 047-352-6891（開場期間のみ）<br>競泳プール・子供プール・ちびっ子プール・流水プール<br>開場期間：7月第1土曜〜9月第1日曜<br>9:00〜17:00（最終入場16:00）／登録不要</p><div class="cta">施設情報</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>東野プール（屋外）</h4><p>東野2-18-1 / TEL 047-352-6891（開場期間のみ）<br>競泳プール・子供プール・ちびっ子プール・流水プール<br>開場期間：7月第1土曜〜9月第1日曜<br>9:00〜17:00（最終入場16:00）／登録不要</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph pg" aria-hidden="true"><svg><use href="#ico-pg"/></svg></div>
-        <div class="inner"><h4>高洲海浜公園パークゴルフ場</h4><p>高洲9-18 / TEL 047-382-0382 / 駐車場152台<br>27ホール／登録不要<br>火曜休場<br>4・5・10・11・3月 9:00〜17:00／6〜9月 9:00〜18:00／12〜2月 9:00〜16:00</p><div class="cta">施設情報</div></div>
-      </a>
-      <a class="fcard" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">
+        <div class="inner"><h4>高洲海浜公園パークゴルフ場</h4><p>高洲9-18 / TEL 047-382-0382 / 駐車場152台<br>27ホール／登録不要<br>火曜休場<br>4・5・10・11・3月 9:00〜17:00／6〜9月 9:00〜18:00／12〜2月 9:00〜16:00</p></div>
+      </div>
+      <div class="fcard">
         <div class="ph sk" aria-hidden="true"><svg><use href="#ico-sk"/></svg></div>
-        <div class="inner"><h4>運動公園スケートボード場</h4><p>舞浜2-27 / TEL 047-350-9829 / 駐車場634台<br>通常 9:00〜17:00<br>5〜8月 9:00〜19:00（土日祝 7:00〜19:00）</p><div class="cta">施設情報</div></div>
-      </a>
+        <div class="inner"><h4>運動公園スケートボード場</h4><p>舞浜2-27 / TEL 047-350-9829 / 駐車場634台<br>通常 9:00〜17:00<br>5〜8月 9:00〜19:00（土日祝 7:00〜19:00）</p></div>
+      </div>
     </div>
   </section>
 </section>
