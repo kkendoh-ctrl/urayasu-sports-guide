@@ -404,6 +404,76 @@
     .embed-form .ef-row{grid-template-columns:1fr}
   }
 
+  /* ===== ページ読み込み時の静かなフェードイン ===== */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .page-section.active>*{animation:fadeUp .25s ease-out both}
+  @media (prefers-reduced-motion:reduce){
+    .page-section.active>*{animation:none}
+  }
+
+  /* ===== スクロール時のヘッダー影 ===== */
+  .site-header.is-scrolled{box-shadow:0 1px 4px rgba(0,0,0,.06)}
+
+  /* ===== 施設フィルター検索 ===== */
+  .fac-filter{
+    background:var(--c-bg);border:1px solid var(--c-bd);border-radius:4px;
+    padding:14px 18px;margin-bottom:24px;
+  }
+  .fac-filter label{
+    display:block;font-size:13px;font-weight:700;color:var(--c-text);margin-bottom:6px;
+  }
+  .fac-filter input[type="search"]{
+    width:100%;padding:10px 14px;border:1px solid var(--c-bd);border-radius:2px;
+    font-size:15px;font-family:inherit;
+  }
+  .fac-filter input[type="search"]:focus{outline:none;border-color:var(--c-brand);box-shadow:0 0 0 2px rgba(0,102,179,.15)}
+  .fac-filter .chips{
+    display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;
+  }
+  .fac-filter .chip{
+    background:var(--c-bg);border:1px solid var(--c-bd);color:var(--c-text);
+    padding:6px 14px;border-radius:16px;font-size:13px;font-weight:600;
+    cursor:pointer;transition:all .12s;
+  }
+  .fac-filter .chip:hover{border-color:var(--c-brand)}
+  .fac-filter .chip.active{background:var(--c-brand);color:#fff;border-color:var(--c-brand)}
+  .fac-filter .result-count{
+    margin-top:10px;font-size:13px;color:var(--c-sub);
+  }
+  .fcard.hidden{display:none}
+  .fcat-empty{display:none;padding:12px 0 4px;font-size:14px;color:var(--c-sub)}
+
+  /* ===== FAQ 検索 ===== */
+  .faq-search{
+    background:var(--c-bg);border:1px solid var(--c-bd);border-radius:4px;
+    padding:14px 18px;margin-bottom:20px;
+  }
+  .faq-search input{
+    width:100%;padding:10px 14px;border:1px solid var(--c-bd);border-radius:2px;
+    font-size:15px;font-family:inherit;
+  }
+  .faq-search input:focus{outline:none;border-color:var(--c-brand);box-shadow:0 0 0 2px rgba(0,102,179,.15)}
+  .faq-search .status{margin-top:8px;font-size:13px;color:var(--c-sub)}
+  .faq-item.hidden{display:none}
+  .faq-category.hidden{display:none}
+
+  /* ===== 戻る（ページトップへ）ボタン ===== */
+  .back-to-top{
+    position:fixed;right:18px;bottom:86px;z-index:40;
+    width:44px;height:44px;border-radius:50%;
+    background:var(--c-bg);color:var(--c-brand);
+    border:1px solid var(--c-bd);
+    display:none;align-items:center;justify-content:center;cursor:pointer;
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
+    font-size:18px;font-weight:700;
+    transition:border-color .12s,color .12s,transform .12s;
+  }
+  .back-to-top:hover{border-color:var(--c-brand);transform:translateY(-2px)}
+  .back-to-top.show{display:flex}
+  @media (min-width:641px){
+    .back-to-top{bottom:24px}
+  }
+
   /* ===== 抽選スケジュール 動的バナー ===== */
   .schedule-banner{
     max-width:var(--max-width);margin:0 auto;
@@ -809,6 +879,22 @@
   <section class="block">
     <h2 id="page-fac-title">施設一覧</h2>
     <p class="lead">浦安市内の体育施設26施設をジャンル別に掲載しています。</p>
+
+    <!-- 施設フィルター -->
+    <div class="fac-filter" role="search">
+      <label for="facSearch">施設名・エリアで検索</label>
+      <input id="facSearch" type="search" placeholder="例：テニス／舞浜／夜間照明" aria-label="施設検索">
+      <div class="chips" role="group" aria-label="カテゴリで絞込み">
+        <button type="button" class="chip active" data-cat="all">すべて</button>
+        <button type="button" class="chip" data-cat="arena">屋内</button>
+        <button type="button" class="chip" data-cat="tennis">テニス</button>
+        <button type="button" class="chip" data-cat="baseball">野球</button>
+        <button type="button" class="chip" data-cat="soccer">サッカー系</button>
+        <button type="button" class="chip" data-cat="pool">プール</button>
+        <button type="button" class="chip" data-cat="pg">その他</button>
+      </div>
+      <div class="result-count" id="facCount">全26施設</div>
+    </div>
 
     <h3>屋内施設</h3>
     <div class="fcard-grid">
@@ -1452,6 +1538,12 @@
     <h2 id="page-faq-title">よくあるご質問</h2>
     <p class="lead">カテゴリ別によくあるご質問をまとめています。見つからない場合は、ページ下部のスポーツ協会事務局（TEL 047-723-9387／平日 9:00〜17:00）までご連絡ください。</p>
 
+    <!-- FAQ検索 -->
+    <div class="faq-search" role="search">
+      <input id="faqSearch" type="search" placeholder="質問や回答に含まれる言葉で検索（例：抽選・料金・キャンセル）" aria-label="FAQ検索">
+      <div class="status" id="faqStatus" role="status" aria-live="polite"></div>
+    </div>
+
     <div class="faq-category">料金について</div>
     <details class="faq-item">
       <summary>市外に住んでいますが、料金はいくらですか？</summary>
@@ -1819,6 +1911,9 @@
   <a href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">予約システムに進む</a>
 </div>
 
+<!-- ページトップへ戻るボタン -->
+<button id="backToTop" class="back-to-top" aria-label="ページトップへ戻る" title="ページトップへ戻る">↑</button>
+
 <!-- ====================== フッター ====================== -->
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
@@ -1919,6 +2014,129 @@ function toggleMenu(btn){
   const isOpen = menu.classList.toggle('open');
   btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 }
+
+/* ===== 施設フィルター（検索＋カテゴリチップ） ===== */
+(function(){
+  const search = document.getElementById('facSearch');
+  const count = document.getElementById('facCount');
+  const chips = document.querySelectorAll('.fac-filter .chip');
+  if(!search) return;
+
+  // カテゴリ判定：.ph arena / tennis / baseball / soccer / pool / pg / sk / budo
+  const catMap = {
+    arena:['arena','budo'],
+    tennis:['tennis'],
+    baseball:['baseball'],
+    soccer:['soccer'],
+    pool:['pool'],
+    pg:['pg','sk']
+  };
+
+  let currentCat = 'all';
+
+  function apply(){
+    const q = (search.value || '').trim().toLowerCase();
+    const targetPage = document.querySelector('.page-section[data-page="facilities"]');
+    if(!targetPage) return;
+    const cards = targetPage.querySelectorAll('.fcard');
+    let visible = 0;
+    cards.forEach(card=>{
+      const ph = card.querySelector('.ph');
+      const phCats = ph ? Array.from(ph.classList).filter(c=>c!=='ph') : [];
+      const text = (card.textContent || '').toLowerCase();
+      const catOK = currentCat === 'all'
+        || (catMap[currentCat] && catMap[currentCat].some(c => phCats.includes(c)));
+      const qOK = q === '' || text.includes(q);
+      const show = catOK && qOK;
+      card.classList.toggle('hidden', !show);
+      if(show) visible++;
+    });
+    // カテゴリ見出しも、そのジャンル内に該当ゼロなら隠す
+    targetPage.querySelectorAll('section.block > h3').forEach(h=>{
+      let next = h.nextElementSibling;
+      let any = false;
+      while(next && next.classList && !next.matches('h3')){
+        if(next.classList.contains('fcard-grid')){
+          any = Array.from(next.querySelectorAll('.fcard')).some(c=>!c.classList.contains('hidden'));
+          break;
+        }
+        next = next.nextElementSibling;
+      }
+      h.style.display = any ? '' : 'none';
+      if(next && next.classList && next.classList.contains('fcard-grid')){
+        next.style.display = any ? '' : 'none';
+      }
+    });
+    if(count){
+      count.textContent = visible === 0 ? '該当する施設が見つかりません' : `${visible}件表示中`;
+    }
+  }
+
+  search.addEventListener('input', apply);
+  chips.forEach(c=>{
+    c.addEventListener('click', ()=>{
+      chips.forEach(x=>x.classList.remove('active'));
+      c.classList.add('active');
+      currentCat = c.dataset.cat;
+      apply();
+    });
+  });
+})();
+
+/* ===== FAQ検索 ===== */
+(function(){
+  const input = document.getElementById('faqSearch');
+  const status = document.getElementById('faqStatus');
+  if(!input) return;
+  const page = document.querySelector('.page-section[data-page="faq"]');
+  if(!page) return;
+  const items = page.querySelectorAll('.faq-item');
+  const cats = page.querySelectorAll('.faq-category');
+
+  input.addEventListener('input', ()=>{
+    const q = input.value.trim().toLowerCase();
+    let hit = 0;
+    items.forEach(it=>{
+      const text = it.textContent.toLowerCase();
+      const show = q === '' || text.includes(q);
+      it.classList.toggle('hidden', !show);
+      if(show) hit++;
+    });
+    // カテゴリラベル：直後〜次のカテゴリラベルまでに該当があれば表示
+    cats.forEach((c,i)=>{
+      let n = c.nextElementSibling;
+      let any = false;
+      while(n && !n.classList.contains('faq-category')){
+        if(n.classList && n.classList.contains('faq-item') && !n.classList.contains('hidden')){
+          any = true;break;
+        }
+        n = n.nextElementSibling;
+      }
+      c.classList.toggle('hidden', !any);
+    });
+    if(status){
+      status.textContent = q === '' ? '' : (hit === 0 ? '該当する質問が見つかりません' : `${hit}件ヒット`);
+    }
+  });
+})();
+
+/* ===== ページトップへ戻るボタン + ヘッダースクロール状態 ===== */
+(function(){
+  const btn = document.getElementById('backToTop');
+  const header = document.querySelector('.site-header');
+  function onScroll(){
+    const y = window.scrollY || document.documentElement.scrollTop;
+    if(btn) btn.classList.toggle('show', y > 400);
+    if(header) header.classList.toggle('is-scrolled', y > 2);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  if(btn){
+    btn.addEventListener('click', ()=>{
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+})();
 </script>
 
 </body>
