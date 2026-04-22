@@ -1233,7 +1233,7 @@
   <!-- 屋外施設 本日の利用可否ボード -->
   <section class="block">
     <h2>本日の屋外施設 利用可否</h2>
-    <p class="lead">各施設の管理人による雨天・グラウンド状況の判断結果です。急な中止などは施設から直接ご連絡します。</p>
+    <p class="lead">各施設の管理人による雨天・グラウンド状況の判断結果です。急な天候不順などの際は、施設または巡回スタッフへ直接ご連絡ください。</p>
 
     <div class="status-board" aria-live="polite">
       <div class="status-board-head">
@@ -1306,9 +1306,8 @@
     </div>
 
     <p class="note" style="margin-top:10px">
-      <b>本ボードについて</b>：各施設の管理人（管理棟がない施設は巡回スタッフ）の判断を、事務局が取りまとめて更新しています。<br>
-      朝8:30・12:00・15:00の1日3回を目安に更新予定。急な変化があった場合は随時更新します。<br>
-      緊急の中止連絡は施設から電話・メールで予約者へ直接ご連絡します。
+      <b>本ボードについて</b>：各施設の管理人（管理棟がない施設は巡回スタッフ）の判断を表示しています。<br>
+      朝8:30・12:00・15:00の1日3回を目安に更新される予定です。天候の急変時などは、施設または巡回スタッフへ直接ご連絡ください。
     </p>
   </section>
 
@@ -1838,55 +1837,6 @@
     <h2 id="page-fees-title">施設使用料</h2>
     <p class="lead">浦安市内の体育施設の使用料を掲載しています。<b>市外登録者は市内料金の5割増し</b>となります。</p>
     <p class="note">※最新の料金は<a href="https://www.urayasu-zaidan.or.jp/taiikukan/1002165.html" target="_blank" rel="noopener">うらやす財団 公式サイト</a>で必ずご確認ください。</p>
-
-    <!-- 料金シミュレーター -->
-    <div class="fee-sim">
-      <h4>💰 料金シミュレーター</h4>
-      <p class="fs-lead">よく使う組み合わせをかんたんに計算できます（主要施設のみ）。</p>
-      <div class="fs-row">
-        <label for="simFac">施設・面積</label>
-        <select id="simFac">
-          <option value="8580,非営利・入場料なし">メインアリーナ 全面（8,580円）</option>
-          <option value="4290,非営利・入場料なし">メインアリーナ 1/2面（4,290円）</option>
-          <option value="2150,非営利・入場料なし">メインアリーナ 1/4面（2,150円）</option>
-          <option value="3430,非営利・入場料なし">サブアリーナ 全面（3,430円）</option>
-          <option value="1720,非営利・入場料なし">サブアリーナ 1/2面（1,720円）</option>
-          <option value="1710,非営利・入場料なし">第一・第二武道場（1,710円）</option>
-          <option value="1080,非営利・入場料なし">卓球室（1,080円）</option>
-          <option value="720,非営利・入場料なし">テニスコート 1面（720円）</option>
-          <option value="2470,非営利・入場料なし">軟式野球場・ソフトボール場（2,470円）</option>
-          <option value="1650,非営利・入場料なし">フットサル場・スポーツコート（1,650円）</option>
-          <option value="7750,非営利・入場料なし">運動公園野球場（7,750円）</option>
-        </select>
-        <label for="simCat">利用区分</label>
-        <select id="simCat">
-          <option value="1">市内・一般</option>
-          <option value="0.5">市内・小中高生/65歳以上</option>
-          <option value="1.5">市外・一般</option>
-          <option value="0.75">市外・小中高生/65歳以上</option>
-        </select>
-      </div>
-      <div class="fs-row">
-        <label for="simSlots">利用コマ数（1コマ=2時間）</label>
-        <input id="simSlots" type="number" min="1" max="10" value="1">
-        <label for="simChildcareAge">託児（任意）</label>
-        <select id="simChildcareAge">
-          <option value="0">利用しない</option>
-          <option value="600,1">6ヶ月〜1歳未満（1時間 600円）</option>
-          <option value="1000,2">6ヶ月〜1歳未満（2時間 1,000円）</option>
-          <option value="450,1">1歳〜2歳未満（1時間 450円）</option>
-          <option value="750,2">1歳〜2歳未満（2時間 750円）</option>
-          <option value="300,1">2歳〜就学前（1時間 300円）</option>
-          <option value="500,2">2歳〜就学前（2時間 500円）</option>
-        </select>
-      </div>
-      <div class="fs-result">
-        <span class="fs-label">合計金額（目安）</span>
-        <span class="fs-total" id="simTotal">¥0</span>
-      </div>
-      <p class="fs-breakdown" id="simBreakdown"></p>
-      <p class="note" style="margin-top:14px">※ 概算です。入場料徴収・営利目的・附属器具・照明・各施設の特例などは含まれません。実際の金額は予約システムでご確認ください。</p>
-    </div>
 
     <!-- 目次 -->
     <div class="info-box">
@@ -3262,48 +3212,6 @@ function searchResultClick(e, page, anchor){
   });
 })();
 
-/* ===== 料金シミュレーター ===== */
-(function(){
-  const simFac = document.getElementById('simFac');
-  if(!simFac) return;
-  const simCat = document.getElementById('simCat');
-  const simSlots = document.getElementById('simSlots');
-  const simChildcare = document.getElementById('simChildcareAge');
-  const totalEl = document.getElementById('simTotal');
-  const breakdownEl = document.getElementById('simBreakdown');
-
-  function calc(){
-    const [basePrice, baseDesc] = simFac.value.split(',');
-    const catMul = parseFloat(simCat.value);
-    const slots = Math.max(1, parseInt(simSlots.value) || 1);
-    const facTotal = Math.round(parseInt(basePrice) * catMul) * slots;
-
-    let childcareTotal = 0;
-    let childcareLabel = '';
-    if(simChildcare.value !== '0'){
-      const [cPrice, cHours] = simChildcare.value.split(',');
-      childcareTotal = parseInt(cPrice);
-      const opt = simChildcare.options[simChildcare.selectedIndex].text.replace(/（.*）/, '').trim();
-      childcareLabel = opt;
-    }
-
-    const total = facTotal + childcareTotal;
-    totalEl.textContent = '¥' + total.toLocaleString();
-
-    const catText = simCat.options[simCat.selectedIndex].text;
-    const facText = simFac.options[simFac.selectedIndex].text.replace(/（.*）/, '').trim();
-    let breakdown = `${facText}：¥${parseInt(basePrice).toLocaleString()} × ${catText}の係数${catMul} × ${slots}コマ = ¥${facTotal.toLocaleString()}`;
-    if(childcareTotal){
-      breakdown += `<br>託児（${childcareLabel}）：¥${childcareTotal.toLocaleString()}`;
-    }
-    breakdownEl.innerHTML = breakdown;
-  }
-  [simFac, simCat, simSlots, simChildcare].forEach(el=>{
-    el.addEventListener('input', calc);
-    el.addEventListener('change', calc);
-  });
-  calc();
-})();
 
 /* ===== ページ内目次（TOC）の自動生成 ===== */
 function renderTOC(page){
