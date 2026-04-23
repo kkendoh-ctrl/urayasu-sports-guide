@@ -857,6 +857,90 @@
   .purpose-card .pc-title{font-size:15px;font-weight:700;color:var(--c-text);line-height:1.5}
   .purpose-card .pc-desc{font-size:13px;color:var(--c-sub);line-height:1.6}
 
+  /* ===== 翌日警報バナー ===== */
+  .next-day-warning{
+    background:#FFEBEE;border:1px solid #C62828;border-left:5px solid #C62828;
+    border-radius:4px;padding:14px 18px;margin:0 0 16px;
+  }
+  .next-day-warning h4{
+    margin:0 0 6px;font-size:15px;font-weight:700;color:#C62828;padding:0;border:0;
+  }
+  .next-day-warning p{margin:0;font-size:14px;line-height:1.7;color:var(--c-text)}
+
+  /* ===== コマ別マトリクス ===== */
+  .slot-table-wrap{overflow-x:auto;border:1px solid var(--c-bd);border-radius:4px}
+  .slot-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--c-bg);min-width:560px}
+  .slot-table th,.slot-table td{
+    border:1px solid var(--c-bg-soft);padding:6px 4px;text-align:center;vertical-align:middle;
+  }
+  .slot-table thead th{
+    background:var(--c-bg-soft);font-size:11px;color:var(--c-sub);font-weight:600;padding:6px 4px;
+  }
+  .slot-table thead th.col-name{text-align:left;padding-left:14px;min-width:180px}
+  .slot-table tbody td.col-name{
+    text-align:left;padding-left:14px;font-weight:600;font-size:13px;
+  }
+  .slot-table tbody td.col-name small{display:block;color:var(--c-sub);font-weight:normal;font-size:11px}
+  .slot-table tbody td.col-tel{text-align:left;font-size:12px;white-space:nowrap;padding-left:8px}
+  .slot-table tbody td.col-tel a{color:var(--c-brand);text-decoration:none;font-weight:600}
+  .slot-table tbody tr.area-header td{
+    background:var(--c-bg-brand);text-align:left;padding:6px 14px;
+    font-weight:700;color:var(--c-brand);font-size:12px;
+  }
+  .slot-cell{font-weight:700;white-space:nowrap;line-height:1.3}
+  .slot-cell.ok{color:#1B5E20;background:#E8F5E9}
+  .slot-cell.warn{color:#E65100;background:#FFF8E1}
+  .slot-cell.ng{color:#C62828;background:#FFEBEE}
+  .slot-cell.closed{color:var(--c-sub);background:var(--c-bg-soft)}
+  .slot-cell .phase{display:block;font-size:9px;font-weight:600;letter-spacing:.04em;color:inherit;opacity:.75}
+  .slot-cell.phase-done{opacity:.55}
+  .slot-cell.phase-now{box-shadow:inset 0 0 0 2px currentColor}
+  .slot-cell.phase-lock::after{content:" 🔒";font-size:10px}
+  .slot-cell.phase-forecast{background-image:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(0,0,0,.04) 4px,rgba(0,0,0,.04) 8px)}
+
+  .slot-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--c-sub);margin:10px 0 0}
+  .slot-legend span{display:inline-flex;align-items:center;gap:4px}
+  .slot-legend .lg-box{display:inline-block;width:14px;height:14px;border-radius:2px;border:1px solid var(--c-bd)}
+
+  /* ===== 免責事項 ===== */
+  .disclaimer{
+    background:var(--c-bg-soft);border:1px solid var(--c-bd);border-radius:4px;
+    padding:16px 20px;margin:16px 0 0;font-size:13px;line-height:1.8;color:var(--c-text);
+  }
+  .disclaimer h4{
+    margin:0 0 10px;font-size:14px;font-weight:700;color:var(--c-text);padding:0;border:0;
+  }
+  .disclaimer ol{margin:0;padding-left:1.4em}
+  .disclaimer li{margin-bottom:8px}
+  .disclaimer .author{text-align:right;margin-top:10px;font-size:12px;color:var(--c-sub);font-weight:600}
+
+  /* ===== デバッグパネル（運用確認用・本番運用時は削除） ===== */
+  .debug-panel{
+    position:fixed;bottom:80px;left:24px;z-index:50;
+    background:#222;color:#fff;border-radius:8px;font-size:12px;
+    font-family:ui-monospace,monospace;max-width:300px;
+    box-shadow:0 4px 16px rgba(0,0,0,.3);
+  }
+  .debug-panel .dbg-toggle{
+    background:#222;color:#FFB300;border:0;padding:8px 12px;width:100%;text-align:left;
+    cursor:pointer;font-family:inherit;font-size:12px;border-radius:8px;
+  }
+  .debug-panel .dbg-toggle::before{content:"🔧 ";margin-right:4px}
+  .debug-panel .dbg-body{display:none;padding:12px;border-top:1px solid #444}
+  .debug-panel.open .dbg-body{display:block}
+  .debug-panel .dbg-body label{display:block;margin-bottom:8px;cursor:pointer;line-height:1.6}
+  .debug-panel .dbg-body input{margin-right:6px;vertical-align:middle}
+  .debug-panel .dbg-body select{
+    background:#333;color:#fff;border:1px solid #444;padding:4px 6px;
+    font-family:inherit;font-size:11px;border-radius:3px;width:100%;margin-top:4px;
+  }
+  .debug-panel .dbg-body button{
+    background:#FFB300;color:#222;border:0;padding:6px 12px;border-radius:3px;
+    cursor:pointer;font-size:11px;margin-top:6px;font-family:inherit;font-weight:700;
+  }
+  .debug-panel .dbg-note{font-size:10px;color:#999;margin-top:8px;line-height:1.5}
+  @media print{.debug-panel{display:none}}
+
   /* ===== 屋外施設 本日の利用可否ボード ===== */
   .status-board{
     background:var(--c-bg);border:1px solid var(--c-bd);border-radius:4px;
@@ -1197,82 +1281,45 @@
     <p style="text-align:right;margin:8px 0 0"><a href="#news" onclick="event.preventDefault();nav('news')">お知らせ一覧を見る</a></p>
 
     <h3>本日の屋外施設 利用可否</h3>
-    <p>各施設の管理人による雨天・グラウンド状況の判断結果です。急な天候不順などの際は、施設または巡回スタッフへ直接ご連絡ください。</p>
+    <p>各施設の利用可否を、気象庁の公開気象データに基づきコマ別に自動判定して掲載しています。</p>
 
-    <div class="status-board" aria-live="polite">
-      <div class="status-board-head">
-        <div class="sb-updated">最終更新：<b>2026/04/23 8:30</b></div>
-        <div class="status-board-legend" aria-hidden="true">
-          <span><i class="dot ok"></i> 利用可</span>
-          <span><i class="dot warn"></i> 現地判断</span>
-          <span><i class="dot ng"></i> 中止</span>
-          <span><i class="dot closed"></i> 閉場中</span>
-        </div>
-      </div>
-
-      <!-- 運動公園エリア -->
-      <div class="status-group">
-        <h4>運動公園エリア（舞浜2-27）</h4>
-        <ul class="status-list">
-          <li><span class="s-name">野球場<small>1面・夜間照明</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509829">047-350-9829</a></li>
-          <li><span class="s-name">軟式野球場<small>2面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509829">047-350-9829</a></li>
-          <li><span class="s-name">テニスコート<small>人工芝8面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509829">047-350-9829</a></li>
-          <li><span class="s-name">スポーツコート<small>フットサル2面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509829">047-350-9829</a></li>
-          <li><span class="s-name">スケートボード場</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509829">047-350-9829</a></li>
-          <li><span class="s-name">ブリオベッカ浦安競技場<small>陸上</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509830">047-350-9830</a></li>
-          <li><span class="s-name">アーチェリー場</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473509830">047-350-9830</a></li>
-        </ul>
-      </div>
-
-      <!-- 中央公園 -->
-      <div class="status-group">
-        <h4>中央公園エリア（富岡4-25）</h4>
-        <ul class="status-list">
-          <li><span class="s-name">KG軟式野球場<small>1面・夜間照明</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473519242">047-351-9242</a></li>
-          <li><span class="s-name">テニスコート<small>人工芝6面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473519242">047-351-9242</a></li>
-        </ul>
-      </div>
-
-      <!-- 高洲エリア -->
-      <div class="status-group">
-        <h4>高洲エリア</h4>
-        <ul class="status-list">
-          <li><span class="s-name">高洲テニスコート<small>人工芝4面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473500485">047-350-0485</a></li>
-          <li><span class="s-name">高洲中央公園テニスコート<small>人工芝2面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473537778">047-353-7778</a></li>
-          <li><span class="s-name">J:COM浦安少年野球場<small>高洲中央公園内</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473537778">047-353-7778</a></li>
-          <li><span class="s-name">高洲南テニスコート<small>ハードコート2面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
-          <li><span class="s-name">高洲海浜公園パークゴルフ場<small>27ホール</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473820382">047-382-0382</a></li>
-        </ul>
-      </div>
-
-      <!-- 美浜・舞浜エリア -->
-      <div class="status-group">
-        <h4>美浜・舞浜エリア（管理棟なし）</h4>
-        <ul class="status-list">
-          <li><span class="s-name">美浜テニスコート</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
-          <li><span class="s-name">美浜運動公園テニスコート</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
-          <li><span class="s-name">舞浜テニスコート</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
-          <li><span class="s-name">大三角公園少年野球場</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
-          <li><span class="s-name">美浜運動公園少年野球場</span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
-        </ul>
-      </div>
-
-      <!-- 明海・今川エリア -->
-      <div class="status-group">
-        <h4>明海・今川エリア</h4>
-        <ul class="status-list">
-          <li><span class="s-name">総合公園球技場<small>明海7-2</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473532867">047-353-2867</a></li>
-          <li><span class="s-name">ブリオベッカフィールド明海<small>明海2-1</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:0473508026">047-350-8026</a></li>
-          <li><span class="s-name">今川球技場<small>ソフトボール2面</small></span><span class="s-badge ok">利用可</span><span class="s-time">8:30更新</span><a class="s-tel" href="tel:08010392108">080-1039-2108</a></li>
-        </ul>
-      </div>
-
+    <!-- 翌日警報バナー（条件表示） -->
+    <div class="next-day-warning" id="nextDayWarning" style="display:none">
+      <h4>⚠️ 明日 <span id="nextDayDate">2026/04/24（金）</span> は気象警報の発令見込み</h4>
+      <p>明日は <span id="nextDayReason">○○警報</span> の発令が見込まれるため、施設の安全確保のため<b>明日終日、屋外施設の利用を中止</b>とさせていただきます。<br>※気象状況が好転した場合（台風が通過した・来なかった等）でも、グラウンド状態の安全確認のため中止扱いを継続します。</p>
     </div>
 
-    <p class="note" style="margin-top:10px">
-      <b>本ボードについて</b>：各施設の管理人（管理棟がない施設は巡回スタッフ）の判断を随時掲載します。<br>
-      天候の急変時などは、施設または巡回スタッフへ直接ご連絡ください。
-    </p>
+    <div class="status-board">
+      <div class="status-board-head">
+        <div class="sb-updated">最終更新：<b id="sbUpdated">取得中…</b><span style="margin-left:8px;color:var(--c-sub);font-size:11px">気象庁データより自動判定</span></div>
+      </div>
+      <div class="slot-table-wrap">
+        <table class="slot-table" id="slotTable" aria-label="屋外施設のコマ別利用可否">
+          <thead><tr id="slotHeader"></tr></thead>
+          <tbody id="slotBody"></tbody>
+        </table>
+      </div>
+      <div class="slot-legend">
+        <span><i class="lg-box" style="background:#E8F5E9"></i>利用可</span>
+        <span><i class="lg-box" style="background:#FFF8E1"></i>現地判断</span>
+        <span><i class="lg-box" style="background:#FFEBEE"></i>中止</span>
+        <span><i class="lg-box" style="background:var(--c-bg-soft)"></i>閉場中</span>
+        <span style="margin-left:8px">🔒 確定済（コマ開始1時間前にロック）</span>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <h4>本ボードに関する重要な免責事項</h4>
+      <ol>
+        <li>本ボードに掲載する各施設の利用可否は、気象庁が公開する気象データを基に自動的に判定したものです。判定アルゴリズムは可能な限り現地状況に近づけるよう設計していますが、常に現地状況と一致することは保証できません。</li>
+        <li>各施設の最終的な利用可否は、施設管理人または巡回スタッフによる現地確認のうえ判断されます。本ボードの表示と現地判断が異なる場合は、現地判断が優先されます。</li>
+        <li>気象データの取得遅延・システム障害・判定アルゴリズムの限界等により、本ボードの内容が現地状況と異なる場合があります。</li>
+        <li>本ボードの情報を信頼してご来場いただいた結果、利用できなかった場合や、それに伴う交通費・準備費・機材費・時間的損失その他いかなる損害について、<b>一般社団法人浦安市スポーツ協会および各施設運営者は一切の責任を負いかねます</b>。</li>
+        <li>翌日に気象警報の発令見込みがある場合、施設の安全確保のため、実際の天候の推移にかかわらず当該日の利用を中止とすることがあります（台風が通過した・来なかった場合でも中止扱いを継続します）。</li>
+        <li>利用日当日の正確な利用可否は、必ず該当施設または巡回スタッフへ直接ご確認のうえご来場ください。</li>
+      </ol>
+      <div class="author">一般社団法人 浦安市スポーツ協会</div>
+    </div>
   </section>
 
   <div class="feedback" data-page="home">
@@ -2705,6 +2752,34 @@
 <!-- ページトップへ戻るボタン -->
 <button id="backToTop" class="back-to-top" aria-label="ページトップへ戻る" title="ページトップへ戻る">↑</button>
 
+<!-- デバッグパネル（運用確認用／本番運用時は削除） -->
+<div class="debug-panel" id="debugPanel">
+  <button type="button" class="dbg-toggle" onclick="document.getElementById('debugPanel').classList.toggle('open')">デバッグ (運用確認用)</button>
+  <div class="dbg-body">
+    <label><b>シミュレーションモード</b><br>
+      <select id="dbgSimMode" onchange="applyDebug()">
+        <option value="">なし（通常）</option>
+        <option value="rain">強い雨（3mm/h以上）</option>
+        <option value="warning">大雨注意報</option>
+        <option value="typhoon">明日 台風接近（翌日警報）</option>
+        <option value="typhoon-passed">台風通過後（中止継続）</option>
+      </select>
+    </label>
+    <label><b>現在時刻（固定）</b><br>
+      <select id="dbgNowHour" onchange="applyDebug()">
+        <option value="">実時刻</option>
+        <option>06:00</option><option>08:00</option><option>10:00</option>
+        <option>12:00</option><option>14:00</option><option>16:00</option><option>18:00</option>
+      </select>
+    </label>
+    <button type="button" onclick="applyDebug()">再描画</button>
+    <div class="dbg-note">
+      運用安定後は削除してください。<br>
+      シミュレーションは表示のみで、実データには影響しません。
+    </div>
+  </div>
+</div>
+
 <!-- ====================== フッター ====================== -->
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
@@ -2728,6 +2803,143 @@
 </footer>
 
 <script>
+/* ===========================================================
+   屋外施設 利用可否ボード（コマ別マトリクス）
+   - データソース: GASが生成するstatus.json（後日URLを設定）
+   - 暫定: ローカルfallbackデータで動作
+   =========================================================== */
+const FACILITIES = [
+  {id:'unko-yakyu', area:'運動公園', name:'野球場', sub:'1面・夜間照明', type:'baseball', tel:'047-350-9829'},
+  {id:'unko-nanyaku', area:'運動公園', name:'軟式野球場', sub:'2面', type:'baseball', tel:'047-350-9829'},
+  {id:'unko-tennis', area:'運動公園', name:'テニスコート', sub:'人工芝8面', type:'tennis', tel:'047-350-9829'},
+  {id:'unko-sport', area:'運動公園', name:'スポーツコート', sub:'フットサル2面', type:'soccer', tel:'047-350-9829'},
+  {id:'unko-sk', area:'運動公園', name:'スケートボード場', sub:'', type:'sk', tel:'047-350-9829'},
+  {id:'unko-rikujo', area:'運動公園', name:'ブリオベッカ浦安競技場', sub:'陸上', type:'soccer', tel:'047-350-9830'},
+  {id:'unko-archery', area:'運動公園', name:'アーチェリー場', sub:'', type:'soccer', tel:'047-350-9830'},
+  {id:'chuo-kg', area:'中央公園', name:'KG軟式野球場', sub:'1面・夜間照明', type:'baseball', tel:'047-351-9242'},
+  {id:'chuo-tennis', area:'中央公園', name:'テニスコート', sub:'人工芝6面', type:'tennis', tel:'047-351-9242'},
+  {id:'koshu-tennis', area:'高洲エリア', name:'高洲テニスコート', sub:'人工芝4面', type:'tennis', tel:'047-350-0485'},
+  {id:'koshu-chuo-tennis', area:'高洲エリア', name:'高洲中央公園テニスコート', sub:'人工芝2面', type:'tennis', tel:'047-353-7778'},
+  {id:'koshu-jcom', area:'高洲エリア', name:'J:COM浦安少年野球場', sub:'高洲中央公園内', type:'baseball', tel:'047-353-7778'},
+  {id:'koshu-minami', area:'高洲エリア', name:'高洲南テニスコート', sub:'ハードコート2面', type:'tennis', tel:'080-1039-2108'},
+  {id:'koshu-pg', area:'高洲エリア', name:'高洲海浜公園パークゴルフ場', sub:'27ホール', type:'pg', tel:'047-382-0382'},
+  {id:'mihama-tennis', area:'美浜・舞浜エリア', name:'美浜テニスコート', sub:'', type:'tennis', tel:'080-1039-2108'},
+  {id:'mihama-undo-tennis', area:'美浜・舞浜エリア', name:'美浜運動公園テニスコート', sub:'', type:'tennis', tel:'080-1039-2108'},
+  {id:'maihama-tennis', area:'美浜・舞浜エリア', name:'舞浜テニスコート', sub:'', type:'tennis', tel:'080-1039-2108'},
+  {id:'daisankaku', area:'美浜・舞浜エリア', name:'大三角公園少年野球場', sub:'', type:'baseball', tel:'080-1039-2108'},
+  {id:'mihama-undo-shounen', area:'美浜・舞浜エリア', name:'美浜運動公園少年野球場', sub:'', type:'baseball', tel:'080-1039-2108'},
+  {id:'sogo-kyu', area:'明海・今川エリア', name:'総合公園球技場', sub:'明海7-2', type:'soccer', tel:'047-353-2867'},
+  {id:'briobecca-akemi', area:'明海・今川エリア', name:'ブリオベッカフィールド明海', sub:'明海2-1', type:'soccer', tel:'047-350-8026'},
+  {id:'imagawa', area:'明海・今川エリア', name:'今川球技場', sub:'ソフトボール2面', type:'baseball', tel:'080-1039-2108'},
+];
+const SLOTS = [
+  {label:'7-9',start:7},{label:'9-11',start:9},{label:'11-13',start:11},
+  {label:'13-15',start:13},{label:'15-17',start:15},{label:'17-19',start:17},{label:'19-21',start:19}
+];
+function defaultStatusData(){
+  return {
+    updatedAt: new Date().toISOString(),
+    source: 'fallback',
+    nextDayWarning: null,
+    facilities: FACILITIES.map(f=>({id:f.id, slots:SLOTS.map(()=>({status:'ok',override:null}))}))
+  };
+}
+const STATUS_JSON_URL = ''; // GAS WebアプリURLを後で設定
+async function fetchStatusData(){
+  if(!STATUS_JSON_URL) return defaultStatusData();
+  try{
+    const res = await fetch(STATUS_JSON_URL, {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    return await res.json();
+  }catch(e){
+    console.warn('status取得失敗→fallback:', e);
+    return defaultStatusData();
+  }
+}
+function getCurrentSlotPhase(i, now){
+  const h = now.getHours();
+  const s = SLOTS[i], n = SLOTS[i+1];
+  if(h >= s.start && (!n || h < n.start)) return 'now';
+  if(h < s.start - 1) return 'forecast';
+  if(h >= s.start - 1 && h < s.start) return 'lock';
+  return 'done';
+}
+function getEffectiveNow(){
+  const v = document.getElementById('dbgNowHour')?.value;
+  if(v){const d=new Date();const [h,m]=v.split(':');d.setHours(+h,+m||0,0,0);return d}
+  return new Date();
+}
+function applySimulation(data){
+  const mode = document.getElementById('dbgSimMode')?.value;
+  if(!mode) return data;
+  const d = JSON.parse(JSON.stringify(data));
+  if(mode==='rain') d.facilities.forEach(f=>f.slots=f.slots.map(s=>({...s,status:'ng'})));
+  else if(mode==='warning') d.facilities.forEach(f=>f.slots=f.slots.map(s=>({...s,status:'warn'})));
+  else if(mode==='typhoon') d.nextDayWarning={date:'明日',reason:'暴風警報・大雨警報の発令見込み'};
+  else if(mode==='typhoon-passed'){
+    d.nextDayWarning={date:'本日',reason:'昨日の警報による安全確認継続中'};
+    d.facilities.forEach(f=>f.slots=f.slots.map(s=>({...s,status:'ng'})));
+  }
+  return d;
+}
+function renderStatusBoard(raw){
+  const data = applySimulation(raw);
+  const banner = document.getElementById('nextDayWarning');
+  if(banner){
+    if(data.nextDayWarning){
+      document.getElementById('nextDayDate').textContent = data.nextDayWarning.date;
+      document.getElementById('nextDayReason').textContent = data.nextDayWarning.reason;
+      banner.style.display = '';
+    } else banner.style.display = 'none';
+  }
+  const updEl = document.getElementById('sbUpdated');
+  if(updEl){
+    const dt = new Date(data.updatedAt);
+    updEl.textContent = dt.toLocaleString('ja-JP',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+  }
+  const headerRow = document.getElementById('slotHeader');
+  if(!headerRow) return;
+  headerRow.innerHTML = '<th class="col-name">施設</th>' + SLOTS.map(s=>'<th>'+s.label+'</th>').join('') + '<th class="col-tel">連絡先</th>';
+  const tbody = document.getElementById('slotBody');
+  if(!tbody) return;
+  tbody.innerHTML = '';
+  const now = getEffectiveNow();
+  let lastArea = '';
+  FACILITIES.forEach(fac=>{
+    if(fac.area !== lastArea){
+      const tr = document.createElement('tr');
+      tr.className = 'area-header';
+      tr.innerHTML = '<td colspan="' + (SLOTS.length+2) + '">' + fac.area + '</td>';
+      tbody.appendChild(tr);
+      lastArea = fac.area;
+    }
+    const facData = data.facilities.find(x=>x.id===fac.id) || {slots: SLOTS.map(()=>({status:'ok'}))};
+    const tr = document.createElement('tr');
+    let html = '<td class="col-name">' + fac.name + (fac.sub?'<small>'+fac.sub+'</small>':'') + '</td>';
+    SLOTS.forEach((slot, i)=>{
+      const sd = facData.slots[i] || {status:'ok'};
+      const phase = getCurrentSlotPhase(i, now);
+      const labels = {ok:'○', warn:'△', ng:'×', closed:'-'};
+      const phaseLabel = {done:'済', now:'現在', lock:'確定', forecast:'予報'};
+      html += '<td class="slot-cell ' + sd.status + ' phase-' + phase + '" title="' + phaseLabel[phase] + '">'
+            + labels[sd.status]
+            + '<span class="phase">' + phaseLabel[phase] + '</span></td>';
+    });
+    html += '<td class="col-tel"><a href="tel:' + fac.tel.replace(/-/g,'') + '">' + fac.tel + '</a></td>';
+    tr.innerHTML = html;
+    tbody.appendChild(tr);
+  });
+}
+let _statusRaw = null;
+async function initStatusBoard(){
+  _statusRaw = await fetchStatusData();
+  renderStatusBoard(_statusRaw);
+}
+function applyDebug(){
+  if(_statusRaw) renderStatusBoard(_statusRaw);
+}
+window.addEventListener('DOMContentLoaded', initStatusBoard);
+
 /* 内部遷移（ハッシュを変えない）— hashchange イベントから呼ばれる */
 function navInternal(page){
   document.querySelectorAll('.page-section').forEach(s=>s.classList.toggle('active', s.dataset.page===page));
