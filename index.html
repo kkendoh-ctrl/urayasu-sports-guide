@@ -2865,7 +2865,7 @@ function defaultStatusData(){
     facilities: FACILITIES.map(f=>({id:f.id, slots:SLOTS.map(()=>({status:'ok',override:null}))}))
   };
 }
-const STATUS_JSON_URL = ''; // GAS WebアプリURLを後で設定
+const STATUS_JSON_URL = 'https://script.google.com/macros/s/AKfycbzLKSBj4B47Hd8ZLa1MWH--HRlBEkp5J4zvoMEhf1r4XdUD6fsUbGe3DAVSTIk9AZylHQ/exec';
 async function fetchStatusData(){
   if(!STATUS_JSON_URL) return defaultStatusData();
   try{
