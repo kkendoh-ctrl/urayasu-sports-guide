@@ -1156,37 +1156,21 @@
     </div>
   </section>
 
+  <!-- お知らせ + 屋外施設 本日の利用可否ボード（統合） -->
   <section class="block">
-    <h2>目的から探す</h2>
-    <p class="lead">ご利用シーンに合わせて、必要な情報にすぐアクセスできます。</p>
-    <div class="purpose-grid">
-      <a class="purpose-card" href="#guide" onclick="event.preventDefault();nav('guide')">
-        <div class="pc-icon" aria-hidden="true"><svg><use href="#ico-guide"/></svg></div>
-        <div class="pc-title">はじめて利用する</div>
-        <div class="pc-desc">利用者登録から予約までの流れを確認</div>
-      </a>
-      <a class="purpose-card" href="#group-reg" onclick="event.preventDefault();nav('guide');setTimeout(()=>document.getElementById('group-reg')?.scrollIntoView({behavior:'smooth',block:'start'}),200)">
-        <div class="pc-icon" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
-        <div class="pc-title">チーム・団体で使う</div>
-        <div class="pc-desc">団体登録の条件・必要書類を確認</div>
-      </a>
-      <a class="purpose-card" href="#fee-childcare" onclick="event.preventDefault();nav('fees');setTimeout(()=>document.getElementById('fee-childcare')?.scrollIntoView({behavior:'smooth',block:'start'}),200)">
-        <div class="pc-icon" aria-hidden="true"><svg><use href="#ico-pool"/></svg></div>
-        <div class="pc-title">子連れで利用する</div>
-        <div class="pc-desc">託児サービス・プール利用ルール</div>
-      </a>
-      <a class="purpose-card" href="#commercial" onclick="event.preventDefault();nav('commercial')">
-        <div class="pc-icon" aria-hidden="true"><svg><use href="#ico-fees"/></svg></div>
-        <div class="pc-title">撮影・営利目的で使う</div>
-        <div class="pc-desc">申請フォームから事前に受付</div>
-      </a>
-    </div>
-  </section>
+    <h2 id="page-home-title">お知らせ・利用状況</h2>
 
-  <!-- 屋外施設 本日の利用可否ボード -->
-  <section class="block">
-    <h2>本日の屋外施設 利用可否</h2>
-    <p class="lead">各施設の管理人による雨天・グラウンド状況の判断結果です。急な天候不順などの際は、施設または巡回スタッフへ直接ご連絡ください。</p>
+    <h3>お知らせ</h3>
+    <ul class="notice-list">
+      <li><span class="date3">2026/04/21</span><span class="tag3 alert">重要</span><span>6月分の抽選申込みは <b>5/1〜5/10</b> 受付です</span></li>
+      <li><span class="date3">2026/04/15</span><span class="tag3 event">イベント</span><span>5月開催 総合体育館 託児のご案内</span></li>
+      <li><span class="date3">2026/04/10</span><span class="tag3 info">施設</span><span>メインアリーナ 床面補修工事（6/15〜17 休館）</span></li>
+      <li><span class="date3">2026/04/01</span><span class="tag3 info">料金</span><span>支払方法にPayPay・コンビニ決済が追加されました</span></li>
+    </ul>
+    <p style="text-align:right;margin:8px 0 0"><a href="#news" onclick="event.preventDefault();nav('news')">お知らせ一覧を見る</a></p>
+
+    <h3>本日の屋外施設 利用可否</h3>
+    <p>各施設の管理人による雨天・グラウンド状況の判断結果です。急な天候不順などの際は、施設または巡回スタッフへ直接ご連絡ください。</p>
 
     <div class="status-board" aria-live="polite">
       <div class="status-board-head">
@@ -1264,35 +1248,34 @@
     </p>
   </section>
 
+  <!-- ご利用案内（主なメニュー＋目的別の統合） -->
   <section class="block">
-    <h2 id="page-home-title">お知らせ</h2>
-    <ul class="notice-list">
-      <li><span class="date3">2026/04/21</span><span class="tag3 alert">重要</span><span>6月分の抽選申込みは <b>5/1〜5/10</b> 受付です</span></li>
-      <li><span class="date3">2026/04/15</span><span class="tag3 event">イベント</span><span>5月開催 総合体育館 託児のご案内</span></li>
-      <li><span class="date3">2026/04/10</span><span class="tag3 info">施設</span><span>メインアリーナ 床面補修工事（6/15〜17 休館）</span></li>
-      <li><span class="date3">2026/04/01</span><span class="tag3 info">料金</span><span>支払方法にPayPay・コンビニ決済が追加されました</span></li>
-    </ul>
-    <p style="text-align:right;margin-top:16px"><a href="#news" onclick="event.preventDefault();nav('news')">お知らせ一覧を見る</a></p>
-  </section>
-
-  <section class="block">
-    <h2>主なメニュー</h2>
+    <h2>ご利用案内</h2>
+    <p class="lead">基本情報と、シーン別の入口をまとめています。</p>
     <div class="fcard-grid">
       <a href="#facilities" class="fcard" onclick="event.preventDefault();nav('facilities')">
         <div class="ph" aria-hidden="true"><svg><use href="#ico-arena"/></svg></div>
-        <div class="inner"><h4>施設一覧</h4><p>体育館・テニスコート・球技場・プールなど浦安市内の体育施設をご紹介</p><div class="cta">施設を探す</div></div>
+        <div class="inner"><h4>施設一覧</h4><p>体育館・テニスコート・球技場・プールなど、浦安市内26施設をジャンル別にご紹介</p><div class="cta">施設を探す</div></div>
       </a>
       <a href="#guide" class="fcard" onclick="event.preventDefault();nav('guide')">
         <div class="ph" aria-hidden="true"><svg><use href="#ico-guide"/></svg></div>
-        <div class="inner"><h4>使い方ガイド</h4><p>はじめての方向けに、登録から予約・支払いまでの手順をご案内</p><div class="cta">使い方を見る</div></div>
+        <div class="inner"><h4>使い方ガイド</h4><p>はじめての方向けに、利用者登録から予約・支払いまでの流れと団体登録の条件をご案内</p><div class="cta">使い方を見る</div></div>
       </a>
       <a href="#fees" class="fcard" onclick="event.preventDefault();nav('fees')">
         <div class="ph" aria-hidden="true"><svg><use href="#ico-fees"/></svg></div>
-        <div class="inner"><h4>料金表</h4><p>体育館・球技場・プールなど全施設の使用料一覧</p><div class="cta">料金表を見る</div></div>
+        <div class="inner"><h4>料金表</h4><p>全施設の使用料一覧。個人・団体・小中高生65歳以上の区分や、託児料金もこちら</p><div class="cta">料金表を見る</div></div>
       </a>
       <a href="#faq" class="fcard" onclick="event.preventDefault();nav('faq')">
         <div class="ph" aria-hidden="true"><svg><use href="#ico-faq"/></svg></div>
-        <div class="inner"><h4>よくある質問</h4><p>料金・登録・予約・キャンセルなどのご質問</p><div class="cta">FAQを見る</div></div>
+        <div class="inner"><h4>よくある質問</h4><p>料金・登録・予約・キャンセル・トレーニング室・プール・託児に関するご質問</p><div class="cta">FAQを見る</div></div>
+      </a>
+      <a href="#commercial" class="fcard" onclick="event.preventDefault();nav('commercial')">
+        <div class="ph" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
+        <div class="inner"><h4>撮影・営利利用</h4><p>映画・テレビ・CM・物販・興行など、営利目的でのご利用は事前申請（利用14日前まで）</p><div class="cta">申請ページへ</div></div>
+      </a>
+      <a href="#troubleshooting" class="fcard" onclick="event.preventDefault();nav('troubleshooting')">
+        <div class="ph" aria-hidden="true"><svg><use href="#ico-faq"/></svg></div>
+        <div class="inner"><h4>トラブル対処</h4><p>ID・パスワード忘れ／ログインできない／決済失敗／メールが届かないなどの対処法</p><div class="cta">対処法を見る</div></div>
       </a>
     </div>
   </section>
