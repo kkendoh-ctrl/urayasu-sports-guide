@@ -1120,7 +1120,6 @@
       <a href="#faq" onclick="event.preventDefault();nav('faq')" data-page="faq">よくある質問</a>
       <a href="#news" onclick="event.preventDefault();nav('news')" data-page="news">お知らせ</a>
       <a href="#commercial" onclick="event.preventDefault();nav('commercial')" data-page="commercial">撮影・営利利用</a>
-      <a href="#troubleshooting" onclick="event.preventDefault();nav('troubleshooting')" data-page="troubleshooting">トラブル対処</a>
       <button type="button" class="search-btn" onclick="openSearch()" aria-label="サイト内検索">サイト内を検索<span class="kbd">Ctrl + K</span></button>
       <a class="cta" href="https://s-yoyaku.city.urayasu.chiba.jp/" target="_blank" rel="noopener">予約システムへ</a>
     </nav>
@@ -1153,6 +1152,34 @@
     <div class="hero-inner">
       <h1>体育施設の利用案内</h1>
       <p class="lead">浦安市内の体育館・テニスコート・球技場・プール等の予約方法・料金・施設情報をご案内します。</p>
+    </div>
+  </section>
+
+  <!-- ご利用案内（主なメニュー＋目的別の統合） -->
+  <section class="block">
+    <h2>ご利用案内</h2>
+    <p class="lead">基本情報と、シーン別の入口をまとめています。</p>
+    <div class="fcard-grid">
+      <a href="#facilities" class="fcard" onclick="event.preventDefault();nav('facilities')">
+        <div class="ph" aria-hidden="true"><svg><use href="#ico-arena"/></svg></div>
+        <div class="inner"><h4>施設一覧</h4><p>体育館・テニスコート・球技場・プールなど、浦安市内26施設をジャンル別にご紹介</p><div class="cta">施設を探す</div></div>
+      </a>
+      <a href="#guide" class="fcard" onclick="event.preventDefault();nav('guide')">
+        <div class="ph" aria-hidden="true"><svg><use href="#ico-guide"/></svg></div>
+        <div class="inner"><h4>使い方ガイド</h4><p>はじめての方向けに、利用者登録から予約・支払いまでの流れと団体登録の条件をご案内</p><div class="cta">使い方を見る</div></div>
+      </a>
+      <a href="#fees" class="fcard" onclick="event.preventDefault();nav('fees')">
+        <div class="ph" aria-hidden="true"><svg><use href="#ico-fees"/></svg></div>
+        <div class="inner"><h4>料金表</h4><p>全施設の使用料一覧。個人・団体・小中高生65歳以上の区分や、託児料金もこちら</p><div class="cta">料金表を見る</div></div>
+      </a>
+      <a href="#faq" class="fcard" onclick="event.preventDefault();nav('faq')">
+        <div class="ph" aria-hidden="true"><svg><use href="#ico-faq"/></svg></div>
+        <div class="inner"><h4>よくある質問</h4><p>料金・登録・予約・キャンセル・トレーニング室・プール・託児に関するご質問</p><div class="cta">FAQを見る</div></div>
+      </a>
+      <a href="#commercial" class="fcard" onclick="event.preventDefault();nav('commercial')">
+        <div class="ph" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
+        <div class="inner"><h4>撮影・営利利用</h4><p>映画・テレビ・CM・物販・興行など、営利目的でのご利用は事前申請（利用14日前まで）</p><div class="cta">申請ページへ</div></div>
+      </a>
     </div>
   </section>
 
@@ -1246,60 +1273,6 @@
       <b>本ボードについて</b>：各施設の管理人（管理棟がない施設は巡回スタッフ）の判断を随時掲載します。<br>
       天候の急変時などは、施設または巡回スタッフへ直接ご連絡ください。
     </p>
-  </section>
-
-  <!-- ご利用案内（主なメニュー＋目的別の統合） -->
-  <section class="block">
-    <h2>ご利用案内</h2>
-    <p class="lead">基本情報と、シーン別の入口をまとめています。</p>
-    <div class="fcard-grid">
-      <a href="#facilities" class="fcard" onclick="event.preventDefault();nav('facilities')">
-        <div class="ph" aria-hidden="true"><svg><use href="#ico-arena"/></svg></div>
-        <div class="inner"><h4>施設一覧</h4><p>体育館・テニスコート・球技場・プールなど、浦安市内26施設をジャンル別にご紹介</p><div class="cta">施設を探す</div></div>
-      </a>
-      <a href="#guide" class="fcard" onclick="event.preventDefault();nav('guide')">
-        <div class="ph" aria-hidden="true"><svg><use href="#ico-guide"/></svg></div>
-        <div class="inner"><h4>使い方ガイド</h4><p>はじめての方向けに、利用者登録から予約・支払いまでの流れと団体登録の条件をご案内</p><div class="cta">使い方を見る</div></div>
-      </a>
-      <a href="#fees" class="fcard" onclick="event.preventDefault();nav('fees')">
-        <div class="ph" aria-hidden="true"><svg><use href="#ico-fees"/></svg></div>
-        <div class="inner"><h4>料金表</h4><p>全施設の使用料一覧。個人・団体・小中高生65歳以上の区分や、託児料金もこちら</p><div class="cta">料金表を見る</div></div>
-      </a>
-      <a href="#faq" class="fcard" onclick="event.preventDefault();nav('faq')">
-        <div class="ph" aria-hidden="true"><svg><use href="#ico-faq"/></svg></div>
-        <div class="inner"><h4>よくある質問</h4><p>料金・登録・予約・キャンセル・トレーニング室・プール・託児に関するご質問</p><div class="cta">FAQを見る</div></div>
-      </a>
-      <a href="#commercial" class="fcard" onclick="event.preventDefault();nav('commercial')">
-        <div class="ph" aria-hidden="true"><svg><use href="#ico-soccer"/></svg></div>
-        <div class="inner"><h4>撮影・営利利用</h4><p>映画・テレビ・CM・物販・興行など、営利目的でのご利用は事前申請（利用14日前まで）</p><div class="cta">申請ページへ</div></div>
-      </a>
-      <a href="#troubleshooting" class="fcard" onclick="event.preventDefault();nav('troubleshooting')">
-        <div class="ph" aria-hidden="true"><svg><use href="#ico-faq"/></svg></div>
-        <div class="inner"><h4>トラブル対処</h4><p>ID・パスワード忘れ／ログインできない／決済失敗／メールが届かないなどの対処法</p><div class="cta">対処法を見る</div></div>
-      </a>
-    </div>
-  </section>
-
-  <!-- A-2：よく見られる質問 TOP3 -->
-  <section class="block">
-    <h2>よく見られているご質問</h2>
-    <div class="top-faq">
-      <a href="#faq" onclick="event.preventDefault();nav('faq')">
-        <span class="tf-rank">TOP 1</span>
-        <span class="tf-q">抽選の申込みはいつ・どこで？</span>
-        <span class="tf-a">毎月1〜10日に申込み、13日に抽選、16〜26日に当選確定…</span>
-      </a>
-      <a href="#faq" onclick="event.preventDefault();nav('faq')">
-        <span class="tf-rank">TOP 2</span>
-        <span class="tf-q">登録は何歳から？どこで手続き？</span>
-        <span class="tf-a">16歳以上／PC・スマホから公共施設予約システムで…</span>
-      </a>
-      <a href="#faq" onclick="event.preventDefault();nav('faq')">
-        <span class="tf-rank">TOP 3</span>
-        <span class="tf-q">キャンセルの還付ルールは？</span>
-        <span class="tf-a">利用日の3日前まで還付／2日前・前日は還付不可…</span>
-      </a>
-    </div>
   </section>
 
   <div class="feedback" data-page="home">
@@ -1745,7 +1718,7 @@
       <p>動画と併せて、以下もご活用ください。</p>
       <ul style="margin:0;padding-left:1.4em;line-height:2">
         <li><a href="#operation-guide" onclick="event.preventDefault();nav('operation-guide')"><b>画面キャプチャ付き 操作ガイド（印刷対応）</b></a>　— PCから印刷して手元に置いて操作できます</li>
-        <li><a href="#troubleshooting" onclick="event.preventDefault();nav('troubleshooting')"><b>予約システムのトラブル対処</b></a>　— ID・パスワード忘れ／ログインできない／決済失敗などの対処法</li>
+        <li><a href="#faq" onclick="event.preventDefault();nav('faq')"><b>よくある質問・トラブル対処</b></a>　— ID・パスワード忘れ／ログインできない／決済失敗などの対処法もこちら</li>
       </ul>
     </div>
   </section>
@@ -2064,7 +2037,7 @@
   </nav>
   <section class="block">
     <h2 id="page-faq-title">よくあるご質問</h2>
-    <p class="lead">カテゴリ別によくあるご質問をまとめています。見つからない場合は、ページ下部のスポーツ協会事務局（TEL 047-723-9387／平日 9:00〜17:00）までご連絡ください。</p>
+    <p class="lead">カテゴリ別のよくあるご質問と、予約システムのトラブル対処をまとめています。見つからない場合は、ページ下部のスポーツ協会事務局（TEL 047-723-9387／平日 9:00〜17:00）までご連絡ください。</p>
 
     <!-- FAQ検索 -->
     <div class="faq-search" role="search">
@@ -2211,6 +2184,104 @@
         ・定員：6ヶ月以上1歳未満は2名／1歳以上就学前まで最大6名<br>
         ・事前申込制。予約当日、予定時刻を10分経過しても受付に来られない場合はキャンセル扱いとなります<br>
         ・開催日・時間は各施設へ直接お問い合わせください
+      </div>
+    </details>
+
+    <div class="faq-category">予約システムのトラブル対処</div>
+
+    <details class="faq-item">
+      <summary>利用者IDを忘れてしまった</summary>
+      <div class="answer">
+        <ol>
+          <li>登録メールアドレスをご用意ください。</li>
+          <li><a href="https://k5.p-kashikan.jp/urayasu-city/" target="_blank" rel="noopener">浦安市公共施設予約システム</a>のログイン画面から「利用者IDをお忘れの方」を選択。</li>
+          <li>登録メールアドレスを入力すると、登録済みのIDがメールで送付されます。</li>
+        </ol>
+        <p>解決しない場合は、本人確認のうえスポーツ協会事務局（<a href="tel:0477239387">047-723-9387</a>／平日9:00〜17:00）までお問い合わせください。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>パスワードを忘れた・ログインできない</summary>
+      <div class="answer">
+        <ol>
+          <li>ログイン画面の「パスワードをお忘れの方」を選択します。</li>
+          <li>利用者IDと登録メールアドレスを入力。再設定用メールが届きます。</li>
+          <li>メール内のリンクから新しいパスワードを設定してください。</li>
+        </ol>
+        <p><b>※旧システムから移行の方</b>：初回ログイン時は、利用者IDとパスワード（旧システム登録時の電話番号 ※ハイフンなし）でログインし、新しいパスワードに更新してください。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>ログイン画面で何度も弾かれる・エラーが出る</summary>
+      <div class="answer">
+        以下を順にお試しください：
+        <ol>
+          <li>ブラウザを最新版に更新（Chrome／Edge／Safari／Firefox 推奨）</li>
+          <li>Cookie・JavaScriptを有効にする</li>
+          <li>シークレット／プライベートモードで再度試す（拡張機能の干渉回避）</li>
+          <li>キャッシュを削除して再読み込み（Ctrl+F5 または Shift+更新）</li>
+          <li>違うブラウザで試す</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>「確定」ボタンが押せない・表示されない</summary>
+      <div class="answer">
+        以下の原因が考えられます：
+        <ol>
+          <li><b>確定期間外</b>：当選確定は<b>毎月16〜26日</b>のみ操作できます。</li>
+          <li><b>すでに確定済み</b>：マイページの「予約申込一覧」をご確認ください。</li>
+          <li>ブラウザキャッシュの問題 → 更新（F5）またはシークレットモード。</li>
+        </ol>
+        <p>確定期間を過ぎてしまった場合、当選は自動キャンセルになります。再度、翌月の抽選にお申込みください。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>支払いで失敗した・エラーが出た</summary>
+      <div class="answer">
+        <b>クレジットカードの場合</b>：カード番号・有効期限・セキュリティコード／利用限度額／3Dセキュア通知をご確認ください。<br>
+        <b>PayPayの場合</b>：残高・支払い設定／メンテナンス時間をご確認ください。<br>
+        <b>コンビニの場合</b>：払込票の期限内に／払込票番号の入力ミスにご注意ください。<br>
+        <p><b>支払い期限を過ぎた場合</b>、予約は自動取消となります。再度、随時予約・抽選申込みからやり直してください。</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>予約システムからのメールが届かない</summary>
+      <div class="answer">
+        <ol>
+          <li><b>迷惑メールフォルダ</b>に振り分けられていないかご確認ください。</li>
+          <li>ドメイン指定受信をしている方は <b>@p-kashikan.jp</b> を受信許可に追加してください。</li>
+          <li>キャリアメール（docomo/au/SoftBank）の場合、URL付きメールの受信許可を確認。</li>
+          <li>登録メールアドレスに誤字がないか、マイページの「利用者情報」でご確認ください。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>領収書・明細が欲しい</summary>
+      <div class="answer">
+        クレジットカード・PayPay・コンビニ決済の場合、それぞれの利用明細が領収書代わりになります。<br>
+        浦安市スポーツ協会名義の領収書が必要な場合は、事務局（<a href="tel:0477239387">047-723-9387</a>／<a href="mailto:office@urayasu-spokyo.org">office@urayasu-spokyo.org</a>）までご連絡ください。
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>住所・電話番号が変わった</summary>
+      <div class="answer">
+        予約システムのマイページ →「利用者情報の変更」から修正できます。住所変更は市内者／市外者の区分にも影響しますので、速やかに変更してください。
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>登録している施設を追加・変更したい</summary>
+      <div class="answer">
+        個人登録をお持ちの方は追加手続き不要です。予約時に希望施設を選択できます。<br>
+        団体登録の種目追加・代表者変更・構成員変更は、スポーツ協会事務局までご連絡ください。
       </div>
     </details>
   </section>
@@ -2460,185 +2531,6 @@
   </div>
 </section>
 
-<!-- ====================== ⑧ トラブル対処 ====================== -->
-<section class="page-section" data-page="troubleshooting" aria-labelledby="page-trouble-title">
-  <nav class="breadcrumb" aria-label="パンくずリスト">
-    <ol>
-      <li><a href="#home" onclick="event.preventDefault();nav('home')">ホーム</a></li>
-      <li>予約システムのトラブル対処</li>
-    </ol>
-  </nav>
-  <section class="block">
-    <h2 id="page-trouble-title">予約システムのトラブル対処</h2>
-    <p class="lead">予約システム操作中によくある困りごとへの対処法をまとめました。該当する項目を開いて手順を確認してください。</p>
-
-    <h3>ログインに関すること</h3>
-    <ul class="trouble-list">
-      <details class="trouble-item">
-        <summary>利用者IDを忘れてしまった</summary>
-        <div class="t-body">
-          <h5>対処方法</h5>
-          <ol>
-            <li>予約システムに登録したメールアドレスをご用意ください。</li>
-            <li><a href="https://k5.p-kashikan.jp/urayasu-city/" target="_blank" rel="noopener">浦安市公共施設予約システム</a>のログイン画面から「利用者IDをお忘れの方」（または相当する）を選択します。</li>
-            <li>登録メールアドレスを入力すると、登録済みのIDがメールで送付されます。</li>
-          </ol>
-          <h5>それでも解決しない場合</h5>
-          <p>本人確認のうえ、スポーツ協会事務局までお問い合わせください。<br>TEL：<a href="tel:0477239387">047-723-9387</a>（平日 9:00〜17:00）</p>
-        </div>
-      </details>
-
-      <details class="trouble-item">
-        <summary>パスワードを忘れた・ログインできない</summary>
-        <div class="t-body">
-          <h5>対処方法</h5>
-          <ol>
-            <li>ログイン画面の「パスワードをお忘れの方」を選択します。</li>
-            <li>利用者IDと登録メールアドレスを入力すると、パスワード再設定用のメールが届きます。</li>
-            <li>メール内のリンクから新しいパスワードを設定してください。</li>
-          </ol>
-          <h5>※旧システムから移行の方</h5>
-          <p>初回ログイン時は、利用者IDとパスワード（<b>旧システム登録時の電話番号 ※ハイフンなし</b>）でログインし、新しいパスワードに更新してください。</p>
-        </div>
-      </details>
-
-      <details class="trouble-item">
-        <summary>ログイン画面で何度も弾かれる・エラーが出る</summary>
-        <div class="t-body">
-          <h5>対処方法（順に試してください）</h5>
-          <ol>
-            <li><b>ブラウザを最新版に更新</b>（Chrome／Edge／Safari／Firefox を推奨）</li>
-            <li><b>Cookie・JavaScriptを有効</b>にする</li>
-            <li><b>シークレット／プライベートモードで再度試す</b>（拡張機能の干渉回避）</li>
-            <li>キャッシュを削除して再読み込み（Ctrl+F5 もしくは Shift+更新）</li>
-            <li>違うブラウザで試す</li>
-          </ol>
-        </div>
-      </details>
-    </ul>
-
-    <h3>予約操作に関すること</h3>
-    <ul class="trouble-list">
-      <details class="trouble-item">
-        <summary>「確定」ボタンが押せない・表示されない</summary>
-        <div class="t-body">
-          <h5>考えられる原因</h5>
-          <ol>
-            <li><b>確定期間外</b>：当選確定は<b>毎月16〜26日</b>の期間中のみ操作できます。</li>
-            <li><b>すでに確定済み</b>：マイページの「予約申込一覧」にすでに表示されていないかご確認ください。</li>
-            <li>ブラウザキャッシュの問題 → 更新（F5）またはシークレットモードで再試行。</li>
-          </ol>
-          <h5>確定期間を過ぎてしまった</h5>
-          <p>確定期間を過ぎた当選は自動でキャンセルとなります。再度、翌月の抽選にお申込みください。</p>
-        </div>
-      </details>
-
-      <details class="trouble-item">
-        <summary>支払いで失敗した・エラーが出た</summary>
-        <div class="t-body">
-          <h5>決済方法別の対処</h5>
-          <h5 style="margin-top:4px">▶ クレジットカード</h5>
-          <ul>
-            <li>カード番号・有効期限・セキュリティコードに誤りがないか再確認</li>
-            <li>カードの利用限度額をご確認ください</li>
-            <li>3Dセキュア（本人認証）の通知が別端末に届いている可能性</li>
-          </ul>
-          <h5>▶ PayPay</h5>
-          <ul>
-            <li>PayPayアプリの残高・支払い設定をご確認ください</li>
-            <li>PayPay側のメンテナンス時間をご確認ください</li>
-          </ul>
-          <h5>▶ コンビニ</h5>
-          <ul>
-            <li>発行された払込票の期限内にお支払いください</li>
-            <li>払込票番号の入力ミスがないかご確認ください</li>
-          </ul>
-          <h5>※支払い期限を過ぎた場合</h5>
-          <p>予約は自動取消となります。再度、随時予約・抽選申込みからやり直してください。</p>
-        </div>
-      </details>
-
-      <details class="trouble-item">
-        <summary>抽選申込みの件数が上限と言われた</summary>
-        <div class="t-body">
-          <p>抽選申込みは、<b>屋外・屋内それぞれ第3希望まで（合計6件まで）</b>です。すでに6件申込済みの場合、追加できません。</p>
-          <p>不要な申込みをマイページから削除してから、新たに申込みしてください。</p>
-        </div>
-      </details>
-
-      <details class="trouble-item">
-        <summary>間違えて申込み／予約した。取り消したい</summary>
-        <div class="t-body">
-          <ol>
-            <li>マイページの「予約申込一覧」を開きます。</li>
-            <li>該当の予約の「取消」ボタンから手続きできます。</li>
-            <li>支払済みの場合、使用日の<b>3日前まで</b>は全額還付、<b>2日前・前日</b>は還付不可です。</li>
-          </ol>
-        </div>
-      </details>
-    </ul>
-
-    <h3>メール・通知に関すること</h3>
-    <ul class="trouble-list">
-      <details class="trouble-item">
-        <summary>予約システムからのメールが届かない</summary>
-        <div class="t-body">
-          <h5>よくある原因と対処</h5>
-          <ol>
-            <li><b>迷惑メールフォルダ</b>に振り分けられていないかご確認ください。</li>
-            <li>ドメイン指定受信をしている方は <b>@p-kashikan.jp</b> を受信許可に追加してください。</li>
-            <li>キャリアメール（docomo/au/SoftBank）の場合、URL付きメールの受信許可を確認。</li>
-            <li>登録メールアドレスに誤字がないか、マイページの「利用者情報」でご確認ください。</li>
-          </ol>
-        </div>
-      </details>
-
-      <details class="trouble-item">
-        <summary>領収書・明細が欲しい</summary>
-        <div class="t-body">
-          <p>クレジットカード・PayPay・コンビニ決済の場合、それぞれの利用明細が領収書代わりになります。</p>
-          <p>別途、浦安市スポーツ協会名義の領収書が必要な場合は、事務局へご連絡ください。<br>TEL：<a href="tel:0477239387">047-723-9387</a>／Email：<a href="mailto:office@urayasu-spokyo.org">office@urayasu-spokyo.org</a></p>
-        </div>
-      </details>
-    </ul>
-
-    <h3>利用者情報に関すること</h3>
-    <ul class="trouble-list">
-      <details class="trouble-item">
-        <summary>住所・電話番号が変わった</summary>
-        <div class="t-body">
-          <p>予約システムのマイページ →「利用者情報の変更」から修正できます。特に住所変更は、市内者／市外者の区分にも影響しますので、速やかに変更してください。</p>
-        </div>
-      </details>
-
-      <details class="trouble-item">
-        <summary>登録している施設を追加・変更したい</summary>
-        <div class="t-body">
-          <p>個人登録をお持ちの方は、新たに追加手続きは不要です。予約時に希望施設を選択できます。</p>
-          <p>団体登録の種目追加・代表者変更・構成員変更は、スポーツ協会事務局までご連絡ください。</p>
-        </div>
-      </details>
-    </ul>
-
-    <div class="info-box">
-      <h3>上記で解決しない場合</h3>
-      <p>お気軽にスポーツ協会事務局までお問い合わせください。</p>
-      <p>一般社団法人 浦安市スポーツ協会 事務局<br>
-         TEL：<a href="tel:0477239387">047-723-9387</a>（平日 9:00〜17:00）<br>
-         Email：<a href="mailto:office@urayasu-spokyo.org">office@urayasu-spokyo.org</a></p>
-    </div>
-  </section>
-
-  <div class="feedback" data-page="troubleshooting">
-    <p>このページは参考になりましたか？</p>
-    <div class="fb-btns">
-      <button type="button" onclick="sendFeedback(this,'yes','troubleshooting')" aria-pressed="false">👍 役に立った</button>
-      <button type="button" onclick="sendFeedback(this,'no','troubleshooting')" aria-pressed="false">👎 改善が必要</button>
-    </div>
-    <div class="fb-thanks">ご回答ありがとうございました。今後の改善に活用させていただきます。</div>
-  </div>
-</section>
-
 <!-- ====================== ⑨ 操作ガイド（印刷用） ====================== -->
 <section class="page-section" data-page="operation-guide" aria-labelledby="page-op-title">
   <nav class="breadcrumb" aria-label="パンくずリスト">
@@ -2829,8 +2721,7 @@
       <a href="#fees" onclick="event.preventDefault();nav('fees')">料金表</a> ｜
       <a href="#faq" onclick="event.preventDefault();nav('faq')">よくある質問</a> ｜
       <a href="#news" onclick="event.preventDefault();nav('news')">お知らせ</a> ｜
-      <a href="#commercial" onclick="event.preventDefault();nav('commercial')">撮影・営利利用</a> ｜
-      <a href="#troubleshooting" onclick="event.preventDefault();nav('troubleshooting')">トラブル対処</a>
+      <a href="#commercial" onclick="event.preventDefault();nav('commercial')">撮影・営利利用</a>
     </p>
     <p class="copy">本サイトは一般社団法人 浦安市スポーツ協会が運営する、市民向けの参考案内サイトです。<br>制度・申請に関する正式情報は<a href="https://www.city.urayasu.lg.jp/shogaigakushu/sports/shisetsu/index.html" target="_blank" rel="noopener">浦安市公式サイト</a>を、施設の最新情報は<a href="https://www.urayasu-zaidan.or.jp/taiikukan/" target="_blank" rel="noopener">うらやす財団 公式サイト</a>をご確認ください。<br>© 一般社団法人 浦安市スポーツ協会</p>
   </div>
@@ -2868,7 +2759,7 @@ function nav(page){
 /* ページ読み込み時のルーティング */
 function syncFromHash(){
   const h = (location.hash || '#home').replace('#','');
-  const validPages = ['home','facilities','guide','fees','faq','news','commercial','troubleshooting','operation-guide'];
+  const validPages = ['home','facilities','guide','fees','faq','news','commercial','operation-guide'];
   const target = validPages.includes(h) ? h : 'home';
   navInternal(target);
 }
