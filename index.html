@@ -81,13 +81,6 @@
     -webkit-font-smoothing:antialiased;
     font-feature-settings:"palt";
   }
-  /* フォントサイズ切替
-     既存CSSがpx指定中心のため、コンテンツ全体に zoom を適用してレイアウトごと拡縮します。
-     ヘッダー・フッターも一緒に拡縮、ナビ／文字サイズトグル／戻るボタンは元サイズのまま。
-  */
-  html.font-sm .site-main,html.font-sm .site-footer{zoom:.9}
-  html.font-lg .site-main,html.font-lg .site-footer{zoom:1.18}
-  html.font-xl .site-main,html.font-xl .site-footer{zoom:1.35}
   /* キーボードフォーカス時のアウトライン(アクセシビリティ) */
   a:focus-visible,button:focus-visible,summary:focus-visible,
   input:focus-visible,select:focus-visible,textarea:focus-visible{
@@ -143,36 +136,6 @@
 
   /* モバイルハンバーガー */
   .mobile-toggle{display:none;background:none;border:0;font-size:24px;cursor:pointer;color:var(--c-text);margin-left:auto}
-
-  /* ===== 文字サイズ切替 ===== */
-  .font-controls{
-    background:var(--c-bg-brand);border-bottom:1px solid var(--c-bd);
-    padding:6px 20px;font-size:13px;color:var(--c-sub);
-    display:flex;align-items:center;justify-content:flex-end;gap:8px;
-    max-width:100%;
-  }
-  .font-controls .fc-inner{
-    max-width:var(--max-width);margin:0 auto;width:100%;
-    display:flex;align-items:center;justify-content:flex-end;gap:8px;
-  }
-  .font-controls .fc-label{font-size:12px;color:var(--c-sub);margin-right:4px}
-  .font-controls button{
-    background:var(--c-bg);border:1px solid var(--c-bd);border-radius:2px;
-    padding:4px 12px;font-size:13px;font-weight:600;color:var(--c-text);cursor:pointer;
-    transition:border-color .1s;min-width:36px;
-  }
-  .font-controls button:hover{border-color:var(--c-brand)}
-  .font-controls button[aria-pressed="true"]{
-    background:var(--c-brand);color:#fff;border-color:var(--c-brand);
-  }
-  .font-controls button.fc-sm{font-size:11px}
-  .font-controls button.fc-md{font-size:13px}
-  .font-controls button.fc-lg{font-size:15px}
-  .font-controls button.fc-xl{font-size:17px}
-  @media (max-width:480px){
-    .font-controls{padding:5px 12px}
-    .font-controls .fc-label{display:none}
-  }
 
   /* ===== メイン ===== */
   .site-main{max-width:var(--max-width);margin:0 auto;background:var(--c-bg);min-height:600px}
@@ -617,7 +580,7 @@
   @media print{
     html,body{background:#fff !important;color:#000 !important;font-size:11pt;line-height:1.6}
     .site-header,.site-nav,.mobile-toggle,.skip-link,
-    .font-controls,.hero-band,.schedule-banner,
+    .hero-band,.schedule-banner,
     .fixed-cta,.back-to-top,.preview-note,
     .breadcrumb,.site-footer .footer-nav{display:none !important}
     .site-main{max-width:100%;box-shadow:none;margin:0;padding:0}
@@ -1054,17 +1017,6 @@
 <body>
 
 <a href="#main" class="skip-link">本文へスキップ</a>
-
-<!-- 文字サイズ切替バー -->
-<div class="font-controls" role="toolbar" aria-label="文字サイズの切替">
-  <div class="fc-inner">
-    <span class="fc-label">文字サイズ</span>
-    <button type="button" class="fc-sm" onclick="setFontSize('sm')" aria-pressed="false" aria-label="小">小</button>
-    <button type="button" class="fc-md" onclick="setFontSize('md')" aria-pressed="true" aria-label="中（既定）">中</button>
-    <button type="button" class="fc-lg" onclick="setFontSize('lg')" aria-pressed="false" aria-label="大">大</button>
-    <button type="button" class="fc-xl" onclick="setFontSize('xl')" aria-pressed="false" aria-label="特大">特大</button>
-  </div>
-</div>
 
 <!-- ===== SVGアイコン定義(画面には表示されない) ===== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -2948,23 +2900,6 @@ function toggleMenu(btn){
   const isOpen = menu.classList.toggle('open');
   btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 }
-
-/* ===== 文字サイズ切替（localStorageで保存） ===== */
-function setFontSize(size){
-  const html = document.documentElement;
-  html.classList.remove('font-sm','font-md','font-lg','font-xl');
-  html.classList.add('font-' + size);
-  try{ localStorage.setItem('urayasu-font-size', size); }catch(e){}
-  document.querySelectorAll('.font-controls button').forEach(b=>{
-    b.setAttribute('aria-pressed', b.classList.contains('fc-'+size) ? 'true' : 'false');
-  });
-}
-// 初期化：保存済みサイズを復元
-(function(){
-  let saved = 'md';
-  try{ saved = localStorage.getItem('urayasu-font-size') || 'md'; }catch(e){}
-  setFontSize(saved);
-})();
 
 /* ===== 施設フィルター（検索＋カテゴリチップ） ===== */
 (function(){
